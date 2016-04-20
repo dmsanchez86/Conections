@@ -91,8 +91,14 @@ section{
 				overflow: hidden;
 
 				&:first-child{
-					@include flex-item( 1 1 10% );
 					position: relative;
+					@include perspective(500px);
+					@include flex-item( 1 1 10% );
+
+					img{
+						@include transition(all .5s ease);
+						@include transform-origin(left center);
+					}
 
 					&:before{
 						position: absolute;
@@ -108,6 +114,10 @@ section{
 					}
 
 					&:hover{
+						img{
+							@include transform(rotatey(5deg));
+						}
+
 						&:before{
 							@include transform(skewx(-34deg) translatex(-20%));
 						}
@@ -153,6 +163,12 @@ section{
 
 					&:last-child{
 						position: relative;
+						@include perspective(500px);
+
+						img{
+							@include transition(all .5s ease);
+							@include transform-origin(center right);
+						}
 
 						&:before{
 							position: absolute;
@@ -168,6 +184,10 @@ section{
 						}
 
 						&:hover{
+							img{
+								@include transform(rotatey(-5deg));
+							}
+
 							&:before{
 								@include transform(skewx(34deg) translatex(16%));
 							}
