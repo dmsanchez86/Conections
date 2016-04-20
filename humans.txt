@@ -1,6 +1,13 @@
+ _____                       _                       
+/  __ \                     (_)                      
+| /  \/ ___  _ __   _____  ___  ___  _ __   ___  ___ 
+| |    / _ \| '_ \ / _ \ \/ / |/ _ \| '_ \ / _ \/ __|
+| \__/\ (_) | | | |  __/>  <| | (_) | | | |  __/\__ \
+ \____/\___/|_| |_|\___/_/\_\_|\___/|_| |_|\___||___/
+                                                     
+
 /* the humans responsible & colophon */
 /* humanstxt.org */
-
 
 /* TEAM */
   Main Developer: Daniel Mauricio Sanchez
@@ -14,30 +21,3 @@
 /* SITE */
   Standards: HTML5, CSS3, SASS, JavaScript
   Components: jQuery
-  Software:
-  
-
-                                    
-                               -o/-                       
-                               +oo//-                     
-                              :ooo+//:                    
-                             -ooooo///-                   
-                             /oooooo//:                   
-                            :ooooooo+//-                  
-                           -+oooooooo///-                 
-           -://////////////+oooooooooo++////////////::    
-            :+ooooooooooooooooooooooooooooooooooooo+:::-  
-              -/+ooooooooooooooooooooooooooooooo+/::////:-
-                -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-   
-                     -:+ooooooooooooooooo+:://////:--     
-                       /ooooooooooooooooo+//////:-        
-                      -ooooooooooooooooooo////-           
-                      /ooooooooo+oooooooooo//:            
-                     :ooooooo+/::/+oooooooo+//-           
-                    -oooooo/::///////+oooooo///-          
-                    /ooo+::://////:---:/+oooo//:          
-                   -o+/::///////:-      -:/+o+//-         
-                   :-:///////:-            -:/://         
-                     -////:-                 --//:        
-                       --                       -:        
