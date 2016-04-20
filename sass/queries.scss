@@ -1,0 +1,178 @@
+
+@media (max-width: 1050px){
+	nav ul{
+		padding: 2rem;
+	}
+}
+
+@media (max-width: 930px){
+	nav ul{
+		padding: 1.5rem 1rem;
+	}
+	.contentArticle{
+		max-height: 70%;
+	}
+}
+
+@media (max-width: 900px){
+	nav{
+		ul{
+			padding: 1.5rem .51rem;
+
+			li{
+				a{
+					padding: .5rem 1rem;
+			    min-height: 78px;
+
+				}
+		    &:nth-child(1){
+		    	a{
+		    		line-height: 2.5;
+		    	}
+		    }
+			}
+		}
+	}
+}
+
+@media (max-width: 780px){
+	nav{
+		ul{
+			padding: 1rem .251rem;
+
+			li{
+				a{
+					padding: .5rem .51rem;
+			    min-height: 50px;
+			    margin: 0 .15rem;
+				}
+			}
+		}
+	}
+
+	.contentArticle{
+		max-width: 85%;
+	}
+
+	footer {
+		ul{
+			bottom: 4rem;
+	    width: 100%;
+	    padding: .51rem 1rem;
+	  }
+	}
+}
+
+@media (max-width: 630px){
+	nav{
+		position: initial;
+
+		ul{
+			padding: .61rem .251rem;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			background: rgba(23, 62, 116, 0.95);
+			z-index: 100;
+			@include flex(flex);
+			@include flex-direction(column);
+			@include justify-content(center);
+			@include align-items(center);
+			@include transition(transform .5s ease);
+			@include transform-origin(top left);
+			@include transform(rotate(-130deg));
+
+			li{
+				margin: .5rem;
+				display: block;
+				min-width: 86%;
+
+				a{
+					padding: .35rem .351rem;
+			    min-height: 50px;
+			    max-width: 100%;
+			    line-height: 1.5 !important;
+			    @include box-shadow(1px 2px 8px rgba(0,0,0,.5));
+
+				}
+
+		    &:nth-child(5){
+		    	a{
+		    		// line-height: 2.5;
+		    	}
+		    }
+			}
+
+			&.open{
+				@include transform(rotate(0deg));
+			}
+		}
+	}
+
+	.contentArticle{
+		max-width: 90%;
+
+		button{
+			padding: .25rem .5rem;
+			font-size: 14px;
+			margin-right: 11px;
+		}
+	}
+
+	section {
+		main{
+			&[blue] {
+				article{
+					&:first-child{
+						.contentArticle{
+							min-height: 80%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.containerMenuMobile{
+		text-align: center;
+		color: white;
+		display: block;
+		margin-top: -5px;
+		padding: 1rem 0;
+		transition: background .25s ease;
+		background: rgba(23, 62, 116, .951);
+
+		&:hover{
+			background: rgba(23, 62, 116, 1);
+		}
+
+		span{
+			cursor: pointer;
+			font-size: 27px;
+			font-weight: 500;
+		}
+	}
+
+	footer{
+    ul{
+			bottom: 4rem;
+	    width: 100%;
+	    padding: .51rem 1rem;
+
+    	li{
+    		a{
+					width: 30px;
+					height: 30px;
+
+    			i{
+  			    color: rgb(255, 255, 255);
+	    			margin-top: .481rem;
+	    			font-size: 16px !important;
+    			}
+    		}
+    	}
+    }
+	}
+}
