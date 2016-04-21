@@ -123,6 +123,23 @@
 					</div>
 				</div>
 			</div>
+			<div class="container" individual>
+				<div class="individualContent">
+					<img src="images/logo.png" alt="Logo Conexiones">
+					<div class="center" ng-controller="searchGuide">
+						<label for="txtSearchGuide">Guía</label>
+						<input type="search" id="txtSearchGuide" placeholder="Ingrese El Número de La Guía" ng-model="valueSearch" name="txtSearchGuide" required>
+						<button type="button" ng-click="search()">Buscar</button>
+						<span>{{message}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="container" group>
+				<div class="groupContent">
+					<img src="images/logo.png" alt="Logo Conexiones">
+					<h1>Group</h1>
+				</div>
+			</div>
 		</div>
 
 		<script src="js/jquery.js"></script>
