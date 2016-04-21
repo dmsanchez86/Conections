@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="conections">
 	<head>
 		<!-- Meta Tags -->
 		<meta charset="UTF-8">
@@ -59,10 +59,10 @@
 			</nav>
 			<section>
 				<main blue>
-					<article>
+					<article ng-controller="followGuide">
 						<div class="contentArticle">
 							<img src="images/boton-seguimiento.png" alt="">
-							<button type="button">Ingrese Aquí</button>
+							<button type="button" ng-click="showGuide()">Ingrese Aquí</button>
 						</div>
 					</article>
 					<article>
@@ -103,7 +103,31 @@
 			</footer>
 		</main>
 
+		<div class="popup" followGuide ng-controller="popup">
+			<span class="closePopup" ng-click="close()">
+				<i class="fa fa-close"></i>
+			</span>
+			<div class="container" choose>
+				<div class="choose">
+					<div class="individual" ng-click="open('individual')">
+						<h1>
+							Individual 
+						</h1>
+						<i class="fa fa-user"></i>
+					</div>
+					<div class="group" ng-click="open('group')">
+						<h1>
+							Empresa 
+						</h1>
+						<i class="fa fa-users"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script src="js/jquery.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/config.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

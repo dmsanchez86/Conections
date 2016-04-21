@@ -1,0 +1,144 @@
+.popup{
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	opacity: 0;
+	background-color: rgba(0,0,0,.3);
+	@include flex(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	@include center-absolute(fixed);
+	@include transition((opacity .5s ease));
+	@include perspective(1000px);
+
+	.closePopup{
+		position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2rem;
+		color: white;
+		cursor: pointer;
+		@include transition(all .25s ease);
+		@include text-shadow(0 0 5px #323232);
+
+		&:hover{
+			color: rgb(196, 197, 199);
+			@include transform(rotate(180deg));
+		}
+	}
+
+	.container{
+		width: 70%;
+		height: 50%;
+		opacity: 0;
+		@include border-radius(2px);
+		@include box-shadow(0 0 20px rgba(0,0,0,.3));
+		@include transform(rotatey(70deg));
+		@include transition((transform .5s ease,opacity .25s linear));
+
+		.choose{
+			width: 100%;
+			height: 100%;
+			@include flex(flex);
+
+			> div{
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				@include flex-item(1);
+				@include flex(flex);
+				@include align-items(center);
+				@include justify-content(center);
+
+				h1, i{
+					color: white;
+					font-size: 5rem;
+					@include text-shadow(0 0 5px rgba(0,0,0,.4));
+					@include transition((transform .15s ease, opacity .5s ease));
+				}
+
+				h1{
+					@include transform(rotate(-15deg));
+				}
+
+				i{
+					position: absolute;
+					bottom: .5rem;
+					right: .5rem;
+					font-size: 7rem;
+					@include transform-origin(bottom right);
+				}
+
+				&:first-child{
+					background-color: #173E74;
+
+					&:before{
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 180%;
+						height: 100%;
+						background: rgba(255,255,255,.1);
+						content: '';
+						@include transition(transform .5s ease);
+						@include transform(skewx(-34deg) translatex(-200%));
+					}
+
+					&:hover{
+						&:before{
+							@include transform(skewx(-34deg) translatex(-20%));
+						}
+					}
+				}
+				&:last-child{
+					background-color: gray;
+
+					&:before{
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 180%;
+						height: 100%;
+						background: rgba(255,255,255,.1);
+						content: '';
+						@include transition(transform .5s ease);
+						@include transform(skewx(34deg) translatex(200%));
+					}
+
+					&:hover{
+						&:before{
+							@include transform(skewx(34deg) translatex(22%));
+						}
+					}
+				}
+
+				&:hover{
+					h1{
+						@include transform(rotate(-18deg) scale(1.18));
+					}
+
+					i{
+						@include transform(scale(2));
+						opacity: .15;
+					}
+				}
+			}
+		}
+	}
+
+	&.open{
+		opacity: 1;
+		z-index: 100;
+
+		.container{
+			opacity: 1;
+			@include transform(rotatey(0deg));
+
+			&.out{
+				opacity: 0;
+				@include transform(translatey(-150%));
+			}
+		}
+	}
+}
