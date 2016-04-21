@@ -124,13 +124,31 @@
 				</div>
 			</div>
 			<div class="container" individual>
-				<div class="individualContent">
+				<div class="individualContent" ng-controller="searchGuide">
 					<img src="images/logo.png" alt="Logo Conexiones">
-					<div class="center" ng-controller="searchGuide">
+					<div class="center">
 						<label for="txtSearchGuide">Guía</label>
 						<input type="search" id="txtSearchGuide" placeholder="Ingrese El Número de La Guía" ng-model="valueSearch" name="txtSearchGuide" required>
 						<button type="button" ng-click="search()">Buscar</button>
 						<span>{{message}}</span>
+					</div>
+					<div class="contentTable" ng-show="listStates.length > 0">
+						<table>
+							<thead>
+								<tr>
+									<th>Fecha</th>
+									<th>Estado</th>
+									<th>Observacion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in listStates">
+									<td>{{ item.fecha }}</td>
+									<td>{{ item.estado }}</td>
+									<td>{{ item.observacion }}</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

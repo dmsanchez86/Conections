@@ -557,6 +557,23 @@ button:hover {
   color: #173E74;
 }
 
+/* line 374, ../sass/style.scss */
+.contentTable {
+  text-align: center;
+  max-height: 290px;
+  overflow: auto;
+}
+/* line 379, ../sass/style.scss */
+.contentTable table {
+  display: inline-block;
+  margin-top: 1rem;
+}
+/* line 383, ../sass/style.scss */
+.contentTable table td, .contentTable table th {
+  padding: .5rem 1rem;
+  border: solid thin #323232;
+}
+
 /* line 1, ../sass/popup.scss */
 .popup {
   width: 100vw;
@@ -669,7 +686,12 @@ button:hover {
   width: 75%;
   height: 85%;
 }
-/* line 50, ../sass/popup.scss */
+/* line 49, ../sass/popup.scss */
+.popup .container[individual] {
+  height: 570px;
+  max-width: 95%;
+}
+/* line 54, ../sass/popup.scss */
 .popup .container[individual], .popup .container[group] {
   -webkit-transform: translatey(-150%);
   -khtml-transform: translatey(-150%);
@@ -678,7 +700,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 55, ../sass/popup.scss */
+/* line 59, ../sass/popup.scss */
 .popup .container .choose {
   width: 100%;
   height: 100%;
@@ -688,7 +710,7 @@ button:hover {
   display: -o-flex;
   display: flex;
 }
-/* line 60, ../sass/popup.scss */
+/* line 64, ../sass/popup.scss */
 .popup .container .choose > div {
   text-align: center;
   position: relative;
@@ -715,7 +737,7 @@ button:hover {
   -o-justify-content: center;
   justify-content: center;
 }
-/* line 71, ../sass/popup.scss */
+/* line 75, ../sass/popup.scss */
 .popup .container .choose > div:hover h1 {
   -webkit-transform: rotate(-18deg) scale(1.18);
   -khtml-transform: rotate(-18deg) scale(1.18);
@@ -724,7 +746,7 @@ button:hover {
   -o-transform: rotate(-18deg) scale(1.18);
   transform: rotate(-18deg) scale(1.18);
 }
-/* line 75, ../sass/popup.scss */
+/* line 79, ../sass/popup.scss */
 .popup .container .choose > div:hover i {
   -webkit-transform: scale(2);
   -khtml-transform: scale(2);
@@ -734,11 +756,11 @@ button:hover {
   transform: scale(2);
   opacity: .15;
 }
-/* line 81, ../sass/popup.scss */
+/* line 85, ../sass/popup.scss */
 .popup .container .choose > div:first-child {
   background-color: #173E74;
 }
-/* line 84, ../sass/popup.scss */
+/* line 88, ../sass/popup.scss */
 .popup .container .choose > div:first-child:before {
   left: 0;
   -webkit-transform: skewx(-34deg) translatex(-200%);
@@ -748,7 +770,7 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-200%);
   transform: skewx(-34deg) translatex(-200%);
 }
-/* line 90, ../sass/popup.scss */
+/* line 94, ../sass/popup.scss */
 .popup .container .choose > div:first-child:hover:before {
   -webkit-transform: skewx(-34deg) translatex(-20%);
   -khtml-transform: skewx(-34deg) translatex(-20%);
@@ -757,11 +779,11 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-20%);
   transform: skewx(-34deg) translatex(-20%);
 }
-/* line 96, ../sass/popup.scss */
+/* line 100, ../sass/popup.scss */
 .popup .container .choose > div:last-child {
   background-color: gray;
 }
-/* line 99, ../sass/popup.scss */
+/* line 103, ../sass/popup.scss */
 .popup .container .choose > div:last-child:before {
   right: 0;
   -webkit-transform: skewx(34deg) translatex(200%);
@@ -771,7 +793,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(200%);
   transform: skewx(34deg) translatex(200%);
 }
-/* line 105, ../sass/popup.scss */
+/* line 109, ../sass/popup.scss */
 .popup .container .choose > div:last-child:hover:before {
   -webkit-transform: skewx(34deg) translatex(22%);
   -khtml-transform: skewx(34deg) translatex(22%);
@@ -780,7 +802,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(22%);
   transform: skewx(34deg) translatex(22%);
 }
-/* line 111, ../sass/popup.scss */
+/* line 115, ../sass/popup.scss */
 .popup .container .choose > div:before {
   position: absolute;
   top: 0;
@@ -795,7 +817,7 @@ button:hover {
   -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
 }
-/* line 121, ../sass/popup.scss */
+/* line 125, ../sass/popup.scss */
 .popup .container .choose > div h1, .popup .container .choose > div i {
   color: white;
   font-size: 5rem;
@@ -812,7 +834,7 @@ button:hover {
   -o-transition: transform 0.15s ease, opacity 0.5s ease;
   transition: transform 0.15s ease, opacity 0.5s ease;
 }
-/* line 128, ../sass/popup.scss */
+/* line 132, ../sass/popup.scss */
 .popup .container .choose > div h1 {
   -webkit-transform: rotate(-15deg);
   -khtml-transform: rotate(-15deg);
@@ -821,7 +843,7 @@ button:hover {
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
-/* line 132, ../sass/popup.scss */
+/* line 136, ../sass/popup.scss */
 .popup .container .choose > div i {
   position: absolute;
   bottom: .5rem;
@@ -834,19 +856,19 @@ button:hover {
   -o-transform-origin: bottom right;
   transform-origin: bottom right;
 }
-/* line 142, ../sass/popup.scss */
+/* line 146, ../sass/popup.scss */
 .popup .container .individualContent,
 .popup .container .groupContent {
   width: 100%;
   height: 100%;
   background: white;
 }
-/* line 150, ../sass/popup.scss */
+/* line 154, ../sass/popup.scss */
 .popup.open {
   opacity: 1;
   z-index: 100;
 }
-/* line 154, ../sass/popup.scss */
+/* line 158, ../sass/popup.scss */
 .popup.open .container {
   opacity: 1;
   -webkit-transform: rotatey(0deg);
@@ -856,11 +878,11 @@ button:hover {
   -o-transform: rotatey(0deg);
   transform: rotatey(0deg);
 }
-/* line 158, ../sass/popup.scss */
+/* line 162, ../sass/popup.scss */
 .popup.open .container.hide {
   display: none;
 }
-/* line 162, ../sass/popup.scss */
+/* line 166, ../sass/popup.scss */
 .popup.open .container.show {
   display: block;
   -webkit-transform: translatey(-150%);
@@ -870,7 +892,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 167, ../sass/popup.scss */
+/* line 171, ../sass/popup.scss */
 .popup.open .container.out {
   opacity: 0;
   -webkit-transform: translatey(-150%);
@@ -880,7 +902,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 172, ../sass/popup.scss */
+/* line 176, ../sass/popup.scss */
 .popup.open .container.in {
   opacity: 1;
   -webkit-transform: translatey(0%);
@@ -907,52 +929,120 @@ button:hover {
   .contentArticle {
     max-height: 70%;
   }
+
+  /* line 18, ../sass/queries.scss */
+  .popup .closePopup {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+  }
+  /* line 26, ../sass/queries.scss */
+  .popup .container[choose] {
+    width: 90%;
+    height: 60%;
+  }
+  /* line 31, ../sass/queries.scss */
+  .popup .container[individual], .popup .container[group] {
+    width: 90%;
+    height: 90%;
+  }
+  /* line 41, ../sass/queries.scss */
+  .popup .container .choose > div h1, .popup .container .choose > div i {
+    font-size: 3rem;
+  }
+  /* line 45, ../sass/queries.scss */
+  .popup .container .choose > div i {
+    font-size: 5rem;
+  }
 }
 @media (max-width: 900px) {
-  /* line 19, ../sass/queries.scss */
+  /* line 56, ../sass/queries.scss */
   nav ul {
     padding: 1.5rem .51rem;
   }
-  /* line 23, ../sass/queries.scss */
+  /* line 60, ../sass/queries.scss */
   nav ul li a {
     padding: .5rem 1rem;
     min-height: 78px;
   }
-  /* line 29, ../sass/queries.scss */
+  /* line 66, ../sass/queries.scss */
   nav ul li:nth-child(1) a {
     line-height: 2.5;
   }
 }
 @media (max-width: 780px) {
-  /* line 40, ../sass/queries.scss */
+  /* line 77, ../sass/queries.scss */
   nav ul {
     padding: 1rem .251rem;
   }
-  /* line 44, ../sass/queries.scss */
+  /* line 81, ../sass/queries.scss */
   nav ul li a {
     padding: .5rem .51rem;
     min-height: 50px;
     margin: 0 .15rem;
   }
 
-  /* line 53, ../sass/queries.scss */
+  /* line 90, ../sass/queries.scss */
   .contentArticle {
     max-width: 85%;
   }
 
-  /* line 58, ../sass/queries.scss */
+  /* line 95, ../sass/queries.scss */
   footer ul {
     bottom: 4rem;
     width: 100%;
     padding: .51rem 1rem;
   }
 }
+@media (max-width: 700px) {
+  /* line 105, ../sass/queries.scss */
+  .popup .closePopup {
+    top: 1rem;
+    right: 1rem;
+  }
+  /* line 112, ../sass/queries.scss */
+  .popup .container[choose] {
+    width: 90%;
+    height: 80%;
+  }
+  /* line 117, ../sass/queries.scss */
+  .popup .container[individual], .popup .container[group] {
+    width: 90%;
+    height: 95%;
+  }
+  /* line 129, ../sass/queries.scss */
+  .popup .container .choose > div:first-child:hover:before {
+    -webkit-transform: skewx(-20deg) translatex(-20%);
+    -khtml-transform: skewx(-20deg) translatex(-20%);
+    -moz-transform: skewx(-20deg) translatex(-20%);
+    -ms-transform: skewx(-20deg) translatex(-20%);
+    -o-transform: skewx(-20deg) translatex(-20%);
+    transform: skewx(-20deg) translatex(-20%);
+  }
+  /* line 137, ../sass/queries.scss */
+  .popup .container .choose > div:last-child:hover:before {
+    -webkit-transform: skewx(20deg) translatex(22%);
+    -khtml-transform: skewx(20deg) translatex(22%);
+    -moz-transform: skewx(20deg) translatex(22%);
+    -ms-transform: skewx(20deg) translatex(22%);
+    -o-transform: skewx(20deg) translatex(22%);
+    transform: skewx(20deg) translatex(22%);
+  }
+  /* line 143, ../sass/queries.scss */
+  .popup .container .choose > div h1, .popup .container .choose > div i {
+    font-size: 3rem;
+  }
+  /* line 147, ../sass/queries.scss */
+  .popup .container .choose > div i {
+    font-size: 5rem;
+  }
+}
 @media (max-width: 630px) {
-  /* line 67, ../sass/queries.scss */
+  /* line 156, ../sass/queries.scss */
   nav {
     position: initial;
   }
-  /* line 70, ../sass/queries.scss */
+  /* line 159, ../sass/queries.scss */
   nav ul {
     padding: .61rem .251rem;
     position: fixed;
@@ -1001,13 +1091,13 @@ button:hover {
     -o-transform: rotate(-130deg);
     transform: rotate(-130deg);
   }
-  /* line 87, ../sass/queries.scss */
+  /* line 176, ../sass/queries.scss */
   nav ul li {
     margin: .5rem;
     display: block;
     min-width: 86%;
   }
-  /* line 92, ../sass/queries.scss */
+  /* line 181, ../sass/queries.scss */
   nav ul li a {
     padding: .35rem .351rem;
     min-height: 50px;
@@ -1020,7 +1110,7 @@ button:hover {
     -o-box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
   }
-  /* line 108, ../sass/queries.scss */
+  /* line 197, ../sass/queries.scss */
   nav ul.open {
     -webkit-transform: rotate(0deg);
     -khtml-transform: rotate(0deg);
@@ -1030,23 +1120,23 @@ button:hover {
     transform: rotate(0deg);
   }
 
-  /* line 114, ../sass/queries.scss */
+  /* line 203, ../sass/queries.scss */
   .contentArticle {
     max-width: 90%;
   }
-  /* line 117, ../sass/queries.scss */
+  /* line 206, ../sass/queries.scss */
   .contentArticle button {
     padding: .25rem .5rem;
     font-size: 14px;
     margin-right: 11px;
   }
 
-  /* line 129, ../sass/queries.scss */
+  /* line 218, ../sass/queries.scss */
   section main[blue] article:first-child .contentArticle {
     min-height: 80%;
   }
 
-  /* line 138, ../sass/queries.scss */
+  /* line 227, ../sass/queries.scss */
   .containerMenuMobile {
     text-align: center;
     color: white;
@@ -1056,29 +1146,29 @@ button:hover {
     transition: background .25s ease;
     background: rgba(23, 62, 116, 0.951);
   }
-  /* line 147, ../sass/queries.scss */
+  /* line 236, ../sass/queries.scss */
   .containerMenuMobile:hover {
     background: #173e74;
   }
-  /* line 151, ../sass/queries.scss */
+  /* line 240, ../sass/queries.scss */
   .containerMenuMobile span {
     cursor: pointer;
     font-size: 27px;
     font-weight: 500;
   }
 
-  /* line 159, ../sass/queries.scss */
+  /* line 248, ../sass/queries.scss */
   footer ul {
     bottom: 4rem;
     width: 100%;
     padding: .51rem 1rem;
   }
-  /* line 165, ../sass/queries.scss */
+  /* line 254, ../sass/queries.scss */
   footer ul li a {
     width: 30px;
     height: 30px;
   }
-  /* line 169, ../sass/queries.scss */
+  /* line 258, ../sass/queries.scss */
   footer ul li a i {
     color: white;
     margin-top: .481rem;

@@ -46,6 +46,10 @@
 			width: 75%;
 			height: 85%;
 		}
+		&[individual]{
+			height: 570px;
+			max-width: 95%;
+		}
 
 		&[individual],
 		&[group]{

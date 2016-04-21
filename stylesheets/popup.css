@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'flex'.
-        on line 7 of C:/Users/usuario/Desktop/conexiones/sass/popup.scss, in `flex'
-        from line 7 of C:/Users/usuario/Desktop/conexiones/sass/popup.scss
+        on line 7 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss, in `flex'
+        from line 7 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss
 
 2: 	width: 100vw;
 3: 	height: 100vh;
@@ -16,8 +16,8 @@ Error: Undefined mixin 'flex'.
 12: 	@include perspective(1000px);
 
 Backtrace:
-C:/Users/usuario/Desktop/conexiones/sass/popup.scss:7:in `flex'
-C:/Users/usuario/Desktop/conexiones/sass/popup.scss:7
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss:7:in `flex'
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss:7
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:348:in `visit_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
@@ -75,4 +75,4 @@ C:/Users/usuario/Desktop/compass.app/lib/ruby/jruby/listen-1.3.1-patched/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 7 of C:/Users/usuario/Desktop/conexiones/sass/popup.scss, in `flex'\A         from line 7 of C:/Users/usuario/Desktop/conexiones/sass/popup.scss\A \A 2: 	width: 100vw;\A 3: 	height: 100vh;\A 4: 	z-index: -1;\A 5: 	opacity: 0;\A 6: 	background-color: rgba(0,0,0,.3);\A 7: 	@include flex(flex);\A 8: 	@include justify-content(center);\A 9: 	@include align-items(center);\A 10: 	@include center-absolute(fixed);\A 11: 	@include transition((opacity .5s ease));\A 12: 	@include perspective(1000px);"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 7 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss, in `flex'\A         from line 7 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/popup.scss\A \A 2: 	width: 100vw;\A 3: 	height: 100vh;\A 4: 	z-index: -1;\A 5: 	opacity: 0;\A 6: 	background-color: rgba(0,0,0,.3);\A 7: 	@include flex(flex);\A 8: 	@include justify-content(center);\A 9: 	@include align-items(center);\A 10: 	@include center-absolute(fixed);\A 11: 	@include transition((opacity .5s ease));\A 12: 	@include perspective(1000px);"; }

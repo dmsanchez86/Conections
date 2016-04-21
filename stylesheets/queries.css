@@ -1,28 +1,83 @@
 /*
-Error: Undefined mixin 'flex'.
-        on line 79 of C:/Users/usuario/Desktop/conexiones/sass/queries.scss, in `flex'
-        from line 79 of C:/Users/usuario/Desktop/conexiones/sass/queries.scss
+Error: Undefined mixin 'transform'.
+        on line 130 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'
+        from line 130 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss
 
-74: 			left: 0;
-75: 			height: 100vh;
-76: 			width: 100vw;
-77: 			background: rgba(23, 62, 116, 0.95);
-78: 			z-index: 100;
-79: 			@include flex(flex);
-80: 			@include flex-direction(column);
-81: 			@include justify-content(center);
-82: 			@include align-items(center);
-83: 			@include transition(transform .5s ease);
-84: 			@include transform-origin(top left);
+125: 				> div{
+126: 
+127: 					&:first-child{
+128: 						&:hover{
+129: 							&:before{
+130: 								@include transform(skewx(-20deg) translatex(-20%));
+131: 							}
+132: 						}
+133: 					}
+134: 
+135: 					&:last-child{
 
 Backtrace:
-C:/Users/usuario/Desktop/conexiones/sass/queries.scss:79:in `flex'
-C:/Users/usuario/Desktop/conexiones/sass/queries.scss:79
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:130:in `transform'
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:130
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:348:in `visit_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
@@ -100,4 +155,4 @@ C:/Users/usuario/Desktop/compass.app/lib/ruby/jruby/listen-1.3.1-patched/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 79 of C:/Users/usuario/Desktop/conexiones/sass/queries.scss, in `flex'\A         from line 79 of C:/Users/usuario/Desktop/conexiones/sass/queries.scss\A \A 74: 			left: 0;\A 75: 			height: 100vh;\A 76: 			width: 100vw;\A 77: 			background: rgba(23, 62, 116, 0.95);\A 78: 			z-index: 100;\A 79: 			@include flex(flex);\A 80: 			@include flex-direction(column);\A 81: 			@include justify-content(center);\A 82: 			@include align-items(center);\A 83: 			@include transition(transform .5s ease);\A 84: 			@include transform-origin(top left);"; }
+  content: "Error: Undefined mixin 'transform'.\A         on line 130 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'\A         from line 130 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss\A \A 125: 				> div{\A 126: \A 127: 					&:first-child{\A 128: 						&:hover{\A 129: 							&:before{\A 130: 								@include transform(skewx(-20deg) translatex(-20%));\A 131: 							}\A 132: 						}\A 133: 					}\A 134: \A 135: 					&:last-child{"; }

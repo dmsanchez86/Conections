@@ -10,12 +10,14 @@ application.controller('followGuide', function($scope){
 application.controller('searchGuide', function($scope, $timeout, $http){
 	$scope.message = "";
 	$scope.valueSearch = "";
+	$scope.listStates = [];
 
 	$scope.search = function(){
 
 		if($scope.valueSearch == "" || $scope.valueSearch == undefined){
 			$scope.message = "Ingrese Algo!";
 			$('#txtSearchGuide').focus();
+			$scope.listStates = [];
 
 			$timeout(function(){
 				$scope.message = "";
@@ -30,8 +32,9 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 				var $data = (response.data.seguimientoGuiaIndividualResult);
 
 				if($data.length > 0){
-
+					$scope.listStates = $data;
 				}else{
+					$scope.listStates = [];
 					$scope.message = "No se encontraron registros";
 
 					$timeout(function(){

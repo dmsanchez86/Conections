@@ -371,5 +371,21 @@ button{
   }
 }
 
+.contentTable {
+	text-align: center;
+	max-height: 290px;
+	overflow: auto;
+
+	table {
+    display: inline-block;
+    margin-top: 1rem;
+
+    td,th{
+    	padding: .5rem 1rem;
+    	border: solid thin #323232;
+    }
+  }
+}
+
 @import 'popup';
 @import 'queries';

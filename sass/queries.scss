@@ -12,6 +12,43 @@
 	.contentArticle{
 		max-height: 70%;
 	}
+
+	.popup{
+
+		.closePopup{
+	    top: 1.5rem;
+	    right: 1.5rem;
+	    font-size: 1.5rem;
+		}
+
+		.container{
+			
+			&[choose]{
+				width: 90%;
+				height: 60%;
+			}
+
+			&[individual],
+			&[group]{
+				width: 90%;
+				height: 90%;
+			}
+
+			.choose{
+
+				> div{
+
+					h1, i{
+						font-size: 3rem;
+					}
+
+					i{
+						font-size: 5rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 900px){
@@ -63,6 +100,58 @@
 	}
 }
 
+@media (max-width: 700px){
+	.popup{
+		.closePopup{
+	    top: 1rem;
+	    right: 1rem;
+		}
+
+		.container{
+			
+			&[choose]{
+				width: 90%;
+				height: 80%;
+			}
+
+			&[individual],
+			&[group]{
+				width: 90%;
+				height: 95%;
+			}
+
+			.choose{
+
+				> div{
+
+					&:first-child{
+						&:hover{
+							&:before{
+								@include transform(skewx(-20deg) translatex(-20%));
+							}
+						}
+					}
+
+					&:last-child{
+						&:hover{
+							&:before{
+								@include transform(skewx(20deg) translatex(22%));
+							}
+						}
+					}
+
+					h1, i{
+						font-size: 3rem;
+					}
+
+					i{
+						font-size: 5rem;
+					}
+				}
+			}
+		}
+	}
+}
 @media (max-width: 630px){
 	nav{
 		position: initial;
