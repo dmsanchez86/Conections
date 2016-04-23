@@ -1,9 +1,25 @@
 <?php 
 
-$param = $_REQUEST['param'];
+if(isset($_REQUEST['opc'])){
+	if($_REQUEST['opc'] == "guia"){
 
-$url = "http://181.143.244.18/wsconexiones/Servicio.svc/seguimientoGuiaIndividual?guia=".$param;
+		$param = $_REQUEST['param'];
 
-$data = file_get_contents($url);
+		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/seguimientoGuiaIndividual?guia=".$param;
 
-echo $data;
+		$data = file_get_contents($url);
+
+		echo $data;
+	}
+
+	if($_REQUEST['opc'] == "login"){
+		$user = $_REQUEST['user'];
+		$password = $_REQUEST['password'];
+
+		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/webLoginEmpresa?usuario=$user&password=$password";
+
+		$data = file_get_contents($url);
+
+		echo $data;
+	}
+}

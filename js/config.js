@@ -1,5 +1,18 @@
 var application = angular.module('conections', []);
 
+// controlador principal
+application.controller('main', function($scope, $window){
+
+	// evento que cierra la session
+	$scope.logout = function(){
+		$window.sessionStorage.removeItem('datosUsuario');
+		$('.contentUser').removeClass('active');
+
+		$.notify("Se cerro la sesión correctamente", "success");
+	}
+});
+
+// controlador de la guía
 application.controller('followGuide', function($scope){
 	$scope.showGuide = function(){
 		$('.popup[followGuide]').addClass('open');
@@ -7,39 +20,33 @@ application.controller('followGuide', function($scope){
 	}
 });
 
+// controlador de la busqueda de la guia
 application.controller('searchGuide', function($scope, $timeout, $http){
 	$scope.message = "";
 	$scope.valueSearch = "";
 	$scope.listStates = [];
 
 	$scope.search = function(){
-
+		// si la busqueda es vacia
 		if($scope.valueSearch == "" || $scope.valueSearch == undefined){
-			$scope.message = "Ingrese Algo!";
+			$('#txtSearchGuide').notify('Ingrese Algo...', 'warning');
 			$('#txtSearchGuide').focus();
 			$scope.listStates = [];
-
-			$timeout(function(){
-				$scope.message = "";
-			},5000);
 		}else{
+			$('#txtSearchGuide').notify('Buscando...', 'info');
 
+			// ajax que me consulta las guias
 			$http({
-			  url: 'index.php?param='+$scope.valueSearch,
+			  url: 'index.php?opc=guia&param='+$scope.valueSearch,
 			  method: 'GET'
 			}).then(function successCallback(response) {
-				console.log(response.data.seguimientoGuiaIndividualResult);
 				var $data = (response.data.seguimientoGuiaIndividualResult);
 
 				if($data.length > 0){
 					$scope.listStates = $data;
 				}else{
 					$scope.listStates = [];
-					$scope.message = "No se encontraron registros";
-
-					$timeout(function(){
-						$scope.message = "";
-					},5000);
+					$('#txtSearchGuide').notify('No se encontraron registros', 'info');
 				}
 		  }, function errorCallback(response) {
 				console.warn(response);
@@ -48,12 +55,16 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 	}
 });
 
+// controlador del poup
 application.controller('popup', function($scope, $timeout){
+	// evento que cierra lel popup
 	$scope.close = function(){
 		$('.popup').removeClass('open');
 		$('.popup .container').removeClass('out in hide show');
 		$('.popup .container[choose]').removeClass('out');
 	}
+
+	// evento que abre segun la seccion que escoja en el popup
 	$scope.open = function(option){
 		$('.popup .container[choose]').addClass('out');
 
@@ -65,5 +76,56 @@ application.controller('popup', function($scope, $timeout){
 				$('.popup .container['+option+']').addClass('in');
 			},100);
 		},500);
+	}
+});
+
+// controlador del login
+application.controller('login', function($scope, $http, $window){
+	$scope.user = "";
+	$scope.password = "";
+	$scope.datosUsuario = [];
+	$scope.loginShow = true;
+
+	// validamos si ya inicio session
+	if($window.sessionStorage.datosUsuario != null){
+		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
+		$scope.loginShow = false;
+		$('.contentUser').addClass('active');
+	}
+
+	// evento del login
+	$scope.login = function(){
+		if($scope.user == "" || $scope.user == undefined){
+			$('#user').notify('Ingrese un usuario', 'warning').focus();
+		}else if($scope.password == "" || $scope.password == undefined){
+			$('#password').notify('Ingrese una contraseña', 'warning').focus();
+		}else{
+
+			// ajax que valida el inicio de sesion
+			$http({
+			  url: 'index.php?opc=login&user='+$scope.user+'&password='+$scope.password,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				var $data = (response.data.webLoginEmpresaResult);
+
+				if($data.nombre != ""){
+					// cerramos el popup
+					$('.popup').removeClass('open');
+					$('.popup .container').removeClass('out in hide show');
+					$('.popup .container[choose]').removeClass('out');
+					$.notify("Inicio de Sesión Correcto", "success");
+
+					// guardamos los datos en el session storage
+					$window.sessionStorage.setItem("datosUsuario", JSON.stringify($data));
+					$scope.loginShow = false;
+					$('.contentUser').addClass('active'); // mostramos el menu para cerrar sesion
+				}else{
+					$scope.listStates = [];
+					$('#txtSearchGuide').notify('No se encontraron registros', 'info');
+				}
+		  }, function errorCallback(response) {
+				console.warn(response);
+		  });
+		}
 	}
 });

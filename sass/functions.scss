@@ -593,3 +593,29 @@
 @mixin transform-style($value){
     @include prefixes(transform-style, $value);
 }
+
+@mixin button{
+  background: $blue-secondary;
+  color: white;
+  display: inline-block;
+  padding: .5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Myriam';
+  font-size: 17px;
+  margin-right: 1.7rem;
+  cursor: pointer;
+  transition: all .35s ease;
+  @include border-radius(1px);
+  @include box-shadow(1px 2px 10px rgba(0,0,0,.4));
+
+  &:focus{
+    outline: none;
+  }
+
+  &:hover{
+    background: $gray-alpha;
+    color: $white;
+    @include box-shadow(1px 2px 15px rgba(0,0,0,.3));
+  }
+}

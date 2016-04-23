@@ -1,0 +1,49 @@
+.contentLogin{
+	max-width: 100%;
+	width: 300px;
+	margin: .51rem auto;
+
+	h3{
+		color: white;
+	}
+
+	.form-group{
+		position: relative;
+		margin: 1rem 0;
+
+		&.with-data{
+			label{
+				opacity: 0;
+			}
+		}
+
+		label{
+			display: inline;
+			color: #323232;
+			opacity: 1;
+	    line-height: 1.6;
+			@include center-absolute(absolute);
+			@include transition(opacity .3s ease);
+		}
+
+		input{
+			&[type=text],
+			&[type=password]{
+				width: 100%;
+				text-align: center;
+				padding: .25rem .5rem;
+				
+				&:focus{
+					+ label{
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		button{
+			@include button;
+			margin-left: 0;
+		}
+	}
+}

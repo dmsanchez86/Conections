@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'variables';
 @import 'functions';
 
 *{ @include reset; @include box-sizing(border-box); }
@@ -9,11 +10,12 @@ a{
 
 body,html{
 	font-family: 'Myriam';
+	font-size: 100%;
 	@include init();
 }
 
 header{
-	text-align: center
+	text-align: center;
 }
 
 img{
@@ -42,7 +44,7 @@ nav {
 		left: 0;
 		width: 100%;
 		padding: 3rem 5rem;
-		background: rgba(23, 62, 116, 0.75);
+		background: $blue-alpha;
 		text-align: center;
 
 		li{
@@ -52,20 +54,20 @@ nav {
 			a{
 				display: block;
 				padding: 1rem 2rem;
-				color: white;
+				color: $white;
 				margin: 0 .5rem;
 			  max-width: 170px;
-			  background: rgba(13, 73, 118, 0.78);
+			  background: $blue-alpha-link;
 			  min-height: 92px;
-			  transition: background .4s ease;
 			  cursor: pointer;
 			  font-size: 25px;
+			  @include transition(background .4s ease);
 			  @include border-radius(3px);
 				
 				&.active,
 				&:focus,
 				&:hover{
-					background: rgba(130,130,130,.8);
+					background: $gray-alpha;
 				}
 			}
 
@@ -85,14 +87,12 @@ section{
 		@include flex(flex);
 
 		> article{
-			@include flex-item( 1 1 0% );
 			width: calc(100% / 2 - 2px);
-			min-height: 7rem;
-			// background: ;
+			@include flex-item( 1 1 0% );
 		}
 
 		&[blue]{
-			background: #173E74;
+			background: $blue;
 
 			article{
 				text-align: center;
@@ -114,8 +114,7 @@ section{
 						left: 0;
 						width: 150%;
 						height: 100%;
-						background: rgba(255,255,255,.1);
-						// z-index: -1;
+						background: $white-alpha;
 						content: '';
 						@include transition(transform .5s ease);
 						@include transform(skewx(-34deg) translatex(-200%));
@@ -150,7 +149,7 @@ section{
 		}
 
 		&[gray]{
-			background: gray;
+			background: $gray;
 				
 				article{
 					text-align: center;
@@ -185,7 +184,6 @@ section{
 							width: 150%;
 							height: 100%;
 							background: rgba(255,255,255,.1);
-							// z-index: -1;
 							content: '';
 							@include transition(transform .5s ease);
 							@include transform(skewx(34deg) translatex(200%));
@@ -211,36 +209,14 @@ section{
 }
 
 .contentArticle{
-	@include center-absolute(absolute);
 	max-height: 50%;
 	width: 400px;
 	max-width: 100%;
 	text-align: right;
+	@include center-absolute(absolute);
 
 	button{
-		background: #00ABFF;
-		color: white;
-		display: inline-block;
-		padding: .5rem 1rem;
-		text-transform: uppercase;
-		font-weight: 300;
-    font-family: 'Myriam';
-    font-size: 17px;
-		margin-right: 1.7rem;
-		cursor: pointer;
-		transition: all .35s ease;
-		@include border-radius(1px);
-		@include box-shadow(1px 2px 10px rgba(0,0,0,.4));
-
-		&:focus{
-			outline: none;
-		}
-
-		&:hover{
-			@include box-shadow(1px 2px 15px rgba(0,0,0,.3));
-			background: rgba(130, 130, 130, 0.9);
-			color: white;
-		}
+		@include button;
 	}
 }
 
@@ -248,10 +224,9 @@ section{
 	display: none;
 }
 
-
 footer {
 	position: relative;
-	background: #173E74;
+	background: $blue;
 	margin-top: -5px;
 	padding: 1rem 0 3rem;
 
@@ -278,23 +253,9 @@ footer {
 				text-align: center;
 				line-height: 1;
 				margin: 0 .25rem;
-				background: #173E74;
+				background: $blue;
 				@include transition(background .15s ease);
 				@include border-radius(50%);
-
-				&:hover{
-					i{
-						@include transform(scale(.8));
-					}
-				}
-
-				&:active{
-					background: rgba(130, 130, 130, 1);
-
-					i{
-						@include transform(scale(1.05));
-					}
-				}
 
 				i{
 					color: rgba(255,255,255,.7);
@@ -302,6 +263,23 @@ footer {
   				font-size: 24px !important;
   				@include transition(transform .15s ease);
 				}
+
+				&:hover{
+					background: $gray;
+
+					i{
+						@include transform(scale(.8));
+					}
+				}
+
+				&:active{
+					background: $gray-alpha;
+
+					i{
+						@include transform(scale(1.05));
+					}
+				}
+
 			}
 		}
 	}
@@ -334,16 +312,16 @@ footer {
 	}
 
 	button{
-		border: solid thin #173E74;
+		border: solid thin $blue;
 	}
 
 	label{
 		vertical-align: bottom;
 	}
 
-	span{
+	.span{
 		display: block;
-		color: red;
+		color: $red;
 		font-weight: bold;
 		margin-top: .3rem;
 	}
@@ -357,17 +335,17 @@ button{
 button{
 	display: inline-block;
 	padding: .15rem .5rem;
-	color: white;
+	color: $white;
 	cursor: pointer;
-  background: #173E74;
+  background: $blue;
   font-size: 1rem;
   vertical-align: top;
   @include transition(all .3s ease);
   @include border-radius(2px);
 
   &:hover{
-		background: white;
-		color: #173E74;
+		background: $white;
+		color: $blue;
   }
 }
 
@@ -380,12 +358,45 @@ button{
     display: inline-block;
     margin-top: 1rem;
 
+    th{
+    	background: #009fe3;
+    	color: white;
+    }
+
+    td{
+    	background: white;
+    	color: #323232;
+    }
+
     td,th{
-    	padding: .5rem 1rem;
-    	border: solid thin #323232;
+    	padding: .25rem 1.3rem;
+	    font-size: 1.3rem;
     }
   }
 }
 
+.contentUser{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: $blue;
+	padding: .25rem 1rem .15rem;
+	text-align: right;
+	z-index: 50;
+	@include transform(translatey(-150%));
+	@include transition(transform .25s ease);
+	@include box-shadow(0 0 5px #323232);
+
+	&.active{
+		@include transform(translatey(0%));
+	}
+
+	a{
+		color: white;
+	}
+}
+
 @import 'popup';
+@import 'login';
 @import 'queries';

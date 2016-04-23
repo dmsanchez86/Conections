@@ -3,7 +3,7 @@
 	height: 100vh;
 	z-index: -1;
 	opacity: 0;
-	background-color: rgba(0,0,0,.3);
+	background-color: $black-alpha;
 	@include flex(flex);
 	@include justify-content(center);
 	@include align-items(center);
@@ -11,15 +11,19 @@
 	@include transition((opacity .5s ease));
 	@include perspective(1000px);
 
+	img{
+		width: 100%;
+	}
+
 	.closePopup{
 		position: absolute;
     top: 2rem;
     right: 3rem;
     font-size: 2rem;
-		color: white;
+		color: $white;
 		cursor: pointer;
 		@include transition(all .25s ease);
-		@include text-shadow(0 0 5px #323232);
+		@include text-shadow(0 0 10px #323232);
 
 		&:hover{
 			color: rgb(196, 197, 199);
@@ -30,10 +34,11 @@
 	.container{
 		opacity: 0;
 		display: none;
+		background: $white;
 		@include border-radius(2px);
 		@include box-shadow(0 0 20px rgba(0,0,0,.3));
-		@include transform(rotatey(90deg));
-		@include transition((transform .5s ease,opacity .25s linear));
+		@include transform(rotatey(120deg));
+		@include transition((transform .75s ease,opacity .35s linear));
 		
 		&[choose]{
 			width: 70%;
@@ -46,6 +51,7 @@
 			width: 75%;
 			height: 85%;
 		}
+
 		&[individual]{
 			height: 570px;
 			max-width: 95%;
@@ -71,19 +77,8 @@
 				@include align-items(center);
 				@include justify-content(center);
 
-				&:hover{
-					h1{
-						@include transform(rotate(-18deg) scale(1.18));
-					}
-
-					i{
-						@include transform(scale(2));
-						opacity: .15;
-					}
-				}
-
 				&:first-child{
-					background-color: #173E74;
+					background-color: $blue;
 
 					&:before{
 						left: 0;
@@ -98,7 +93,7 @@
 				}
 
 				&:last-child{
-					background-color: gray;
+					background-color: $gray;
 
 					&:before{
 						right: 0;						
@@ -117,16 +112,16 @@
 					top: 0;
 					width: 180%;
 					height: 100%;
-					background: rgba(255,255,255,.1);
+					background: $white-alpha;
 					content: '';
 					@include transition(transform .2s ease);
 				}
 
 				h1, i{
-					color: white;
+					color: $white;
 					font-size: 5rem;
 					@include text-shadow(0 0 5px rgba(0,0,0,.4));
-					@include transition((transform .15s ease, opacity .5s ease));
+					@include transition((transform .15s ease, opacity .25s ease));
 				}
 
 				h1{
@@ -137,9 +132,21 @@
 					position: absolute;
 					bottom: .5rem;
 					right: .5rem;
-					font-size: 7rem;
+					font-size: 7.5rem;
 					@include transform-origin(bottom right);
 				}
+
+				&:hover{
+					h1{
+						@include transform(rotate(-18deg) scale(1.18));
+					}
+
+					i{
+						opacity: .15;
+						@include transform(scale(2));
+					}
+				}
+
 			}
 		}
 
@@ -147,7 +154,13 @@
 		.groupContent{
 			width: 100%;
 			height: 100%;
-			background: white;
+		}
+		.groupContent{
+			background: $blue;
+
+			img{
+				background: $white;
+			}
 		}
 	}
 
