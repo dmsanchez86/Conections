@@ -3,11 +3,20 @@ var application = angular.module('conections', []);
 // controlador principal
 application.controller('main', function($scope, $window){
 
+	$scope.loginShow = true;
+
+	// validamos si ya inicio session
+	if($window.sessionStorage.datosUsuario != null){
+		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
+		$scope.loginShow = false;
+		$('.contentUser').addClass('active');
+	}
+
 	// evento que cierra la session
 	$scope.logout = function(){
 		$window.sessionStorage.removeItem('datosUsuario');
 		$('.contentUser').removeClass('active');
-
+		$scope.loginShow = true;
 		$.notify("Se cerro la sesión correctamente", "success");
 	}
 });
@@ -84,14 +93,6 @@ application.controller('login', function($scope, $http, $window){
 	$scope.user = "";
 	$scope.password = "";
 	$scope.datosUsuario = [];
-	$scope.loginShow = true;
-
-	// validamos si ya inicio session
-	if($window.sessionStorage.datosUsuario != null){
-		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
-		$scope.loginShow = false;
-		$('.contentUser').addClass('active');
-	}
 
 	// evento del login
 	$scope.login = function(){
@@ -117,7 +118,7 @@ application.controller('login', function($scope, $http, $window){
 
 					// guardamos los datos en el session storage
 					$window.sessionStorage.setItem("datosUsuario", JSON.stringify($data));
-					$scope.loginShow = false;
+					$scope.$parent.loginShow = false;
 					$('.contentUser').addClass('active'); // mostramos el menu para cerrar sesion
 				}else{
 					$scope.listStates = [];

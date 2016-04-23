@@ -19,10 +19,10 @@
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="favicon.png" id="favicon">
 	</head>
-	<body>
-		<main ng-controller="main">
+	<body ng-controller="main">
+		<main>
 			<header>
-				<div class="contentUser" ng-show="!loginShow">
+				<div class="contentUser" ng-hide="$parent.loginShow">
 					<a href="#" ng-click="logout()">Cerrar Sesión <i class="fa fa-sign-out"></i></a>
 				</div>
 				<img src="images/logo.png" alt="Logo Conexiones">
@@ -159,7 +159,7 @@
 				<div class="groupContent">
 					<img src="images/logo.png" alt="Logo Conexiones">
 					<div class="center">
-						<div class="contentLogin" ng-controller="login" ng-show="loginShow">
+						<div class="contentLogin" ng-controller="login" ng-show="$parent.loginShow">
 							<h3>Iniciar Sesión</h3>
 							<div class="form-group">
 								<input type="text" name="usuario" id="user" ng-model="user" required>
@@ -173,9 +173,9 @@
 								<button type="button" ng-click="login()" style="margin: 0">Ingresar</button>
 							</div>
 						</div>
-						<!-- <div class="loguedSection" ng-show="!loginShow">
+						<div class="loguedSection" ng-hide="$parent.loginShow">
 							secccion loqueada
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
