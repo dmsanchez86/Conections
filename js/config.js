@@ -3,6 +3,7 @@ var application = angular.module('conections', []);
 // controlador principal
 application.controller('main', function($scope, $window){
 
+	// variable que permite mostrar el formulario de login cuando esta verdadera
 	$scope.loginShow = true;
 
 	// validamos si ya inicio session
@@ -17,7 +18,7 @@ application.controller('main', function($scope, $window){
 		$window.sessionStorage.removeItem('datosUsuario');
 		$('.contentUser').removeClass('active');
 		$scope.loginShow = true;
-		$.notify("Se cerro la sesión correctamente", "success");
+		$.notify("Se cerro la sesión correctamente", "info");
 	}
 });
 
@@ -34,6 +35,13 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 	$scope.message = "";
 	$scope.valueSearch = "";
 	$scope.listStates = [];
+	$scope.listGuides = [];
+
+	$scope.objSearch = {
+		dateStart: "",
+		dateEnd: "",
+		guide: ""
+	};
 
 	$scope.search = function(){
 		// si la busqueda es vacia
@@ -46,7 +54,7 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 
 			// ajax que me consulta las guias
 			$http({
-			  url: 'index.php?opc=guia&param='+$scope.valueSearch,
+			  url: 'index.php?opc=guia&guia='+$scope.valueSearch,
 			  method: 'GET'
 			}).then(function successCallback(response) {
 				var $data = (response.data.seguimientoGuiaIndividualResult);
@@ -61,6 +69,45 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 				console.warn(response);
 		  });
 		}
+	}
+
+	$scope.searchEntidad = function(){
+		if($scope.objSearch.dateStart == "" || $scope.objSearch.dateStart == undefined){
+			$('#dateStart').notify("Ingrese una fecha").focus();
+		}else if($scope.objSearch.dateEnd == "" || $scope.objSearch.dateEnd == undefined){
+			$('#dateEnd').notify("Ingrese una fecha").focus();
+		}else{
+			console.log($scope.objSearch);
+			console.log($scope.datosUsuario);
+
+			$('.contentLogin.table').notify('Buscando...', 'info');
+
+			if($scope.objSearch.guide == undefined){
+				$scope.objSearch.guide = "";
+			}
+
+			// ajax que me consulta las guias
+			$http({
+			  url: 'index.php?opc=guiaEntidad&fechaInicio='+$scope.objSearch.dateStart+'&fechaFinal='+$scope.objSearch.dateEnd+'&client='+$scope.datosUsuario.uid_cli+'&guia='+$scope.objSearch.guide,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				console.log(response);
+				var $data = (response.data.guiasClienteResult);
+
+				if($data.length > 0){
+					$scope.listGuides = $data;
+				}else{
+					$scope.listStates = [];
+					$('.contentLogin.table').notify('No se encontraron registros', 'info');
+				}
+		  }, function errorCallback(response) {
+				console.warn(response);
+		  });
+		}
+	}
+
+	$scope.details = function(numero){
+		alert(numero);
 	}
 });
 
@@ -118,7 +165,7 @@ application.controller('login', function($scope, $http, $window){
 
 					// guardamos los datos en el session storage
 					$window.sessionStorage.setItem("datosUsuario", JSON.stringify($data));
-					$scope.$parent.loginShow = false;
+					$scope.$parent.$parent.loginShow = false; // ocultamos el formulario de logueo
 					$('.contentUser').addClass('active'); // mostramos el menu para cerrar sesion
 				}else{
 					$scope.listStates = [];

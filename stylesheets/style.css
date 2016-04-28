@@ -569,7 +569,7 @@ button:hover {
 /* line 352, ../sass/style.scss */
 .contentTable {
   text-align: center;
-  max-height: 290px;
+  max-height: 283px;
   overflow: auto;
 }
 /* line 357, ../sass/style.scss */
@@ -590,10 +590,21 @@ button:hover {
 /* line 371, ../sass/style.scss */
 .contentTable table td, .contentTable table th {
   padding: .25rem 1.3rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+}
+/* line 375, ../sass/style.scss */
+.contentTable table td:last-child, .contentTable table th:last-child {
+  padding: .25rem;
+}
+/* line 378, ../sass/style.scss */
+.contentTable table td:last-child button, .contentTable table th:last-child button {
+  font-size: 14px;
+  padding: .15rem;
+  line-height: 1;
+  height: auto;
 }
 
-/* line 378, ../sass/style.scss */
+/* line 389, ../sass/style.scss */
 .contentUser {
   position: fixed;
   top: 0;
@@ -622,7 +633,7 @@ button:hover {
   -o-box-shadow: 0 0 5px #323232;
   box-shadow: 0 0 5px #323232;
 }
-/* line 391, ../sass/style.scss */
+/* line 402, ../sass/style.scss */
 .contentUser.active {
   -webkit-transform: translatey(0%);
   -khtml-transform: translatey(0%);
@@ -631,7 +642,7 @@ button:hover {
   -o-transform: translatey(0%);
   transform: translatey(0%);
 }
-/* line 395, ../sass/style.scss */
+/* line 406, ../sass/style.scss */
 .contentUser a {
   color: white;
 }
@@ -679,9 +690,11 @@ button:hover {
 }
 /* line 14, ../sass/popup.scss */
 .popup img {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
 }
-/* line 18, ../sass/popup.scss */
+/* line 20, ../sass/popup.scss */
 .popup .closePopup {
   position: absolute;
   top: 2rem;
@@ -702,7 +715,7 @@ button:hover {
   -o-text-shadow: 0 0 10px #323232;
   text-shadow: 0 0 10px #323232;
 }
-/* line 28, ../sass/popup.scss */
+/* line 30, ../sass/popup.scss */
 .popup .closePopup:hover {
   color: #c4c5c7;
   -webkit-transform: rotate(180deg);
@@ -712,7 +725,7 @@ button:hover {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 34, ../sass/popup.scss */
+/* line 36, ../sass/popup.scss */
 .popup .container {
   opacity: 0;
   display: none;
@@ -742,23 +755,23 @@ button:hover {
   -o-transition: transform 0.75s ease, opacity 0.35s linear;
   transition: transform 0.75s ease, opacity 0.35s linear;
 }
-/* line 43, ../sass/popup.scss */
+/* line 45, ../sass/popup.scss */
 .popup .container[choose] {
   width: 70%;
   height: 50%;
   display: block;
 }
-/* line 49, ../sass/popup.scss */
+/* line 51, ../sass/popup.scss */
 .popup .container[individual], .popup .container[group] {
   width: 75%;
   height: 85%;
 }
-/* line 55, ../sass/popup.scss */
+/* line 57, ../sass/popup.scss */
 .popup .container[individual] {
   height: 570px;
   max-width: 95%;
 }
-/* line 60, ../sass/popup.scss */
+/* line 62, ../sass/popup.scss */
 .popup .container[individual], .popup .container[group] {
   -webkit-transform: translatey(-150%);
   -khtml-transform: translatey(-150%);
@@ -767,7 +780,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 65, ../sass/popup.scss */
+/* line 67, ../sass/popup.scss */
 .popup .container .choose {
   width: 100%;
   height: 100%;
@@ -777,7 +790,7 @@ button:hover {
   display: -o-flex;
   display: flex;
 }
-/* line 70, ../sass/popup.scss */
+/* line 72, ../sass/popup.scss */
 .popup .container .choose > div {
   text-align: center;
   position: relative;
@@ -804,11 +817,11 @@ button:hover {
   -o-justify-content: center;
   justify-content: center;
 }
-/* line 80, ../sass/popup.scss */
+/* line 82, ../sass/popup.scss */
 .popup .container .choose > div:first-child {
   background-color: #173E74;
 }
-/* line 83, ../sass/popup.scss */
+/* line 85, ../sass/popup.scss */
 .popup .container .choose > div:first-child:before {
   left: 0;
   -webkit-transform: skewx(-34deg) translatex(-200%);
@@ -818,7 +831,7 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-200%);
   transform: skewx(-34deg) translatex(-200%);
 }
-/* line 89, ../sass/popup.scss */
+/* line 91, ../sass/popup.scss */
 .popup .container .choose > div:first-child:hover:before {
   -webkit-transform: skewx(-34deg) translatex(-20%);
   -khtml-transform: skewx(-34deg) translatex(-20%);
@@ -827,11 +840,11 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-20%);
   transform: skewx(-34deg) translatex(-20%);
 }
-/* line 95, ../sass/popup.scss */
+/* line 97, ../sass/popup.scss */
 .popup .container .choose > div:last-child {
   background-color: gray;
 }
-/* line 98, ../sass/popup.scss */
+/* line 100, ../sass/popup.scss */
 .popup .container .choose > div:last-child:before {
   right: 0;
   -webkit-transform: skewx(34deg) translatex(200%);
@@ -841,7 +854,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(200%);
   transform: skewx(34deg) translatex(200%);
 }
-/* line 104, ../sass/popup.scss */
+/* line 106, ../sass/popup.scss */
 .popup .container .choose > div:last-child:hover:before {
   -webkit-transform: skewx(34deg) translatex(22%);
   -khtml-transform: skewx(34deg) translatex(22%);
@@ -850,7 +863,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(22%);
   transform: skewx(34deg) translatex(22%);
 }
-/* line 110, ../sass/popup.scss */
+/* line 112, ../sass/popup.scss */
 .popup .container .choose > div:before {
   position: absolute;
   top: 0;
@@ -865,7 +878,7 @@ button:hover {
   -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
 }
-/* line 120, ../sass/popup.scss */
+/* line 122, ../sass/popup.scss */
 .popup .container .choose > div h1, .popup .container .choose > div i {
   color: #fff;
   font-size: 5rem;
@@ -882,7 +895,7 @@ button:hover {
   -o-transition: transform 0.15s ease, opacity 0.25s ease;
   transition: transform 0.15s ease, opacity 0.25s ease;
 }
-/* line 127, ../sass/popup.scss */
+/* line 129, ../sass/popup.scss */
 .popup .container .choose > div h1 {
   -webkit-transform: rotate(-15deg);
   -khtml-transform: rotate(-15deg);
@@ -891,7 +904,7 @@ button:hover {
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
-/* line 131, ../sass/popup.scss */
+/* line 133, ../sass/popup.scss */
 .popup .container .choose > div i {
   position: absolute;
   bottom: .5rem;
@@ -904,7 +917,7 @@ button:hover {
   -o-transform-origin: bottom right;
   transform-origin: bottom right;
 }
-/* line 140, ../sass/popup.scss */
+/* line 142, ../sass/popup.scss */
 .popup .container .choose > div:hover h1 {
   -webkit-transform: rotate(-18deg) scale(1.18);
   -khtml-transform: rotate(-18deg) scale(1.18);
@@ -913,7 +926,7 @@ button:hover {
   -o-transform: rotate(-18deg) scale(1.18);
   transform: rotate(-18deg) scale(1.18);
 }
-/* line 144, ../sass/popup.scss */
+/* line 146, ../sass/popup.scss */
 .popup .container .choose > div:hover i {
   opacity: .15;
   -webkit-transform: scale(2);
@@ -923,26 +936,26 @@ button:hover {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 153, ../sass/popup.scss */
+/* line 155, ../sass/popup.scss */
 .popup .container .individualContent,
 .popup .container .groupContent {
   width: 100%;
   height: 100%;
 }
-/* line 158, ../sass/popup.scss */
+/* line 160, ../sass/popup.scss */
 .popup .container .groupContent {
   background: #173E74;
 }
-/* line 161, ../sass/popup.scss */
-.popup .container .groupContent img {
+/* line 163, ../sass/popup.scss */
+.popup .container .groupContent header {
   background: #fff;
 }
-/* line 167, ../sass/popup.scss */
+/* line 169, ../sass/popup.scss */
 .popup.open {
   opacity: 1;
   z-index: 100;
 }
-/* line 171, ../sass/popup.scss */
+/* line 173, ../sass/popup.scss */
 .popup.open .container {
   opacity: 1;
   -webkit-transform: rotatey(0deg);
@@ -952,11 +965,11 @@ button:hover {
   -o-transform: rotatey(0deg);
   transform: rotatey(0deg);
 }
-/* line 175, ../sass/popup.scss */
+/* line 177, ../sass/popup.scss */
 .popup.open .container.hide {
   display: none;
 }
-/* line 179, ../sass/popup.scss */
+/* line 181, ../sass/popup.scss */
 .popup.open .container.show {
   display: block;
   -webkit-transform: translatey(-150%);
@@ -966,7 +979,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 184, ../sass/popup.scss */
+/* line 186, ../sass/popup.scss */
 .popup.open .container.out {
   opacity: 0;
   -webkit-transform: translatey(-150%);
@@ -976,7 +989,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 189, ../sass/popup.scss */
+/* line 191, ../sass/popup.scss */
 .popup.open .container.in {
   opacity: 1;
   -webkit-transform: translatey(0%);
@@ -994,19 +1007,75 @@ button:hover {
   margin: .51rem auto;
 }
 /* line 6, ../sass/login.scss */
+.contentLogin.table {
+  width: 90%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+/* line 10, ../sass/login.scss */
+.contentLogin.table .form-group {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  padding: 0 .8rem;
+  margin-top: 0;
+}
+/* line 15, ../sass/login.scss */
+.contentLogin.table .form-group:last-child {
+  max-width: 100px;
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -o-align-items: flex-end;
+  align-items: flex-end;
+}
+/* line 23, ../sass/login.scss */
+.contentLogin.table .form-group label {
+  position: relative;
+  color: white;
+  display: inline-block;
+  margin-right: .25rem;
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 31, ../sass/login.scss */
+.contentLogin.table .form-group label + input {
+  width: 100%;
+}
+/* line 38, ../sass/login.scss */
 .contentLogin h3 {
   color: white;
 }
-/* line 10, ../sass/login.scss */
+/* line 42, ../sass/login.scss */
 .contentLogin .form-group {
   position: relative;
   margin: 1rem 0;
 }
-/* line 15, ../sass/login.scss */
+/* line 47, ../sass/login.scss */
+.contentLogin .form-group.block button {
+  width: 100%;
+}
+/* line 53, ../sass/login.scss */
 .contentLogin .form-group.with-data label {
   opacity: 0;
 }
-/* line 20, ../sass/login.scss */
+/* line 58, ../sass/login.scss */
 .contentLogin .form-group label {
   display: inline;
   color: #323232;
@@ -1025,17 +1094,17 @@ button:hover {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 30, ../sass/login.scss */
-.contentLogin .form-group input[type=text], .contentLogin .form-group input[type=password] {
+/* line 68, ../sass/login.scss */
+.contentLogin .form-group input[type=text], .contentLogin .form-group input[type=date], .contentLogin .form-group input[type=password] {
   width: 100%;
   text-align: center;
   padding: .25rem .5rem;
 }
-/* line 37, ../sass/login.scss */
-.contentLogin .form-group input[type=text]:focus + label, .contentLogin .form-group input[type=password]:focus + label {
+/* line 76, ../sass/login.scss */
+.contentLogin .form-group input[type=text]:focus + label, .contentLogin .form-group input[type=date]:focus + label, .contentLogin .form-group input[type=password]:focus + label {
   opacity: 0;
 }
-/* line 44, ../sass/login.scss */
+/* line 83, ../sass/login.scss */
 .contentLogin .form-group button {
   background: #00ABFF;
   color: white;

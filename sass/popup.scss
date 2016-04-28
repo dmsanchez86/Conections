@@ -12,7 +12,9 @@
 	@include perspective(1000px);
 
 	img{
-		width: 100%;
+		width: 80%;
+    margin: 0 auto;
+    display: block;
 	}
 
 	.closePopup{
@@ -158,7 +160,7 @@
 		.groupContent{
 			background: $blue;
 
-			img{
+			header{
 				background: $white;
 			}
 		}

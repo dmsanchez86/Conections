@@ -3,6 +3,38 @@
 	width: 300px;
 	margin: .51rem auto;
 
+	&.table{
+		width: 90%;
+		@include flex(flex);
+
+		.form-group{
+			@include flex-item(1);
+			padding: 0 .8rem;
+			margin-top: 0;
+
+			&:last-child{
+				max-width: 100px;
+				text-align: center;
+				@include flex(flex);
+				@include justify-content(center);
+				@include align-items(flex-end);
+			}
+
+			label{
+				position: relative;
+				color: white;
+				display: inline-block;
+				margin-right: .25rem;
+				vertical-align: middle;
+				text-align: center;
+
+				+ input{
+					width: 100%;
+				}
+			}
+		}
+	}
+
 	h3{
 		color: white;
 	}
@@ -10,6 +42,12 @@
 	.form-group{
 		position: relative;
 		margin: 1rem 0;
+
+		&.block{
+			button{
+				width: 100%;
+			}
+		}
 
 		&.with-data{
 			label{
@@ -28,6 +66,7 @@
 
 		input{
 			&[type=text],
+			&[type=date],
 			&[type=password]{
 				width: 100%;
 				text-align: center;

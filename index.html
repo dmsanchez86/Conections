@@ -157,7 +157,9 @@
 			</div>
 			<div class="container" group>
 				<div class="groupContent">
-					<img src="images/logo.png" alt="Logo Conexiones">
+					<header>
+						<img src="images/logo.png" alt="Logo Conexiones">
+					</header>
 					<div class="center">
 						<div class="contentLogin" ng-controller="login" ng-show="$parent.loginShow">
 							<h3>Iniciar Sesión</h3>
@@ -169,12 +171,58 @@
 								<input type="password" name="password" id="password" ng-model="password" required>
 								<label for="password">Contraseña</label>
 							</div>
-							<div class="form-group">
+							<div class="form-group block">
 								<button type="button" ng-click="login()" style="margin: 0">Ingresar</button>
 							</div>
 						</div>
-						<div class="loguedSection" ng-hide="$parent.loginShow">
-							secccion loqueada
+						<div class="loguedSection" ng-hide="$parent.loginShow" ng-controller="searchGuide">
+							<div class="contentLogin table">
+								<div class="form-group">
+									<label for="dateStart">Fecha Inicio</label>
+									<input type="date" name="usuario" id="dateStart" ng-model="objSearch.dateStart" required>
+								</div>
+								<div class="form-group">
+									<label for="dateEnd">Fecha Final</label>
+									<input type="date" name="usuario" id="dateEnd" ng-model="objSearch.dateEnd" required>
+								</div>
+								<div class="form-group">
+									<label for="guide">Guía</label>
+									<input type="text" style="min-height: 2.4rem;" placeholder="N° de Guía" name="usuario" id="guide" ng-model="objSearch.guide" required>
+								</div>
+								<div class="form-group">
+									<button type="button" ng-click="searchEntidad()" style="margin: 0">Buscar</button>
+								</div>
+							</div>
+							<div class="contentTable" ng-show="listGuides.length > 0">
+								<table>
+									<thead>
+										<tr>
+											<th>Número</th>
+											<th>Fecha</th>
+											<th>Origen</th>
+											<th>Destino</th>
+											<th>Estado</th>
+											<th>Unidades</th>
+											<th>Peso</th>
+											<th>&nbsp;</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in listGuides">
+											<td>{{ item.numero }}</td>
+											<td>{{ item.fecha }}</td>
+											<td>{{ item.origen }}</td>
+											<td>{{ item.destino }}</td>
+											<td>{{ item.estado }}</td>
+											<td>{{ item.unidades }}</td>
+											<td>{{ item.peso }}</td>
+											<td>
+												<button ng-click="details(item.numero)" title="Detalles"><i class="fa fa-search"></i></button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>

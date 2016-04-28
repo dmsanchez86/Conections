@@ -1,39 +1,28 @@
 /*
-Error: Undefined mixin 'center-absolute'.
-        on line 25 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss, in `center-absolute'
-        from line 25 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss
+Error: Undefined mixin 'flex'.
+        on line 8 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss, in `flex'
+        from line 8 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss
 
-20: 		label{
-21: 			display: inline;
-22: 			color: #323232;
-23: 			opacity: 1;
-24: 	    line-height: 1.6;
-25: 			@include center-absolute(absolute);
-26: 			@include transition(opacity .3s ease);
-27: 		}
-28: 
-29: 		input{
-30: 			&[type=text],
+3: 	width: 300px;
+4: 	margin: .51rem auto;
+5: 
+6: 	&.table{
+7: 		width: 90%;
+8: 		@include flex(flex);
+9: 
+10: 		.form-group{
+11: 			@include flex-item(1);
+12: 			padding: 0 .8rem;
+13: 			margin-top: 0;
 
 Backtrace:
-C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss:25:in `center-absolute'
-C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss:25
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss:8:in `flex'
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss:8
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:348:in `visit_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
-org/jruby/RubyArray.java:2412:in `map'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `visit_rule'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
@@ -97,4 +86,4 @@ C:/Users/usuario/Desktop/compass.app/lib/ruby/jruby/listen-1.3.1-patched/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'center-absolute'.\A         on line 25 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss, in `center-absolute'\A         from line 25 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss\A \A 20: 		label{\A 21: 			display: inline;\A 22: 			color: #323232;\A 23: 			opacity: 1;\A 24: 	    line-height: 1.6;\A 25: 			@include center-absolute(absolute);\A 26: 			@include transition(opacity .3s ease);\A 27: 		}\A 28: \A 29: 		input{\A 30: 			&[type=text],"; }
+  content: "Error: Undefined mixin 'flex'.\A         on line 8 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss, in `flex'\A         from line 8 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/login.scss\A \A 3: 	width: 300px;\A 4: 	margin: .51rem auto;\A 5: \A 6: 	&.table{\A 7: 		width: 90%;\A 8: 		@include flex(flex);\A 9: \A 10: 		.form-group{\A 11: 			@include flex-item(1);\A 12: 			padding: 0 .8rem;\A 13: 			margin-top: 0;"; }
