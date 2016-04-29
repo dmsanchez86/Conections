@@ -31,7 +31,7 @@ application.controller('followGuide', function($scope){
 });
 
 // controlador de la busqueda de la guia
-application.controller('searchGuide', function($scope, $timeout, $http){
+application.controller('searchGuide', function($scope, $timeout, $http, $window){
 	$scope.message = "";
 	$scope.valueSearch = "";
 	$scope.listStates = [];
@@ -50,6 +50,7 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 			$('#txtSearchGuide').focus();
 			$scope.listStates = [];
 		}else{
+			$scope.listStates = [];
 			$('#txtSearchGuide').notify('Buscando...', 'info');
 
 			// ajax que me consulta las guias
@@ -61,6 +62,7 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 
 				if($data.length > 0){
 					$scope.listStates = $data;
+					$('#txtSearchGuide').notify('Se encontraron '+$scope.listStates.length+' registros', 'success');
 				}else{
 					$scope.listStates = [];
 					$('#txtSearchGuide').notify('No se encontraron registros', 'info');
@@ -77,14 +79,14 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 		}else if($scope.objSearch.dateEnd == "" || $scope.objSearch.dateEnd == undefined){
 			$('#dateEnd').notify("Ingrese una fecha").focus();
 		}else{
-			console.log($scope.objSearch);
-			console.log($scope.datosUsuario);
-
+			$scope.listStates = [];
 			$('.contentLogin.table').notify('Buscando...', 'info');
 
 			if($scope.objSearch.guide == undefined){
 				$scope.objSearch.guide = "";
 			}
+
+			$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
 
 			// ajax que me consulta las guias
 			$http({
@@ -96,6 +98,7 @@ application.controller('searchGuide', function($scope, $timeout, $http){
 
 				if($data.length > 0){
 					$scope.listGuides = $data;
+					$('.contentLogin.table').notify('Se encontraron '+$scope.listGuides.length+' registros', 'success');
 				}else{
 					$scope.listStates = [];
 					$('.contentLogin.table').notify('No se encontraron registros', 'info');
