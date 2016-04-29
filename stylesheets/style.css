@@ -115,13 +115,19 @@ nav ul {
   padding: 3rem 5rem;
   background: rgba(23, 62, 116, 0.75);
   text-align: center;
+  -webkit-transition: padding 0.5s ease;
+  -khtml-transition: padding 0.5s ease;
+  -moz-transition: padding 0.5s ease;
+  -ms-transition: padding 0.5s ease;
+  -o-transition: padding 0.5s ease;
+  transition: padding 0.5s ease;
 }
-/* line 17, ../sass/nav.scss */
+/* line 18, ../sass/nav.scss */
 nav ul li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 21, ../sass/nav.scss */
+/* line 22, ../sass/nav.scss */
 nav ul li a {
   display: block;
   padding: 1rem 2rem;
@@ -145,11 +151,11 @@ nav ul li a {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 34, ../sass/nav.scss */
+/* line 35, ../sass/nav.scss */
 nav ul li a.active, nav ul li a:focus, nav ul li a:hover {
   background: rgba(130, 130, 130, 0.8);
 }
-/* line 41, ../sass/nav.scss */
+/* line 42, ../sass/nav.scss */
 nav ul li:nth-child(2) a, nav ul li:nth-child(3) a, nav ul li:nth-child(4) a {
   line-height: 2.5;
 }
@@ -1247,80 +1253,80 @@ button:hover {
 }
 
 @media (max-width: 1050px) {
-  /* line 3, ../sass/queries.scss */
+  /* line 2, ../sass/queries.scss */
   nav ul {
     padding: 2rem;
   }
 }
 @media (max-width: 930px) {
-  /* line 9, ../sass/queries.scss */
+  /* line 8, ../sass/queries.scss */
   nav ul {
     padding: 1.5rem 1rem;
   }
 
-  /* line 12, ../sass/queries.scss */
+  /* line 11, ../sass/queries.scss */
   .contentArticle {
     max-height: 70%;
   }
 
-  /* line 18, ../sass/queries.scss */
+  /* line 17, ../sass/queries.scss */
   .popup .closePopup {
     top: 1.5rem;
     right: 1.5rem;
     font-size: 1.5rem;
   }
-  /* line 26, ../sass/queries.scss */
+  /* line 25, ../sass/queries.scss */
   .popup .container[choose] {
     width: 90%;
     height: 60%;
   }
-  /* line 31, ../sass/queries.scss */
+  /* line 30, ../sass/queries.scss */
   .popup .container[individual], .popup .container[group] {
     width: 90%;
     height: 90%;
   }
-  /* line 41, ../sass/queries.scss */
+  /* line 40, ../sass/queries.scss */
   .popup .container .choose > div h1, .popup .container .choose > div i {
     font-size: 3rem;
   }
-  /* line 45, ../sass/queries.scss */
+  /* line 44, ../sass/queries.scss */
   .popup .container .choose > div i {
     font-size: 5rem;
   }
 }
 @media (max-width: 900px) {
-  /* line 56, ../sass/queries.scss */
+  /* line 55, ../sass/queries.scss */
   nav ul {
     padding: 1.5rem .51rem;
   }
-  /* line 60, ../sass/queries.scss */
+  /* line 59, ../sass/queries.scss */
   nav ul li a {
     padding: .5rem 1rem;
     min-height: 78px;
   }
-  /* line 66, ../sass/queries.scss */
+  /* line 65, ../sass/queries.scss */
   nav ul li:nth-child(1) a {
     line-height: 2.5;
   }
 }
 @media (max-width: 780px) {
-  /* line 77, ../sass/queries.scss */
+  /* line 76, ../sass/queries.scss */
   nav ul {
     padding: 1rem .251rem;
   }
-  /* line 81, ../sass/queries.scss */
+  /* line 80, ../sass/queries.scss */
   nav ul li a {
     padding: .5rem .51rem;
     min-height: 50px;
     margin: 0 .15rem;
   }
 
-  /* line 90, ../sass/queries.scss */
+  /* line 89, ../sass/queries.scss */
   .contentArticle {
     max-width: 85%;
   }
 
-  /* line 95, ../sass/queries.scss */
+  /* line 94, ../sass/queries.scss */
   footer ul {
     bottom: 4rem;
     width: 100%;
@@ -1328,22 +1334,22 @@ button:hover {
   }
 }
 @media (max-width: 700px) {
-  /* line 105, ../sass/queries.scss */
+  /* line 104, ../sass/queries.scss */
   .popup .closePopup {
     top: 1rem;
     right: 1rem;
   }
-  /* line 112, ../sass/queries.scss */
+  /* line 111, ../sass/queries.scss */
   .popup .container[choose] {
     width: 90%;
     height: 80%;
   }
-  /* line 117, ../sass/queries.scss */
+  /* line 116, ../sass/queries.scss */
   .popup .container[individual], .popup .container[group] {
     width: 90%;
     height: 95%;
   }
-  /* line 129, ../sass/queries.scss */
+  /* line 128, ../sass/queries.scss */
   .popup .container .choose > div:first-child:hover:before {
     -webkit-transform: skewx(-20deg) translatex(-20%);
     -khtml-transform: skewx(-20deg) translatex(-20%);
@@ -1352,7 +1358,7 @@ button:hover {
     -o-transform: skewx(-20deg) translatex(-20%);
     transform: skewx(-20deg) translatex(-20%);
   }
-  /* line 137, ../sass/queries.scss */
+  /* line 136, ../sass/queries.scss */
   .popup .container .choose > div:last-child:hover:before {
     -webkit-transform: skewx(20deg) translatex(22%);
     -khtml-transform: skewx(20deg) translatex(22%);
@@ -1361,11 +1367,11 @@ button:hover {
     -o-transform: skewx(20deg) translatex(22%);
     transform: skewx(20deg) translatex(22%);
   }
-  /* line 143, ../sass/queries.scss */
+  /* line 142, ../sass/queries.scss */
   .popup .container .choose > div h1, .popup .container .choose > div i {
     font-size: 3rem;
   }
-  /* line 147, ../sass/queries.scss */
+  /* line 146, ../sass/queries.scss */
   .popup .container .choose > div i {
     font-size: 5rem;
   }
@@ -1506,5 +1512,17 @@ button:hover {
     color: white;
     margin-top: .481rem;
     font-size: 16px !important;
+  }
+}
+@media (min-width: 1300px) {
+  /* line 271, ../sass/queries.scss */
+  nav ul {
+    padding: 3rem 5rem 8rem;
+  }
+}
+@media (min-height: 660px) {
+  /* line 279, ../sass/queries.scss */
+  nav ul {
+    padding: 3rem 5rem;
   }
 }

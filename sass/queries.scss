@@ -1,4 +1,3 @@
-
 @media (max-width: 1050px){
 	nav ul{
 		padding: 2rem;
@@ -152,6 +151,7 @@
 		}
 	}
 }
+
 @media (max-width: 630px){
 	nav{
 		position: initial;
@@ -263,5 +263,21 @@
     		}
     	}
     }
+	}
+}
+
+@media (min-width: 1300px){
+	nav {
+		ul{
+			padding: 3rem 5rem 8rem;
+		}
+	}
+}
+
+@media (min-height: 660px){
+	nav{
+		ul{
+			padding: 3rem 5rem;
+		}
 	}
 }

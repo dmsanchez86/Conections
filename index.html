@@ -30,29 +30,9 @@
 			<nav>
 				<img src="images/foto-empresa.jpg" alt="Foto Emmpresa Conexiones">
 				<ul>
-					<li>
-						<a href="#quienes-somos">
-							Quienes Somos
-						</a>
-					</li>
-					<li>
-						<a href="#servicios">
-							Servicios
-						</a>
-					</li>
-					<li>
-						<a href="#contacto">
-							Contacto
-						</a>
-					</li>
-					<li>
-						<a href="#cubrimiento">
-							Cubrimiento
-						</a>
-					</li>
-					<li>
-						<a href="#contacto">
-							Responsabilidad Social
+					<li ng-repeat="link in links" ng-click="page(link.slug)">
+						<a href="#{{ link.slug }}">
+							{{ link.name }}
 						</a>
 					</li>
 				</ul>
@@ -60,29 +40,34 @@
 					<span>Menu <i class="fa fa-navicon"></i></span>
 				</div>
 			</nav>
-			<section>
-				<main blue>
-					<article ng-controller="followGuide">
-						<div class="contentArticle">
-							<img src="images/boton-seguimiento.png" alt="">
-							<button type="button" ng-click="showGuide()">Ingrese Aquí</button>
-						</div>
-					</article>
-					<article>
-						<img src="images/camion.png" alt="">
-					</article>
-				</main>
-				<main gray>
-					<article>
-						<img src="images/repartidor.png" alt="">
-					</article>
-					<article>
-						<div class="contentArticle">
-							<img src="images/boton-guia.png" alt="">
-							<button type="button">Ingrese Aquí</button>
-						</div>
-					</article>
-				</main>
+			<section ng-switch="route">
+				<div ng-switch-when="home">
+					<main blue>
+						<article ng-controller="followGuide">
+							<div class="contentArticle">
+								<img src="images/boton-seguimiento.png" alt="">
+								<button type="button" ng-click="showGuide()">Ingrese Aquí</button>
+							</div>
+						</article>
+						<article>
+							<img src="images/camion.png" alt="">
+						</article>
+					</main>
+					<main gray>
+						<article>
+							<img src="images/repartidor.png" alt="">
+						</article>
+						<article>
+							<div class="contentArticle">
+								<img src="images/boton-guia.png" alt="">
+								<button type="button">Ingrese Aquí</button>
+							</div>
+						</article>
+					</main>
+				</div>
+				<div ng-switch-when="quienes-somos">
+					quienes somos
+				</div>
 			</section>
 			<footer>
 				<img src="images/foto-camiones.jpg" alt="">

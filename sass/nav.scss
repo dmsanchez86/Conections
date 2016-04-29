@@ -13,6 +13,7 @@ nav {
 		padding: 3rem 5rem;
 		background: $blue-alpha;
 		text-align: center;
+		@include transition(padding .5s ease);
 
 		li{
 			display: inline-block;

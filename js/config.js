@@ -2,6 +2,30 @@ var application = angular.module('conections', []);
 
 // controlador principal
 application.controller('main', function($scope, $window){
+	$scope.links = [
+		{
+			name: "Quiénes Somos",
+			slug: "quienes-somos"
+		},
+		{
+			name: "Servicios",
+			slug: "servicios"
+		},
+		{
+			name: "Contacto",
+			slug: "contacto"
+		},
+		{
+			name: "Cubrimiento",
+			slug: "cubrimiento"
+		},
+		{
+			name: "Responsabilidad Social",
+			slug: "responsabilidad-social"
+		},
+	];
+
+	$scope.route = "home";
 
 	// variable que permite mostrar el formulario de login cuando esta verdadera
 	$scope.loginShow = true;
@@ -20,7 +44,13 @@ application.controller('main', function($scope, $window){
 		$scope.loginShow = true;
 		$.notify("Se cerro la sesión correctamente", "info");
 	}
+	
+	// evento que me cambia la pagina
+	$scope.page = function(slug){
+		//$scope.route = slug;
+	}
 });
+
 
 // controlador de la guía
 application.controller('followGuide', function($scope){

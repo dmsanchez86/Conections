@@ -21,6 +21,23 @@ $().ready(function($) {
 });
 
 
+$(document).unbind('scroll').scroll(function(e){
+  var attrs = document.body.getBoundingClientRect();
+
+  var height = window.innerHeight;
+  var width = window.innerWidth;
+
+  if(height < 660 || width > 1400){
+    if(attrs.top == 0){
+        $('nav ul').css('padding-bottom', '8rem');
+    }else{
+        $('nav ul').css('padding-bottom', '3rem');
+    }
+  }
+
+});
+
+
 
 
 
