@@ -53,6 +53,7 @@
 			width: 75%;
 			height: 85%;
 		}
+
 		&[group]{
 			max-height: 555px;
 		}
@@ -196,5 +197,27 @@
 				@include transform(translatey(0%));
 			}
 		}
+	}
+}
+
+.backSection{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: $blue;
+	color: white;
+	font-size: 25px;
+  cursor: pointer;
+  top: .5rem;
+  left: .5rem;
+  text-align: center;
+  line-height: 43px;
+	@include border-radius(50%);
+	@include box-shadow(1px 1px 8px rgba(0,0,0,.3));
+	@include transition((transform .35s ease-in-out, box-shadow .5s ease));
+
+	&:hover{
+		@include box-shadow(1px 1px 12px rgba(0,0,0,.3));
+		@include transform(rotate(-360deg));
 	}
 }

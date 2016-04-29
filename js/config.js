@@ -165,6 +165,21 @@ application.controller('popup', function($scope, $timeout){
 			},100);
 		},500);
 	}
+
+	// evento que vuelve atras de la seccion en el popup
+	$scope.backSection = function(option){
+		$('.popup .container['+option+']').removeClass('in');
+
+		$timeout(function(){
+			$('.popup').removeClass('open');
+		}, 400);
+
+		$timeout(function(){
+			$('.popup .container').removeClass('out in hide show');
+			$('.popup[followGuide]').addClass('open');
+		}, 450);
+
+	}
 });
 
 // controlador del login
