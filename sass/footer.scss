@@ -1,0 +1,60 @@
+footer {
+	position: relative;
+	background: $blue;
+	margin-top: -5px;
+	padding: 1rem 0 3rem;
+
+	img{
+		width: 100%;
+	}
+
+	ul{
+		position: absolute;
+		bottom: 5rem;
+		left: 0;
+		width: 70%;
+		padding: 1rem 2rem;
+		@include gradient(linear, (left,white, rgba(255,255,255,.2),transparent));
+
+		li{
+			display: inline-block;
+			vertical-align: top;
+
+			a{
+				width: 40px;
+				height: 40px;
+				display: block;
+				text-align: center;
+				line-height: 1;
+				margin: 0 .25rem;
+				background: $blue;
+				@include transition(background .15s ease);
+				@include border-radius(50%);
+
+				i{
+					color: rgba(255,255,255,.7);
+					margin-top: .551rem;
+  				font-size: 24px !important;
+  				@include transition(transform .15s ease);
+				}
+
+				&:hover{
+					background: $gray;
+
+					i{
+						@include transform(scale(.8));
+					}
+				}
+
+				&:active{
+					background: $gray-alpha;
+
+					i{
+						@include transform(scale(1.05));
+					}
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+nav {
+	position: relative;
+
+	img{
+		width: 100%;
+	}
+
+	ul{
+		position: absolute;
+		bottom: 4px;
+		left: 0;
+		width: 100%;
+		padding: 3rem 5rem;
+		background: $blue-alpha;
+		text-align: center;
+
+		li{
+			display: inline-block;
+			vertical-align: top;
+
+			a{
+				display: block;
+				padding: 1rem 2rem;
+				color: $white;
+				margin: 0 .5rem;
+			  max-width: 170px;
+			  background: $blue-alpha-link;
+			  min-height: 92px;
+			  cursor: pointer;
+			  font-size: 25px;
+			  @include transition(background .4s ease);
+			  @include border-radius(3px);
+				
+				&.active,
+				&:focus,
+				&:hover{
+					background: $gray-alpha;
+				}
+			}
+
+			&:nth-child(2) a,
+			&:nth-child(3) a,
+			&:nth-child(4) a{
+				line-height: 2.5;
+			}
+		}
+	}
+}

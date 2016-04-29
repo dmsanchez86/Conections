@@ -98,15 +98,15 @@ label {
   margin: 0 .5rem;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 1, ../sass/nav.scss */
 nav {
   position: relative;
 }
-/* line 53, ../sass/style.scss */
+/* line 4, ../sass/nav.scss */
 nav img {
   width: 100%;
 }
-/* line 57, ../sass/style.scss */
+/* line 8, ../sass/nav.scss */
 nav ul {
   position: absolute;
   bottom: 4px;
@@ -116,12 +116,12 @@ nav ul {
   background: rgba(23, 62, 116, 0.75);
   text-align: center;
 }
-/* line 66, ../sass/style.scss */
+/* line 17, ../sass/nav.scss */
 nav ul li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 70, ../sass/style.scss */
+/* line 21, ../sass/nav.scss */
 nav ul li a {
   display: block;
   padding: 1rem 2rem;
@@ -145,20 +145,20 @@ nav ul li a {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 83, ../sass/style.scss */
+/* line 34, ../sass/nav.scss */
 nav ul li a.active, nav ul li a:focus, nav ul li a:hover {
   background: rgba(130, 130, 130, 0.8);
 }
-/* line 90, ../sass/style.scss */
+/* line 41, ../sass/nav.scss */
 nav ul li:nth-child(2) a, nav ul li:nth-child(3) a, nav ul li:nth-child(4) a {
   line-height: 2.5;
 }
 
-/* line 99, ../sass/style.scss */
+/* line 1, ../sass/section.scss */
 section {
   margin-top: -5px;
 }
-/* line 102, ../sass/style.scss */
+/* line 4, ../sass/section.scss */
 section main {
   display: -webkit-flex;
   display: -moz-flex;
@@ -166,7 +166,7 @@ section main {
   display: -o-flex;
   display: flex;
 }
-/* line 105, ../sass/style.scss */
+/* line 7, ../sass/section.scss */
 section main > article {
   width: calc(100% / 2 - 2px);
   -webkit-flex: 1 1 0%;
@@ -175,16 +175,16 @@ section main > article {
   -o-flex: 1 1 0%;
   flex: 1 1 0%;
 }
-/* line 110, ../sass/style.scss */
+/* line 12, ../sass/section.scss */
 section main[blue] {
   background: #173E74;
 }
-/* line 113, ../sass/style.scss */
+/* line 15, ../sass/section.scss */
 section main[blue] article {
   text-align: center;
   overflow: hidden;
 }
-/* line 117, ../sass/style.scss */
+/* line 19, ../sass/section.scss */
 section main[blue] article:first-child {
   position: relative;
   -webkit-perspective: 500px;
@@ -199,7 +199,7 @@ section main[blue] article:first-child {
   -o-flex: 1 1 10%;
   flex: 1 1 10%;
 }
-/* line 122, ../sass/style.scss */
+/* line 24, ../sass/section.scss */
 section main[blue] article:first-child img {
   -webkit-transition: all 0.5s ease;
   -khtml-transition: all 0.5s ease;
@@ -214,7 +214,7 @@ section main[blue] article:first-child img {
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-/* line 127, ../sass/style.scss */
+/* line 29, ../sass/section.scss */
 section main[blue] article:first-child:before {
   position: absolute;
   top: 0;
@@ -236,7 +236,7 @@ section main[blue] article:first-child:before {
   -o-transform: skewx(-34deg) translatex(-200%);
   transform: skewx(-34deg) translatex(-200%);
 }
-/* line 140, ../sass/style.scss */
+/* line 42, ../sass/section.scss */
 section main[blue] article:first-child:hover img {
   -webkit-transform: rotatey(5deg);
   -khtml-transform: rotatey(5deg);
@@ -245,7 +245,7 @@ section main[blue] article:first-child:hover img {
   -o-transform: rotatey(5deg);
   transform: rotatey(5deg);
 }
-/* line 144, ../sass/style.scss */
+/* line 46, ../sass/section.scss */
 section main[blue] article:first-child:hover:before {
   -webkit-transform: skewx(-34deg) translatex(-20%);
   -khtml-transform: skewx(-34deg) translatex(-20%);
@@ -254,7 +254,7 @@ section main[blue] article:first-child:hover:before {
   -o-transform: skewx(-34deg) translatex(-20%);
   transform: skewx(-34deg) translatex(-20%);
 }
-/* line 150, ../sass/style.scss */
+/* line 52, ../sass/section.scss */
 section main[blue] article:last-child {
   -webkit-flex: 1 1 0%;
   -moz-flex: 1 1 0%;
@@ -262,7 +262,7 @@ section main[blue] article:last-child {
   -o-flex: 1 1 0%;
   flex: 1 1 0%;
 }
-/* line 154, ../sass/style.scss */
+/* line 56, ../sass/section.scss */
 section main[blue] article:last-child:hover img {
   -webkit-transform: scale(1.3);
   -khtml-transform: scale(1.3);
@@ -271,7 +271,7 @@ section main[blue] article:last-child:hover img {
   -o-transform: scale(1.3);
   transform: scale(1.3);
 }
-/* line 159, ../sass/style.scss */
+/* line 61, ../sass/section.scss */
 section main[blue] article:last-child img {
   width: 100%;
   -webkit-transition: transform 15s linear;
@@ -281,16 +281,16 @@ section main[blue] article:last-child img {
   -o-transition: transform 15s linear;
   transition: transform 15s linear;
 }
-/* line 167, ../sass/style.scss */
+/* line 69, ../sass/section.scss */
 section main[gray] {
   background: gray;
 }
-/* line 170, ../sass/style.scss */
+/* line 72, ../sass/section.scss */
 section main[gray] article {
   text-align: center;
   overflow: hidden;
 }
-/* line 176, ../sass/style.scss */
+/* line 78, ../sass/section.scss */
 section main[gray] article:first-child:hover img {
   -webkit-transform: scale(1.3);
   -khtml-transform: scale(1.3);
@@ -299,7 +299,7 @@ section main[gray] article:first-child:hover img {
   -o-transform: scale(1.3);
   transform: scale(1.3);
 }
-/* line 181, ../sass/style.scss */
+/* line 83, ../sass/section.scss */
 section main[gray] article:first-child img {
   width: 100%;
   -webkit-transition: transform 15s linear;
@@ -309,7 +309,7 @@ section main[gray] article:first-child img {
   -o-transition: transform 15s linear;
   transition: transform 15s linear;
 }
-/* line 187, ../sass/style.scss */
+/* line 89, ../sass/section.scss */
 section main[gray] article:last-child {
   position: relative;
   -webkit-perspective: 500px;
@@ -319,7 +319,7 @@ section main[gray] article:last-child {
   -o-perspective: 500px;
   perspective: 500px;
 }
-/* line 191, ../sass/style.scss */
+/* line 93, ../sass/section.scss */
 section main[gray] article:last-child img {
   -webkit-transition: all 0.5s ease;
   -khtml-transition: all 0.5s ease;
@@ -334,7 +334,7 @@ section main[gray] article:last-child img {
   -o-transform-origin: center right;
   transform-origin: center right;
 }
-/* line 196, ../sass/style.scss */
+/* line 98, ../sass/section.scss */
 section main[gray] article:last-child:before {
   position: absolute;
   top: 0;
@@ -356,7 +356,7 @@ section main[gray] article:last-child:before {
   -o-transform: skewx(34deg) translatex(200%);
   transform: skewx(34deg) translatex(200%);
 }
-/* line 209, ../sass/style.scss */
+/* line 111, ../sass/section.scss */
 section main[gray] article:last-child:hover img {
   -webkit-transform: rotatey(-5deg);
   -khtml-transform: rotatey(-5deg);
@@ -365,7 +365,7 @@ section main[gray] article:last-child:hover img {
   -o-transform: rotatey(-5deg);
   transform: rotatey(-5deg);
 }
-/* line 213, ../sass/style.scss */
+/* line 115, ../sass/section.scss */
 section main[gray] article:last-child:hover:before {
   -webkit-transform: skewx(34deg) translatex(16%);
   -khtml-transform: skewx(34deg) translatex(16%);
@@ -374,12 +374,12 @@ section main[gray] article:last-child:hover:before {
   -o-transform: skewx(34deg) translatex(16%);
   transform: skewx(34deg) translatex(16%);
 }
-/* line 221, ../sass/style.scss */
+/* line 123, ../sass/section.scss */
 section main:last-child {
   margin-top: -5px;
 }
 
-/* line 227, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .contentArticle {
   max-height: 50%;
   width: 400px;
@@ -392,7 +392,7 @@ section main:last-child {
   bottom: 0;
   margin: auto;
 }
-/* line 234, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .contentArticle button {
   background: #00ABFF;
   color: white;
@@ -434,23 +434,23 @@ section main:last-child {
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* line 239, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .containerMenuMobile {
   display: none;
 }
 
-/* line 243, ../sass/style.scss */
+/* line 1, ../sass/footer.scss */
 footer {
   position: relative;
   background: #173E74;
   margin-top: -5px;
   padding: 1rem 0 3rem;
 }
-/* line 249, ../sass/style.scss */
+/* line 7, ../sass/footer.scss */
 footer img {
   width: 100%;
 }
-/* line 253, ../sass/style.scss */
+/* line 11, ../sass/footer.scss */
 footer ul {
   position: absolute;
   bottom: 5rem;
@@ -464,12 +464,12 @@ footer ul {
   background-image: -o-linear-gradient(left, white, rgba(255, 255, 255, 0.2), transparent);
   background-image: linear-gradient(left, white, rgba(255, 255, 255, 0.2), transparent);
 }
-/* line 261, ../sass/style.scss */
+/* line 19, ../sass/footer.scss */
 footer ul li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 265, ../sass/style.scss */
+/* line 23, ../sass/footer.scss */
 footer ul li a {
   width: 40px;
   height: 40px;
@@ -491,7 +491,7 @@ footer ul li a {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 276, ../sass/style.scss */
+/* line 34, ../sass/footer.scss */
 footer ul li a i {
   color: rgba(255, 255, 255, 0.7);
   margin-top: .551rem;
@@ -503,11 +503,11 @@ footer ul li a i {
   -o-transition: transform 0.15s ease;
   transition: transform 0.15s ease;
 }
-/* line 283, ../sass/style.scss */
+/* line 41, ../sass/footer.scss */
 footer ul li a:hover {
   background: gray;
 }
-/* line 286, ../sass/style.scss */
+/* line 44, ../sass/footer.scss */
 footer ul li a:hover i {
   -webkit-transform: scale(0.8);
   -khtml-transform: scale(0.8);
@@ -516,11 +516,11 @@ footer ul li a:hover i {
   -o-transform: scale(0.8);
   transform: scale(0.8);
 }
-/* line 291, ../sass/style.scss */
+/* line 49, ../sass/footer.scss */
 footer ul li a:active {
   background: rgba(130, 130, 130, 0.8);
 }
-/* line 294, ../sass/style.scss */
+/* line 52, ../sass/footer.scss */
 footer ul li a:active i {
   -webkit-transform: scale(1.05);
   -khtml-transform: scale(1.05);
@@ -530,13 +530,13 @@ footer ul li a:active i {
   transform: scale(1.05);
 }
 
-/* line 304, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .center {
   margin-top: 1rem;
   text-align: center;
   font-size: 20px;
 }
-/* line 310, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 .center input[type="search"] {
   border-bottom: solid thin #173E74;
   display: inline-block;
@@ -545,25 +545,25 @@ footer ul li a:active i {
   vertical-align: top;
   min-width: 200px;
 }
-/* line 318, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .center input[type="search"]:focus {
   outline: none;
 }
-/* line 324, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .center input,
 .center label,
 .center button {
   font-size: 20px;
 }
-/* line 330, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 .center button {
   border: solid thin #173E74;
 }
-/* line 334, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 .center label {
   vertical-align: bottom;
 }
-/* line 338, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 .center .span {
   display: block;
   color: #F70E0E;
@@ -571,13 +571,13 @@ footer ul li a:active i {
   margin-top: .3rem;
 }
 
-/* line 346, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 input,
 button {
   font-family: 'Myriam';
 }
 
-/* line 351, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 button {
   display: inline-block;
   padding: .15rem .5rem;
@@ -599,44 +599,50 @@ button {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 362, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 button:hover {
   background: #fff;
   color: #173E74;
 }
 
-/* line 368, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .contentTable {
   text-align: center;
   max-height: 283px;
   overflow: auto;
   margin: 0 .5rem;
 }
-/* line 374, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 .contentTable table {
   display: inline-block;
   margin-top: 1rem;
 }
-/* line 378, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 .contentTable table th {
   background: #009fe3;
   color: white;
 }
-/* line 383, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .contentTable table td {
   background: white;
   color: #323232;
 }
-/* line 388, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .contentTable table td, .contentTable table th {
   padding: .25rem 1.3rem;
   font-size: 1.1rem;
+  -webkit-border-radius: 1px;
+  -khtml-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
 }
-/* line 392, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 .contentTable table td:last-child, .contentTable table th:last-child {
   padding: .25rem;
 }
-/* line 395, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 .contentTable table td:last-child button, .contentTable table th:last-child button {
   font-size: 14px;
   padding: .15rem;
@@ -644,7 +650,7 @@ button:hover {
   height: auto;
 }
 
-/* line 406, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 .contentUser {
   position: fixed;
   top: 0;
@@ -673,7 +679,7 @@ button:hover {
   -o-box-shadow: 0 0 5px #323232;
   box-shadow: 0 0 5px #323232;
 }
-/* line 419, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 .contentUser.active {
   -webkit-transform: translatey(0%);
   -khtml-transform: translatey(0%);
@@ -682,7 +688,7 @@ button:hover {
   -o-transform: translatey(0%);
   transform: translatey(0%);
 }
-/* line 423, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 .contentUser a {
   color: white;
 }
