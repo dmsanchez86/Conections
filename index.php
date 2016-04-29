@@ -39,4 +39,16 @@ if(isset($_REQUEST['opc'])){
 
 		echo $data;
 	}
+
+	// cuando solicita un detalle de una guia de una entidad logueada
+	if($_REQUEST['opc'] == "detalleGuiaEntidad"){
+		$client = $_REQUEST['client'];
+		$numero = $_REQUEST['numero'];
+
+		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/seguimientoGuia?guia=$numero&cliente=$client";
+
+		$data = file_get_contents($url);
+
+		echo $data;
+	}
 }

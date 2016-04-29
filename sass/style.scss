@@ -4,6 +4,22 @@
 
 *{ @include reset; @include box-sizing(border-box); }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+	@include box-shadow(inset 0 0 6px rgba(0,0,0,0.3)); 
+	@include border-radius(3px);
+}
+ 
+::-webkit-scrollbar-thumb {
+	background: #009FE3;
+	cursor: pointer;
+  @include border-radius(3px);
+  @include box-shadow(inset 0 0 6px rgba(0,0,0,0.5)); 
+}
+
 a{
 	text-decoration: none;
 }
@@ -353,6 +369,7 @@ button{
 	text-align: center;
 	max-height: 283px;
 	overflow: auto;
+	margin: 0 .5rem;
 
 	table {
     display: inline-block;

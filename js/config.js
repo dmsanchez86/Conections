@@ -36,6 +36,8 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 	$scope.valueSearch = "";
 	$scope.listStates = [];
 	$scope.listGuides = [];
+	$scope.listDetailsGuide = [];
+	$scope.viewDetails = false;
 
 	$scope.objSearch = {
 		dateStart: "",
@@ -46,7 +48,7 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 	$scope.search = function(){
 		// si la busqueda es vacia
 		if($scope.valueSearch == "" || $scope.valueSearch == undefined){
-			$('#txtSearchGuide').notify('Ingrese Algo...', 'warning');
+			$('#txtSearchGuide').notify('Ingrese Algo...');
 			$('#txtSearchGuide').focus();
 			$scope.listStates = [];
 		}else{
@@ -74,6 +76,13 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 	}
 
 	$scope.searchEntidad = function(){
+		$scope.viewDetails = false;
+		$scope.listGuides = [];
+
+		$scope.back = function(){
+			$scope.viewDetails = false;
+		}
+
 		if($scope.objSearch.dateStart == "" || $scope.objSearch.dateStart == undefined){
 			$('#dateStart').notify("Ingrese una fecha").focus();
 		}else if($scope.objSearch.dateEnd == "" || $scope.objSearch.dateEnd == undefined){
@@ -100,7 +109,7 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 					$scope.listGuides = $data;
 					$('.contentLogin.table').notify('Se encontraron '+$scope.listGuides.length+' registros', 'success');
 				}else{
-					$scope.listStates = [];
+					$scope.listGuides = [];
 					$('.contentLogin.table').notify('No se encontraron registros', 'info');
 				}
 		  }, function errorCallback(response) {
@@ -110,7 +119,27 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 	}
 
 	$scope.details = function(numero){
-		alert(numero);
+		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
+
+		// ajax que me consulta las guias
+		$http({
+		  url: 'index.php?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
+		  method: 'POST'
+		}).then(function successCallback(response) {
+			console.log(response.data.seguimientoGuiaResult);
+			var $data = (response.data.seguimientoGuiaResult);
+
+			if($data.length > 0){
+				$scope.listDetailsGuide = $data;
+				$('.contentLogin.table').notify('Se encontraron '+$scope.listDetailsGuide.length+' registros', 'success');
+				$scope.viewDetails = true;
+			}else{
+				$scope.listDetailsGuide = [];
+				$('.contentLogin.table').notify('No se encontraron los detalles del registro', 'info');
+			}
+	  }, function errorCallback(response) {
+			console.warn(response);
+	  });
 	}
 });
 

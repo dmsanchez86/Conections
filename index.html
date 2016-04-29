@@ -194,7 +194,7 @@
 								</div>
 							</div>
 							<div class="contentTable" ng-show="listGuides.length > 0">
-								<table>
+								<table ng-if="viewDetails == false">
 									<thead>
 										<tr>
 											<th>Número</th>
@@ -218,6 +218,30 @@
 											<td>{{ item.peso }}</td>
 											<td>
 												<button ng-click="details(item.numero)" title="Detalles"><i class="fa fa-search"></i></button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table ng-if="viewDetails" ng-show="listDetailsGuide.length > 0">
+									<thead>
+										<tr>
+											<th>Fecha</th>
+											<th>Estado</th>
+											<th>Observacion</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in listDetailsGuide">
+											<td>{{ item.fecha }}</td>
+											<td>{{ item.estado }}</td>
+											<td>{{ item.observacion }}</td>
+										</tr>
+										<tr style="text-align: right">
+											<td colspan="3">
+												<button type="button" ng-click="back()" style="font-size: 1.35rem;width: 100%">
+													<i class="fa fa-hand-o-left"></i> 
+													Volver
+												</button>
 											</td>
 										</tr>
 									</tbody>
