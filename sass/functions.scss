@@ -114,6 +114,15 @@
 }
 
 // Function to set direction to item with display flex
+@mixin flex-wrap($value){
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  -o-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+// Function to set direction to item with display flex
 @mixin flex-direction($value){
   -webkit-flex-direction: $value;
   -moz-flex-direction: $value;

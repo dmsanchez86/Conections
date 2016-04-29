@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'transform'.
-        on line 129 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'
-        from line 129 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss
+        on line 143 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'
+        from line 143 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss
 
-124: 				> div{
-125: 
-126: 					&:first-child{
-127: 						&:hover{
-128: 							&:before{
-129: 								@include transform(skewx(-20deg) translatex(-20%));
-130: 							}
-131: 						}
-132: 					}
-133: 
-134: 					&:last-child{
+138: 				> div{
+139: 
+140: 					&:first-child{
+141: 						&:hover{
+142: 							&:before{
+143: 								@include transform(skewx(-20deg) translatex(-20%));
+144: 							}
+145: 						}
+146: 					}
+147: 
+148: 					&:last-child{
 
 Backtrace:
-C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:129:in `transform'
-C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:129
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:143:in `transform'
+C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss:143
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/tree/visitors/perform.rb:348:in `visit_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
 C:/Users/usuario/Desktop/compass.app/lib/ruby/compass_1.0/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
@@ -155,4 +155,4 @@ C:/Users/usuario/Desktop/compass.app/lib/ruby/jruby/listen-1.3.1-patched/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'transform'.\A         on line 129 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'\A         from line 129 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss\A \A 124: 				> div{\A 125: \A 126: 					&:first-child{\A 127: 						&:hover{\A 128: 							&:before{\A 129: 								@include transform(skewx(-20deg) translatex(-20%));\A 130: 							}\A 131: 						}\A 132: 					}\A 133: \A 134: 					&:last-child{"; }
+  content: "Error: Undefined mixin 'transform'.\A         on line 143 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss, in `transform'\A         from line 143 of C:/Program Files (x86)/EasyPHP-DevServer-13.1VC9/data/localweb/conexiones/sass/queries.scss\A \A 138: 				> div{\A 139: \A 140: 					&:first-child{\A 141: 						&:hover{\A 142: 							&:before{\A 143: 								@include transform(skewx(-20deg) translatex(-20%));\A 144: 							}\A 145: 						}\A 146: 					}\A 147: \A 148: 					&:last-child{"; }

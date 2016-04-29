@@ -23,6 +23,7 @@
     right: 3rem;
     font-size: 2rem;
 		color: $white;
+		z-index: 2;
 		cursor: pointer;
 		@include transition(all .25s ease);
 		@include text-shadow(0 0 10px #323232);

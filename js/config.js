@@ -221,9 +221,9 @@ application.controller('login', function($scope, $http, $window){
 	// evento del login
 	$scope.login = function(){
 		if($scope.user == "" || $scope.user == undefined){
-			$('#user').notify('Ingrese un usuario', 'warning').focus();
+			$('#user').notify('Ingrese un usuario').focus();
 		}else if($scope.password == "" || $scope.password == undefined){
-			$('#password').notify('Ingrese una contraseña', 'warning').focus();
+			$('#password').notify('Ingrese una contraseña').focus();
 		}else{
 
 			// ajax que valida el inicio de sesion
