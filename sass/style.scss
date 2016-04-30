@@ -107,6 +107,11 @@ label{
 		color: $red;
 		font-weight: bold;
 		margin-top: .3rem;
+
+		&.blue{
+	    color: $blue-secondary;
+    	text-shadow: 0 0 3px #323232;
+		}
 	}
 }
 

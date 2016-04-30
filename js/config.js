@@ -58,6 +58,11 @@ application.controller('followGuide', function($scope){
 		$('.popup[followGuide]').addClass('open');
 		$('.popup .container').removeClass('out in hide show');
 	}
+
+	$scope.showCotizador = function(){
+		$('.popup[cotizador]').addClass('open');
+		$('.popup .container').removeClass('out in hide show');
+	}
 });
 
 // controlador de la busqueda de la guia
@@ -174,7 +179,20 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 });
 
 // controlador del poup
-application.controller('popup', function($scope, $timeout){
+application.controller('popup', function($scope, $timeout, $http){
+	$scope.cotizador = {
+		origin: "",
+		destine: "",
+		units: 1,
+		weight: "",
+		width: "",
+		height: "",
+		fondo: "",
+		value: "",
+	}
+	$scope.listDestines = [];
+	$scope.valueCotizacion = -1;
+
 	// evento que cierra lel popup
 	$scope.close = function(){
 		$('.popup').removeClass('open');
@@ -208,6 +226,67 @@ application.controller('popup', function($scope, $timeout){
 			$('.popup .container').removeClass('out in hide show');
 			$('.popup[followGuide]').addClass('open');
 		}, 450);
+	}
+
+	$scope.getDestinos = function(){
+
+		$scope.listDestines = [];
+
+		if($scope.cotizador.origin != ""){
+			// ajax que me consulta las guias
+			$http({
+			  url: 'index.php?opc=getDestinos&origin='+$scope.cotizador.origin,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				var $data = (response.data.traerDestinosResult);
+
+				if($data.length > 0){
+					$scope.listDestines = $data;
+				}else{
+					$scope.listDestines = [];
+				}
+		  }, function errorCallback(response) {
+				console.warn(response);
+		  });
+		}
+	}
+
+	// evento que hace la cotizacion
+	$scope.cotizar = function(){
+		if($scope.cotizador.origin == "" || $scope.cotizador.origin == undefined){
+			$('#origin').notify('Seleccione un origen!').focus();
+		}else if($scope.cotizador.destine == "" || $scope.cotizador.destine == undefined){
+			$('#destines').notify('Seleccione un destino!').focus();
+		}else if($scope.cotizador.weight == "" || $scope.cotizador.weight == undefined){
+			$('#weight').notify('Ingrese un peso!').focus();
+		}else if($scope.cotizador.width == "" || $scope.cotizador.width == undefined){
+			$('#width').notify('Ingrese un ancho!').focus();
+		}else if($scope.cotizador.height == "" || $scope.cotizador.height == undefined){
+			$('#height').notify('Ingrese el largo!').focus();
+		}else if($scope.cotizador.fondo == "" || $scope.cotizador.fondo == undefined){
+			$('#fondo').notify('Ingrese un fondo!').focus();
+		}else if($scope.cotizador.value == "" || $scope.cotizador.value == undefined){
+			$('#value').notify('Ingrese un valor!').focus();
+		}else{
+			// ajax que me consulta la cotizacion
+			$http({
+			  url: 'index.php?opc=cotizar&origin='+$scope.cotizador.origin+'&destine='+$scope.cotizador.destine+'&units='+$scope.cotizador.units+'&weight='+$scope.cotizador.weight+'&width='+$scope.cotizador.width+'&height='+$scope.cotizador.height+'&fondo='+$scope.cotizador.fondo+'&value='+$scope.cotizador.value,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				var $data = (response.data.cotizarDespachoResult);
+				$scope.valueCotizacion = 0;
+
+				if($data.length > 0){
+					var arr = $data.split(",");
+
+					for(var i = 0; i < arr.length; i++){
+						$scope.valueCotizacion += parseInt(arr[i]);
+					}
+				}
+		  }, function errorCallback(response) {
+				console.warn(response);
+		  });
+		}
 
 	}
 });

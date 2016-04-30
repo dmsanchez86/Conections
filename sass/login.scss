@@ -28,8 +28,10 @@
 				vertical-align: middle;
 				text-align: center;
 
-				+ input{
+				~ input,
+				~ select{
 					width: 100%;
+			    min-height: 2.4rem;
 				}
 			}
 		}
@@ -65,9 +67,22 @@
 			@include transition(opacity .3s ease);
 		}
 
+		select{
+			width: 100%;
+			text-align: center;
+			padding: .25rem .5rem;
+			
+			&:focus{
+				+ label{
+					opacity: 0;
+				}
+			}
+		}
+
 		input{
 			&[type=text],
 			&[type=date],
+			&[type=number],
 			&[type=password]{
 				width: 100%;
 				text-align: center;

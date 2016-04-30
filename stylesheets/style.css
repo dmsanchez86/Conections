@@ -576,14 +576,19 @@ footer ul li a:active i {
   font-weight: bold;
   margin-top: .3rem;
 }
+/* line 111, ../sass/style.scss */
+.center .span.blue {
+  color: #00ABFF;
+  text-shadow: 0 0 3px #323232;
+}
 
-/* line 113, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 input,
 button {
   font-family: 'Myriam';
 }
 
-/* line 118, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 button {
   display: inline-block;
   padding: .15rem .5rem;
@@ -605,35 +610,35 @@ button {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 129, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 button:hover {
   background: #fff;
   color: #173E74;
 }
 
-/* line 135, ../sass/style.scss */
+/* line 140, ../sass/style.scss */
 .contentTable {
   text-align: center;
   max-height: 283px;
   overflow: auto;
   margin: 0 .5rem;
 }
-/* line 141, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 .contentTable table {
   display: inline-block;
   margin-top: 1rem;
 }
-/* line 145, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .contentTable table th {
   background: #009fe3;
   color: white;
 }
-/* line 150, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .contentTable table td {
   background: white;
   color: #323232;
 }
-/* line 155, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 .contentTable table td, .contentTable table th {
   padding: .25rem 1.3rem;
   font-size: 1.1rem;
@@ -644,11 +649,11 @@ button:hover {
   -o-border-radius: 1px;
   border-radius: 1px;
 }
-/* line 160, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .contentTable table td:last-child, .contentTable table th:last-child {
   padding: .25rem;
 }
-/* line 163, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 .contentTable table td:last-child button, .contentTable table th:last-child button {
   font-size: 14px;
   padding: .15rem;
@@ -656,7 +661,7 @@ button:hover {
   height: auto;
 }
 
-/* line 174, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 .contentUser {
   position: fixed;
   top: 0;
@@ -685,7 +690,7 @@ button:hover {
   -o-box-shadow: 0 0 5px #323232;
   box-shadow: 0 0 5px #323232;
 }
-/* line 187, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 .contentUser.active {
   -webkit-transform: translatey(0%);
   -khtml-transform: translatey(0%);
@@ -694,7 +699,7 @@ button:hover {
   -o-transform: translatey(0%);
   transform: translatey(0%);
 }
-/* line 191, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 .contentUser a {
   color: white;
 }
@@ -741,12 +746,82 @@ button:hover {
   perspective: 1000px;
 }
 /* line 14, ../sass/popup.scss */
+.popup.open {
+  opacity: 1;
+  z-index: 100;
+}
+/* line 18, ../sass/popup.scss */
+.popup.open .container {
+  opacity: 1;
+  -webkit-transform: rotatey(0deg);
+  -khtml-transform: rotatey(0deg);
+  -moz-transform: rotatey(0deg);
+  -ms-transform: rotatey(0deg);
+  -o-transform: rotatey(0deg);
+  transform: rotatey(0deg);
+}
+/* line 22, ../sass/popup.scss */
+.popup.open .container.hide {
+  display: none;
+}
+/* line 26, ../sass/popup.scss */
+.popup.open .container.show {
+  display: block;
+  -webkit-transform: translatey(-150%);
+  -khtml-transform: translatey(-150%);
+  -moz-transform: translatey(-150%);
+  -ms-transform: translatey(-150%);
+  -o-transform: translatey(-150%);
+  transform: translatey(-150%);
+}
+/* line 31, ../sass/popup.scss */
+.popup.open .container.out {
+  opacity: 0;
+  -webkit-transform: translatey(-150%);
+  -khtml-transform: translatey(-150%);
+  -moz-transform: translatey(-150%);
+  -ms-transform: translatey(-150%);
+  -o-transform: translatey(-150%);
+  transform: translatey(-150%);
+}
+/* line 36, ../sass/popup.scss */
+.popup.open .container.in {
+  opacity: 1;
+  -webkit-transform: translatey(0%);
+  -khtml-transform: translatey(0%);
+  -moz-transform: translatey(0%);
+  -ms-transform: translatey(0%);
+  -o-transform: translatey(0%);
+  transform: translatey(0%);
+}
+/* line 45, ../sass/popup.scss */
+.popup[cotizador] .container[choose] {
+  width: 80%;
+  height: 80%;
+}
+/* line 57, ../sass/popup.scss */
+.popup[cotizador] .contentLogin.table:nth-child(1) .form-group:last-child, .popup[cotizador] .contentLogin.table:nth-child(2) .form-group:last-child {
+  display: block;
+}
+/* line 63, ../sass/popup.scss */
+.popup[cotizador] .contentLogin.table:last-child {
+  margin: 2rem auto 1rem;
+}
+/* line 67, ../sass/popup.scss */
+.popup[cotizador] .contentLogin.table .form-group {
+  margin: 0;
+}
+/* line 70, ../sass/popup.scss */
+.popup[cotizador] .contentLogin.table .form-group:last-child {
+  max-width: initial;
+}
+/* line 78, ../sass/popup.scss */
 .popup img {
   width: 80%;
   margin: 0 auto;
   display: block;
 }
-/* line 20, ../sass/popup.scss */
+/* line 84, ../sass/popup.scss */
 .popup .closePopup {
   position: absolute;
   top: 2rem;
@@ -768,7 +843,7 @@ button:hover {
   -o-text-shadow: 0 0 10px #323232;
   text-shadow: 0 0 10px #323232;
 }
-/* line 31, ../sass/popup.scss */
+/* line 95, ../sass/popup.scss */
 .popup .closePopup:hover {
   color: #c4c5c7;
   -webkit-transform: rotate(180deg);
@@ -778,7 +853,7 @@ button:hover {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 37, ../sass/popup.scss */
+/* line 101, ../sass/popup.scss */
 .popup .container {
   opacity: 0;
   display: none;
@@ -808,27 +883,27 @@ button:hover {
   -o-transition: transform 0.75s ease, opacity 0.35s linear;
   transition: transform 0.75s ease, opacity 0.35s linear;
 }
-/* line 46, ../sass/popup.scss */
+/* line 110, ../sass/popup.scss */
 .popup .container[choose] {
   width: 70%;
   height: 50%;
   display: block;
 }
-/* line 52, ../sass/popup.scss */
+/* line 116, ../sass/popup.scss */
 .popup .container[individual], .popup .container[group] {
   width: 75%;
   height: 85%;
 }
-/* line 58, ../sass/popup.scss */
+/* line 122, ../sass/popup.scss */
 .popup .container[group] {
   max-height: 555px;
 }
-/* line 62, ../sass/popup.scss */
+/* line 126, ../sass/popup.scss */
 .popup .container[individual] {
   height: 570px;
   max-width: 95%;
 }
-/* line 67, ../sass/popup.scss */
+/* line 131, ../sass/popup.scss */
 .popup .container[individual], .popup .container[group] {
   -webkit-transform: translatey(-150%);
   -khtml-transform: translatey(-150%);
@@ -837,7 +912,7 @@ button:hover {
   -o-transform: translatey(-150%);
   transform: translatey(-150%);
 }
-/* line 72, ../sass/popup.scss */
+/* line 136, ../sass/popup.scss */
 .popup .container .choose {
   width: 100%;
   height: 100%;
@@ -847,7 +922,7 @@ button:hover {
   display: -o-flex;
   display: flex;
 }
-/* line 77, ../sass/popup.scss */
+/* line 141, ../sass/popup.scss */
 .popup .container .choose > div {
   text-align: center;
   position: relative;
@@ -874,11 +949,11 @@ button:hover {
   -o-justify-content: center;
   justify-content: center;
 }
-/* line 87, ../sass/popup.scss */
+/* line 151, ../sass/popup.scss */
 .popup .container .choose > div:first-child {
   background-color: #173E74;
 }
-/* line 90, ../sass/popup.scss */
+/* line 154, ../sass/popup.scss */
 .popup .container .choose > div:first-child:before {
   left: 0;
   -webkit-transform: skewx(-34deg) translatex(-200%);
@@ -888,7 +963,7 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-200%);
   transform: skewx(-34deg) translatex(-200%);
 }
-/* line 96, ../sass/popup.scss */
+/* line 160, ../sass/popup.scss */
 .popup .container .choose > div:first-child:hover:before {
   -webkit-transform: skewx(-34deg) translatex(-20%);
   -khtml-transform: skewx(-34deg) translatex(-20%);
@@ -897,11 +972,11 @@ button:hover {
   -o-transform: skewx(-34deg) translatex(-20%);
   transform: skewx(-34deg) translatex(-20%);
 }
-/* line 102, ../sass/popup.scss */
+/* line 166, ../sass/popup.scss */
 .popup .container .choose > div:last-child {
   background-color: gray;
 }
-/* line 105, ../sass/popup.scss */
+/* line 169, ../sass/popup.scss */
 .popup .container .choose > div:last-child:before {
   right: 0;
   -webkit-transform: skewx(34deg) translatex(200%);
@@ -911,7 +986,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(200%);
   transform: skewx(34deg) translatex(200%);
 }
-/* line 111, ../sass/popup.scss */
+/* line 175, ../sass/popup.scss */
 .popup .container .choose > div:last-child:hover:before {
   -webkit-transform: skewx(34deg) translatex(22%);
   -khtml-transform: skewx(34deg) translatex(22%);
@@ -920,7 +995,7 @@ button:hover {
   -o-transform: skewx(34deg) translatex(22%);
   transform: skewx(34deg) translatex(22%);
 }
-/* line 117, ../sass/popup.scss */
+/* line 181, ../sass/popup.scss */
 .popup .container .choose > div:before {
   position: absolute;
   top: 0;
@@ -935,7 +1010,7 @@ button:hover {
   -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
 }
-/* line 127, ../sass/popup.scss */
+/* line 191, ../sass/popup.scss */
 .popup .container .choose > div h1, .popup .container .choose > div i {
   color: #fff;
   font-size: 5rem;
@@ -952,7 +1027,7 @@ button:hover {
   -o-transition: transform 0.15s ease, opacity 0.25s ease;
   transition: transform 0.15s ease, opacity 0.25s ease;
 }
-/* line 134, ../sass/popup.scss */
+/* line 198, ../sass/popup.scss */
 .popup .container .choose > div h1 {
   -webkit-transform: rotate(-15deg);
   -khtml-transform: rotate(-15deg);
@@ -961,7 +1036,7 @@ button:hover {
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
-/* line 138, ../sass/popup.scss */
+/* line 202, ../sass/popup.scss */
 .popup .container .choose > div i {
   position: absolute;
   bottom: .5rem;
@@ -974,7 +1049,7 @@ button:hover {
   -o-transform-origin: bottom right;
   transform-origin: bottom right;
 }
-/* line 147, ../sass/popup.scss */
+/* line 211, ../sass/popup.scss */
 .popup .container .choose > div:hover h1 {
   -webkit-transform: rotate(-18deg) scale(1.18);
   -khtml-transform: rotate(-18deg) scale(1.18);
@@ -983,7 +1058,7 @@ button:hover {
   -o-transform: rotate(-18deg) scale(1.18);
   transform: rotate(-18deg) scale(1.18);
 }
-/* line 151, ../sass/popup.scss */
+/* line 215, ../sass/popup.scss */
 .popup .container .choose > div:hover i {
   opacity: .15;
   -webkit-transform: scale(2);
@@ -993,71 +1068,22 @@ button:hover {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 160, ../sass/popup.scss */
+/* line 224, ../sass/popup.scss */
 .popup .container .individualContent,
 .popup .container .groupContent {
   width: 100%;
   height: 100%;
 }
-/* line 165, ../sass/popup.scss */
+/* line 229, ../sass/popup.scss */
 .popup .container .groupContent {
   background: #173E74;
 }
-/* line 168, ../sass/popup.scss */
+/* line 232, ../sass/popup.scss */
 .popup .container .groupContent header {
   background: #fff;
 }
-/* line 174, ../sass/popup.scss */
-.popup.open {
-  opacity: 1;
-  z-index: 100;
-}
-/* line 178, ../sass/popup.scss */
-.popup.open .container {
-  opacity: 1;
-  -webkit-transform: rotatey(0deg);
-  -khtml-transform: rotatey(0deg);
-  -moz-transform: rotatey(0deg);
-  -ms-transform: rotatey(0deg);
-  -o-transform: rotatey(0deg);
-  transform: rotatey(0deg);
-}
-/* line 182, ../sass/popup.scss */
-.popup.open .container.hide {
-  display: none;
-}
-/* line 186, ../sass/popup.scss */
-.popup.open .container.show {
-  display: block;
-  -webkit-transform: translatey(-150%);
-  -khtml-transform: translatey(-150%);
-  -moz-transform: translatey(-150%);
-  -ms-transform: translatey(-150%);
-  -o-transform: translatey(-150%);
-  transform: translatey(-150%);
-}
-/* line 191, ../sass/popup.scss */
-.popup.open .container.out {
-  opacity: 0;
-  -webkit-transform: translatey(-150%);
-  -khtml-transform: translatey(-150%);
-  -moz-transform: translatey(-150%);
-  -ms-transform: translatey(-150%);
-  -o-transform: translatey(-150%);
-  transform: translatey(-150%);
-}
-/* line 196, ../sass/popup.scss */
-.popup.open .container.in {
-  opacity: 1;
-  -webkit-transform: translatey(0%);
-  -khtml-transform: translatey(0%);
-  -moz-transform: translatey(0%);
-  -ms-transform: translatey(0%);
-  -o-transform: translatey(0%);
-  transform: translatey(0%);
-}
 
-/* line 204, ../sass/popup.scss */
+/* line 239, ../sass/popup.scss */
 .backSection {
   position: absolute;
   width: 40px;
@@ -1089,7 +1115,7 @@ button:hover {
   -o-transition: transform 0.35s ease-in-out, box-shadow 0.5s ease;
   transition: transform 0.35s ease-in-out, box-shadow 0.5s ease;
 }
-/* line 220, ../sass/popup.scss */
+/* line 255, ../sass/popup.scss */
 .backSection:hover {
   -webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
   -khtml-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
@@ -1160,28 +1186,30 @@ button:hover {
   text-align: center;
 }
 /* line 31, ../sass/login.scss */
-.contentLogin.table .form-group label + input {
+.contentLogin.table .form-group label ~ input,
+.contentLogin.table .form-group label ~ select {
   width: 100%;
+  min-height: 2.4rem;
 }
-/* line 38, ../sass/login.scss */
+/* line 40, ../sass/login.scss */
 .contentLogin h3 {
   color: white;
   margin-top: 4rem;
 }
-/* line 43, ../sass/login.scss */
+/* line 45, ../sass/login.scss */
 .contentLogin .form-group {
   position: relative;
   margin: 1rem 0;
 }
-/* line 48, ../sass/login.scss */
+/* line 50, ../sass/login.scss */
 .contentLogin .form-group.block button {
   width: 100%;
 }
-/* line 54, ../sass/login.scss */
+/* line 56, ../sass/login.scss */
 .contentLogin .form-group.with-data label {
   opacity: 0;
 }
-/* line 59, ../sass/login.scss */
+/* line 61, ../sass/login.scss */
 .contentLogin .form-group label {
   display: inline;
   color: #323232;
@@ -1200,17 +1228,27 @@ button:hover {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 69, ../sass/login.scss */
-.contentLogin .form-group input[type=text], .contentLogin .form-group input[type=date], .contentLogin .form-group input[type=password] {
+/* line 70, ../sass/login.scss */
+.contentLogin .form-group select {
   width: 100%;
   text-align: center;
   padding: .25rem .5rem;
 }
-/* line 77, ../sass/login.scss */
-.contentLogin .form-group input[type=text]:focus + label, .contentLogin .form-group input[type=date]:focus + label, .contentLogin .form-group input[type=password]:focus + label {
+/* line 76, ../sass/login.scss */
+.contentLogin .form-group select:focus + label {
   opacity: 0;
 }
-/* line 84, ../sass/login.scss */
+/* line 83, ../sass/login.scss */
+.contentLogin .form-group input[type=text], .contentLogin .form-group input[type=date], .contentLogin .form-group input[type=number], .contentLogin .form-group input[type=password] {
+  width: 100%;
+  text-align: center;
+  padding: .25rem .5rem;
+}
+/* line 92, ../sass/login.scss */
+.contentLogin .form-group input[type=text]:focus + label, .contentLogin .form-group input[type=date]:focus + label, .contentLogin .form-group input[type=number]:focus + label, .contentLogin .form-group input[type=password]:focus + label {
+  opacity: 0;
+}
+/* line 99, ../sass/login.scss */
 .contentLogin .form-group button {
   background: #00ABFF;
   color: white;

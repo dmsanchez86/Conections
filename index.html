@@ -57,10 +57,10 @@
 						<article>
 							<img src="images/repartidor.png" alt="">
 						</article>
-						<article>
+						<article ng-controller="followGuide">
 							<div class="contentArticle">
 								<img src="images/boton-guia.png" alt="">
-								<button type="button">Ingrese Aquí</button>
+								<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
 							</div>
 						</article>
 					</main>
@@ -238,6 +238,74 @@
 									</tbody>
 								</table>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popup" cotizador ng-controller="popup">
+			<span class="closePopup" ng-click="close()">
+				<i class="fa fa-close"></i>
+			</span>
+			<div class="container" choose>
+				<div class="groupContent">
+					<header>
+						<img src="images/logo.png" alt="Logo Conexiones">
+					</header>
+					<div class="center">
+						<div class="loguedSection">
+							<div class="contentLogin table">
+								<div class="form-group">
+									<label for="origin">Origen</label>
+									<select name="origin" id="origin" ng-model="cotizador.origin" ng-change="getDestinos()">
+										<option value="">Seleccione</option>
+										<!-- <option value="CIU000001724">Manizales</option> -->
+										<option value="CIU000006852">Pereira</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="destines">Destino</label>
+									<select name="destines" id="destines" ng-model="cotizador.destine">
+										<option value="">Seleccione</option>
+										<option ng-repeat="destine in listDestines" value="{{destine.uid}}">{{destine.nombre}}</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="units">Unidades</label>
+									<input type="number" placeholder="Unidades" name="units" id="units" min="1" value="1" ng-model="cotizador.units" readonly>
+								</div>
+								<div class="form-group">
+									<label for="weight">Peso</label>
+									<input type="number" placeholder="Peso KG" name="weight" id="weight" min="1" ng-model="cotizador.weight" required>
+								</div>
+							</div>
+							<div class="contentLogin table">
+								<div class="form-group">
+									<label for="width">Ancho</label>
+									<input type="number" placeholder="Ancho CM" name="width" id="width" min="1" ng-model="cotizador.width" required>
+								</div>
+								<div class="form-group">
+									<label for="height">Largo</label>
+									<input type="number" placeholder="Largo CM" name="height" id="height" min="1" ng-model="cotizador.height" required>
+								</div>
+								<div class="form-group">
+									<label for="fondo">Fondo</label>
+									<input type="number" placeholder="Fondo" name="fondo" min="0" id="fondo" ng-model="cotizador.fondo" required>
+								</div>
+								<div class="form-group">
+									<label for="value">Valor Declarado</label>
+									<input type="number" placeholder="Valor Declarado" name="value" min="0" id="value" ng-model="cotizador.value" required>
+								</div>
+							</div>
+							<div class="contentLogin table">
+								<div class="form-group block">
+									<button type="button" ng-click="cotizar()" style="margin: 0">Cotizar</button>
+								</div>
+							</div>
+						</div>
+						<div class="center" ng-show="valueCotizacion != -1">
+							<span class="span blue">El valor de la cotización es: ${{ valueCotizacion }}</span>
 						</div>
 					</div>
 				</div>
