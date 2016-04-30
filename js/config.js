@@ -51,7 +51,6 @@ application.controller('main', function($scope, $window){
 	}
 });
 
-
 // controlador de la guía
 application.controller('followGuide', function($scope){
 	$scope.showGuide = function(){
@@ -198,6 +197,20 @@ application.controller('popup', function($scope, $timeout, $http){
 		$('.popup').removeClass('open');
 		$('.popup .container').removeClass('out in hide show');
 		$('.popup .container[choose]').removeClass('out');
+
+		// cada vez que cerramos el popup resetiamos las variables del cotizador
+		$scope.cotizador = {
+			origin: "",
+			destine: "",
+			units: 1,
+			weight: "",
+			width: "",
+			height: "",
+			fondo: "",
+			value: "",
+		}
+		$scope.listDestines = [];
+		$scope.valueCotizacion = -1;
 	}
 
 	// evento que abre segun la seccion que escoja en el popup
@@ -287,7 +300,6 @@ application.controller('popup', function($scope, $timeout, $http){
 				console.warn(response);
 		  });
 		}
-
 	}
 });
 
@@ -323,6 +335,10 @@ application.controller('login', function($scope, $http, $window){
 					$window.sessionStorage.setItem("datosUsuario", JSON.stringify($data));
 					$scope.$parent.$parent.loginShow = false; // ocultamos el formulario de logueo
 					$('.contentUser').addClass('active'); // mostramos el menu para cerrar sesion
+
+					// reseteamos las variables cuando inicia sesión
+					$scope.user = "";
+					$scope.password = "";
 				}else{
 					$scope.listStates = [];
 					$('#txtSearchGuide').notify('No se encontraron registros', 'info');

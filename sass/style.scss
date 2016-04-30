@@ -109,8 +109,10 @@ label{
 		margin-top: .3rem;
 
 		&.blue{
-	    color: $blue-secondary;
+	    color: $white;
     	text-shadow: 0 0 3px #323232;
+    	font-size: 2rem;
+    	margin-top: 2rem;
 		}
 	}
 }

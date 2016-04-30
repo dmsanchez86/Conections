@@ -57,4 +57,14 @@ footer {
 			}
 		}
 	}
+
+	&:before{
+		content: '@s Limitada';
+		position: absolute;
+		text-align: center;
+		bottom: 1rem;
+		color: white;
+		left: 0;
+		right: 0;
+	}
 }
