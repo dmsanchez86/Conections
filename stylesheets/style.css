@@ -186,6 +186,8 @@ section {
               font-size: 2rem; }
             section main[blue].min .second section p {
               font-size: 1.3rem; }
+            section main[blue].min .second section div {
+              font-size: 1.15rem; }
       section main[blue].blue {
         background: #009CCF; }
       section main[blue] article {
