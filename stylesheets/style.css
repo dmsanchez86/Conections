@@ -137,7 +137,9 @@ section {
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
-    display: flex; }
+    display: flex;
+    margin-top: -5px;
+    overflow: hidden; }
     section main > article {
       width: calc(100% / 2 - 2px);
       -webkit-flex: 1 1 0%;
@@ -172,7 +174,8 @@ section {
           section main[blue].min .first h1 {
             font-size: 4rem;
             color: white;
-            text-align: center; }
+            text-align: center;
+            padding: 0 1rem; }
         section main[blue].min .second {
           width: calc(100% / 2 + 10% - 1rem); }
           section main[blue].min .second section {
@@ -183,6 +186,8 @@ section {
               font-size: 2rem; }
             section main[blue].min .second section p {
               font-size: 1.3rem; }
+      section main[blue].blue {
+        background: #009CCF; }
       section main[blue] article {
         text-align: center;
         overflow: hidden; }
@@ -217,7 +222,7 @@ section {
             top: 0;
             left: 0;
             width: 150%;
-            height: 100%;
+            height: calc(100% - 5px);
             background: rgba(255, 255, 255, 0.1);
             content: '';
             -webkit-transition: transform 0.5s ease;
@@ -313,7 +318,7 @@ section {
             top: 0;
             right: 0;
             width: 150%;
-            height: 100%;
+            height: calc(100% - 5px);
             background: rgba(255, 255, 255, 0.1);
             content: '';
             -webkit-transition: transform 0.5s ease;
@@ -536,7 +541,7 @@ button {
 
 .contentTable {
   text-align: center;
-  max-height: 283px;
+  max-height: 275px;
   overflow: auto;
   margin: 0 .5rem; }
   .contentTable table {
@@ -1303,4 +1308,10 @@ button {
 
 @media (min-height: 660px) {
   nav ul {
-    padding: 3rem 5rem; } }
+    padding: 3rem 5rem; }
+  .contentTable {
+    max-height: 240px; } }
+
+@media (min-height: 790px) {
+  .contentTable {
+    max-height: 210px; } }

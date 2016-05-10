@@ -373,4 +373,13 @@
 			padding: 3rem 5rem;
 		}
 	}
+
+	.contentTable {
+    	max-height: 240px;
+    }
+}
+@media (min-height: 790px){
+	.contentTable {
+    	max-height: 210px;
+    }
 }
