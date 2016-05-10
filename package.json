@@ -1,0 +1,13 @@
+{
+  "name": "conexiones",
+  "version": "1.0.0",
+  "description": "Aplicación Conexiones",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [
+    "conexiones"
+  ],
+  "author": "Daniel M Sanchez",
+  "license": "ISC"
+}

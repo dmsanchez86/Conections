@@ -12,6 +12,46 @@ section{
 		&[blue]{
 			background: $blue;
 
+			&.min{
+				min-height: 200px;
+
+				> div{
+					display: inline-block;
+					vertical-align: top;
+				}
+
+				.first{
+					width: calc(100% / 2 - 10%);
+					@include flex(flex);
+					@include justify-content(center);
+					@include align-items(center);
+
+					h1{
+						font-size: 4rem;
+						color: white;
+						text-align: center;
+					}
+				}
+
+				.second{
+					width: calc(100% / 2 + 10% - 1rem);
+
+					section{
+						padding: 2rem 4rem;
+						text-align: center;
+						color: white;
+
+						h2{
+							font-size: 2rem;
+						}
+
+						p{
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+
 			article{
 				text-align: center;
 				overflow: hidden;
