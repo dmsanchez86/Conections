@@ -40,56 +40,90 @@
 					<span>Menu <i class="fa fa-navicon"></i></span>
 				</div>
 			</nav>
-			<section ng-switch="route">
-				<div ng-switch-when="home">
-					<main blue>
-						<article ng-controller="followGuide">
-							<div class="contentArticle">
-								<img src="images/boton-seguimiento.png" alt="">
-								<button type="button" ng-click="showGuide()">Ingrese Aquí</button>
-							</div>
-						</article>
-						<article>
-							<img src="images/camion.png" alt="">
-						</article>
-					</main>
-					<main gray>
-						<article>
-							<img src="images/repartidor.png" alt="">
-						</article>
-						<article ng-controller="followGuide">
-							<div class="contentArticle">
-								<img src="images/boton-guia.png" alt="">
-								<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
-							</div>
-						</article>
-					</main>
-					<main blue class="min" id="quienes-somos">
-						<div class="first">
-							<h1>Quiénes Somos</h1>
+			<section>
+				<main blue>
+					<article ng-controller="followGuide">
+						<div class="contentArticle">
+							<img src="images/boton-seguimiento.png" alt="">
+							<button type="button" ng-click="showGuide()">Ingrese Aquí</button>
 						</div>
-						<div class="second">
-							<section>
-								<h2>Misión</h2>
-								<p>
-									CONEXIONES S. A. S., es una empresa de transporte de carga, que apoya a las transportadoras y comerciantes del área de influencia, a través del servicio de reexpedición y distribución de mercancía, asegurando la entrega de los envíos en los municipios de destino, en base a la optimización de los recursos.
-								</p>
-							</section>
-							<section>
-								<h2>Visión</h2>
-								<p>
-									Consolidar un modelo de negocio que permita estandarizar la prestación del servicio de transporte de carga en reexpedición, que evidencie la eficacia y la eficiencia en la operación y nos permita avanzar en la expansión hacia el mercado nacional..
-								</p>
-							</section>
+					</article>
+					<article>
+						<img src="images/camion.png" alt="">
+					</article>
+				</main>
+				<main gray>
+					<article>
+						<img src="images/repartidor.png" alt="">
+					</article>
+					<article ng-controller="followGuide">
+						<div class="contentArticle">
+							<img src="images/boton-guia.png" alt="">
+							<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
 						</div>
-						<!-- <article>
-							<img src="images/camion.png" alt="">
-						</article> -->
-					</main>
-				</div>
-				<div ng-switch-when="quienes-somos">
-					quienes somos
-				</div>
+					</article>
+				</main>
+				<main blue class="min" id="quienes-somos">
+					<div class="first">
+						<h1>Quiénes Somos</h1>
+					</div>
+					<div class="second">
+						<section>
+							<h2>Misión</h2>
+							<p>
+								CONEXIONES S. A. S., es una empresa de transporte de carga, que apoya a las transportadoras y comerciantes del área de influencia, a través del servicio de reexpedición y distribución de mercancía, asegurando la entrega de los envíos en los municipios de destino, en base a la optimización de los recursos.
+							</p>
+						</section>
+						<section>
+							<h2>Visión</h2>
+							<p>
+								Consolidar un modelo de negocio que permita estandarizar la prestación del servicio de transporte de carga en reexpedición, que evidencie la eficacia y la eficiencia en la operación y nos permita avanzar en la expansión hacia el mercado nacional..
+							</p>
+						</section>
+					</div>
+					<!-- <article>
+						<img src="images/camion.png" alt="">
+					</article> -->
+				</main>
+				<main gray id="servicios">
+					<article>
+						<img src="images/servicios.jpg" alt="">
+					</article>
+					<article ng-controller="followGuide">
+						<div class="contentArticle">
+							<img src="images/boton-guia.png" alt="">
+							<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
+						</div>
+					</article>
+				</main>
+				<main blue class="min" id="contacto">
+					<div class="first">
+						<h1>Contacto</h1>
+					</div>
+					<div class="second">
+						<section>
+							<h2>Misión</h2>
+							<p>
+								CONEXIONES S. A. S., es una empresa de transporte de carga, que apoya a las transportadoras y comerciantes del área de influencia, a través del servicio de reexpedición y distribución de mercancía, asegurando la entrega de los envíos en los municipios de destino, en base a la optimización de los recursos.
+							</p>
+						</section>
+					</div>
+					<!-- <article>
+						<img src="images/camion.png" alt="">
+					</article> -->
+				</main>
+				<main gray id="cubrimiento">
+					<article>
+						<img src="images/Satelite.jpg" alt="">
+					</article>
+					<article ng-controller="followGuide">
+						<div class="contentArticle">
+							<img src="images/boton-guia.png" alt="">
+							<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
+						</div>
+					</article>
+				</main>
+				
 			</section>
 			<footer>
 				<img src="images/foto-camiones.jpg" alt="">

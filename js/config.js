@@ -47,7 +47,17 @@ application.controller('main', function($scope, $window){
 	
 	// evento que me cambia la pagina
 	$scope.page = function(slug){
-		//$scope.route = slug;
+            
+        // $('.button-menu a').removeClass('active');
+        $(this).addClass('active');
+        
+        var target = '#'+slug;
+        
+        $('html, body').stop().animate({
+	        'scrollTop': ($(target).offset().top)
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
 	}
 });
 
