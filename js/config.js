@@ -79,8 +79,31 @@ application.controller('followGuide', function($scope){
 	}
 });
 
-// controlador de la busqueda de la guia
-application.controller('searchGuide', function($scope, $timeout, $http, $window){
+// controlador del poup
+application.controller('popup', function($scope, $timeout, $http, $window){
+	$scope.cotizador = {
+		origin: "",
+		destine: "",
+		units: 1,
+		weight: "",
+		width: "",
+		height: "",
+		fondo: "",
+		value: 450000,
+	}
+	$scope.listDestines = [];
+	$scope.valueCotizacion = -1;
+
+	$scope.listStates = [];
+	$scope.valueSearch = "";
+
+	$scope.listGuides = [];
+	$scope.objSearch = {
+		dateStart: "",
+		dateEnd: "",
+		guide: ""
+	};
+
 	$scope.message = "";
 	
 	$scope.listDetailsGuide = [];
@@ -109,32 +132,6 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 			console.warn(response);
 	  });
 	}
-});
-
-// controlador del poup
-application.controller('popup', function($scope, $timeout, $http, $window){
-	$scope.cotizador = {
-		origin: "",
-		destine: "",
-		units: 1,
-		weight: "",
-		width: "",
-		height: "",
-		fondo: "",
-		value: 450000,
-	}
-	$scope.listDestines = [];
-	$scope.valueCotizacion = -1;
-
-	$scope.listStates = [];
-	$scope.valueSearch = "";
-
-	$scope.listGuides = [];
-	$scope.objSearch = {
-		dateStart: "",
-		dateEnd: "",
-		guide: ""
-	};
 
 	$scope.search = function(){
 		// si la busqueda es vacia
