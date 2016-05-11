@@ -154,6 +154,7 @@ section {
         section main[blue].min > div {
           display: inline-block;
           vertical-align: top; }
+        section main[blue].min .third,
         section main[blue].min .first {
           width: calc(100% / 2 - 10%);
           display: -webkit-flex;
@@ -171,6 +172,7 @@ section {
           -ms-align-items: center;
           -o-align-items: center;
           align-items: center; }
+          section main[blue].min .third h1,
           section main[blue].min .first h1 {
             font-size: 4rem;
             color: white;
@@ -188,6 +190,8 @@ section {
               font-size: 1.3rem; }
             section main[blue].min .second section div {
               font-size: 1.15rem; }
+        section main[blue].min .third {
+          width: 100%; }
       section main[blue].blue {
         background: #009CCF; }
       section main[blue] article {

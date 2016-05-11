@@ -22,6 +22,7 @@ section{
 					vertical-align: top;
 				}
 
+				.third,
 				.first{
 					width: calc(100% / 2 - 10%);
 					@include flex(flex);
@@ -56,6 +57,10 @@ section{
 							font-size: 1.15rem;
 						}
 					}
+				}
+
+				.third{
+					width: 100%;
 				}
 			}
 
