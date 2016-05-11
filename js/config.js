@@ -59,6 +59,11 @@ application.controller('main', function($scope, $window){
 	        window.location.hash = target;
 	    });
 	}
+
+	$scope.showServices = function(){
+		$('.popup[services]').addClass('open');
+		$('.popup .container').removeClass('out in hide show');
+	}
 });
 
 // controlador de la guía

@@ -83,9 +83,9 @@
 
 	.closePopup{
 		position: absolute;
-    top: 2rem;
-    right: 3rem;
-    font-size: 2rem;
+	    top: 2rem;
+	    right: 3rem;
+	    font-size: 2rem;
 		color: $white;
 		z-index: 2;
 		cursor: pointer;
@@ -131,6 +131,13 @@
 		&[individual],
 		&[group]{
 			@include transform(translatey(-150%));
+		}
+
+		&[services]{
+			width: 90%;
+			height: 90%;
+			display: block;
+		    max-height: 580px;
 		}
 
 		.choose{

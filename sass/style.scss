@@ -170,8 +170,8 @@ button{
 	margin: 0 .5rem;
 
 	&.services{
-		margin: 3rem 0;
-		max-height: initial !important;
+		margin: 1rem 0;
+    	max-height: 350px;
 
 		td{
 			border: solid thin rgba(0,0,0,.2);

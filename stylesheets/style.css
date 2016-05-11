@@ -370,6 +370,7 @@ section {
     font-size: 3rem;
     display: block;
     margin-bottom: 2rem;
+    font-weight: 400;
     position: relative; }
     .contentArticle h1:before {
       position: absolute;
@@ -563,8 +564,8 @@ button {
   overflow: auto;
   margin: 0 .5rem; }
   .contentTable.services {
-    margin: 3rem 0;
-    max-height: initial !important; }
+    margin: 1rem 0;
+    max-height: 350px; }
     .contentTable.services td {
       border: solid thin rgba(0, 0, 0, 0.2); }
     .contentTable.services td, .contentTable.services th {
@@ -798,6 +799,11 @@ button {
       -ms-transform: translatey(-150%);
       -o-transform: translatey(-150%);
       transform: translatey(-150%); }
+    .popup .container[services] {
+      width: 90%;
+      height: 90%;
+      display: block;
+      max-height: 580px; }
     .popup .container .choose {
       width: 100%;
       height: 100%;

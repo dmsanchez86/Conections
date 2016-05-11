@@ -94,7 +94,6 @@
 							<h1>Servicios</h1>
 							<button type="button" ng-click="showServices()">Ver</button>
 						</div>
-						<!-- <div ng-include="'tmpl/tableServices.html'"></div> -->
 					</article>
 				</main>
 				<main blue class="min" id="contacto">
@@ -120,9 +119,6 @@
 							</div>
 						</section>
 					</div>
-					<!-- <article>
-						<img src="images/camion.png" alt="">
-					</article> -->
 				</main>
 				<main gray id="cubrimiento">
 					<article>
@@ -144,9 +140,6 @@
 							<h2>Misión</h2>
 						</section>
 					</div>
-					<!-- <article>
-						<img src="images/camion.png" alt="">
-					</article> -->
 				</main>
 			</section>
 			<footer>
@@ -387,6 +380,22 @@
 						<div class="center" ng-show="valueCotizacion != -1">
 							<span class="span blue">El valor de su despacho es: ${{ valueCotizacion }}</span>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popup" services ng-controller="popup">
+			<span class="closePopup" ng-click="close()">
+				<i class="fa fa-close"></i>
+			</span>
+			<div class="container" services>
+				<div class="groupContent">
+					<header>
+						<img src="images/logo.png" alt="Logo Conexiones">
+					</header>
+					<div class="center">
+						<div ng-include="'tmpl/tableServices.html'"></div>
 					</div>
 				</div>
 			</div>
