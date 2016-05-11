@@ -197,7 +197,7 @@ application.controller('popup', function($scope, $timeout, $http){
 		width: "",
 		height: "",
 		fondo: "",
-		value: "",
+		value: 450000,
 	}
 	$scope.listDestines = [];
 	$scope.valueCotizacion = -1;
@@ -217,7 +217,7 @@ application.controller('popup', function($scope, $timeout, $http){
 			width: "",
 			height: "",
 			fondo: "",
-			value: "",
+			value: 450000,
 		}
 		$scope.listDestines = [];
 		$scope.valueCotizacion = -1;

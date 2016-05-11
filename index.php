@@ -56,7 +56,7 @@ if(isset($_REQUEST['opc'])){
 	if($_REQUEST['opc'] == "getDestinos"){
 		$origin = $_REQUEST['origin'];
 
-		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/traerDestinos?origen=CIU000006852&cliente=CLI000000230";
+		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/traerDestinos?origen=$origin&cliente=CLI000000542";
 
 		$data = file_get_contents($url);
 
@@ -74,7 +74,7 @@ if(isset($_REQUEST['opc'])){
 		$fondo = $_REQUEST['fondo'];
 		$valor = $_REQUEST['value'];
 
-		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/cotizarDespacho?uid_cli=CLI000000230&uid_ciu_origen=$origen&uid_ciu_destino=$destino&unidades=$unidades&peso=$peso&ancho=$ancho&largo=$largo&fondo=$fondo&valor_declarado=$valor";
+		$url = "http://181.143.244.18/wsconexiones/Servicio.svc/cotizarDespacho?uid_cli=CLI000000542&uid_ciu_origen=$origen&uid_ciu_destino=$destino&unidades=$unidades&peso=$peso&ancho=$ancho&largo=$largo&fondo=$fondo&valor_declarado=$valor";
 
 		$data = file_get_contents($url);
 

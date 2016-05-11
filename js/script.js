@@ -18,6 +18,10 @@ $().ready(function($) {
       else
           $(this).parent().removeClass('with-data');
   });
+
+  $('#value').focus(function(event) {
+    $(this).notify("El valor minimo es $450.000", "info");
+  });
 });
 
 

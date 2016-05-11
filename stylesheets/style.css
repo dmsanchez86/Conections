@@ -363,6 +363,22 @@ section {
   right: 0;
   bottom: 0;
   margin: auto; }
+  .contentArticle.normal {
+    text-align: left; }
+  .contentArticle h1 {
+    color: white;
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 2rem;
+    position: relative; }
+    .contentArticle h1:before {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 70%;
+      height: 2px;
+      background: white;
+      content: ''; }
   .contentArticle button {
     background: #00ABFF;
     color: white;
@@ -546,6 +562,13 @@ button {
   max-height: 275px;
   overflow: auto;
   margin: 0 .5rem; }
+  .contentTable.services {
+    margin: 3rem 0;
+    max-height: initial !important; }
+    .contentTable.services td {
+      border: solid thin rgba(0, 0, 0, 0.2); }
+    .contentTable.services td, .contentTable.services th {
+      padding: .15rem .5rem; }
   .contentTable table {
     display: inline-block;
     margin-top: 1rem; }
