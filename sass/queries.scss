@@ -267,11 +267,47 @@
 
 	section {
 		main{
+
 			&[blue] {
 				article{
 					&:first-child{
 						.contentArticle{
 							min-height: 80%;
+						}
+					}
+				}
+
+				&.min{
+					display: block;
+					min-height: 100px;
+
+					.third,
+					.second,
+					.first{
+						padding: 1rem 0;
+						width: 100%;
+
+						h1{
+							font-size: 3rem;
+						}
+					}
+
+					.second{
+
+						section{
+							padding: 1rem;
+
+							h2{
+								font-size: 1.5rem;
+							}
+
+							p{
+								font-size: 1.1rem;
+							}
+
+							div{
+								font-size: 1rem;
+							}
 						}
 					}
 				}
@@ -300,24 +336,31 @@
 	}
 
 	footer{
-    ul{
+	    ul{
 			bottom: 4rem;
-	    width: 100%;
-	    padding: .51rem 1rem;
+		    width: 100%;
+		    padding: .51rem 1rem;
 
-    	li{
-    		a{
+	    	li{
+	    		a{
 					width: 30px;
 					height: 30px;
 
-    			i{
-  			    color: rgb(255, 255, 255);
-	    			margin-top: .481rem;
-	    			font-size: 16px !important;
-    			}
-    		}
-    	}
-    }
+	    			i{
+	  			    	color: rgb(255, 255, 255);
+		    			margin-top: .481rem;
+		    			font-size: 16px !important;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+	.contentArticle {
+		h1{
+			margin-bottom: .5rem;
+			font-size: 2rem;
+		}
 	}
 }
 
@@ -378,6 +421,7 @@
     	max-height: 240px;
     }
 }
+
 @media (min-height: 790px){
 	.contentTable {
     	max-height: 210px;

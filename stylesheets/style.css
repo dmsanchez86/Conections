@@ -1300,6 +1300,26 @@ button {
       margin-right: 11px; }
   section main[blue] article:first-child .contentArticle {
     min-height: 80%; }
+  section main[blue].min {
+    display: block;
+    min-height: 100px; }
+    section main[blue].min .third,
+    section main[blue].min .second,
+    section main[blue].min .first {
+      padding: 1rem 0;
+      width: 100%; }
+      section main[blue].min .third h1,
+      section main[blue].min .second h1,
+      section main[blue].min .first h1 {
+        font-size: 3rem; }
+    section main[blue].min .second section {
+      padding: 1rem; }
+      section main[blue].min .second section h2 {
+        font-size: 1.5rem; }
+      section main[blue].min .second section p {
+        font-size: 1.1rem; }
+      section main[blue].min .second section div {
+        font-size: 1rem; }
   .containerMenuMobile {
     text-align: center;
     color: white;
@@ -1324,7 +1344,10 @@ button {
       footer ul li a i {
         color: white;
         margin-top: .481rem;
-        font-size: 16px !important; } }
+        font-size: 16px !important; }
+  .contentArticle h1 {
+    margin-bottom: .5rem;
+    font-size: 2rem; } }
 
 @media (max-width: 400px) {
   .popup .container[choose] {
