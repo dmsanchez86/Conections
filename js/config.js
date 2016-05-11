@@ -12,16 +12,16 @@ application.controller('main', function($scope, $window){
 			slug: "servicios"
 		},
 		{
-			name: "Contacto",
-			slug: "contacto"
+			name: "Responsabilidad Social",
+			slug: "responsabilidad-social"
 		},
 		{
 			name: "Cubrimiento",
 			slug: "cubrimiento"
 		},
 		{
-			name: "Responsabilidad Social",
-			slug: "responsabilidad-social"
+			name: "Contacto",
+			slug: "contacto"
 		},
 	];
 
@@ -325,12 +325,16 @@ application.controller('login', function($scope, $http, $window){
 	$scope.datosUsuario = [];
 
 	// evento del login
-	$scope.login = function(){
+	$scope.login = function($event){
+		var $el = angular.element($event.target);
+
 		if($scope.user == "" || $scope.user == undefined){
 			$('#user').notify('Ingrese un usuario').focus();
 		}else if($scope.password == "" || $scope.password == undefined){
 			$('#password').notify('Ingrese una contraseña').focus();
 		}else{
+
+			$el.notify("Iniciando Sesión","info");
 
 			// ajax que valida el inicio de sesion
 			$http({
@@ -339,11 +343,8 @@ application.controller('login', function($scope, $http, $window){
 			}).then(function successCallback(response) {
 				var $data = (response.data.webLoginEmpresaResult);
 
-				if($data.nombre != ""){
-					// cerramos el popup
-					$('.popup').removeClass('open');
-					$('.popup .container').removeClass('out in hide show');
-					$('.popup .container[choose]').removeClass('out');
+				if($data.uid != ""){
+					// mostramos el mensaje de que el inicio de sesión fue correcto
 					$.notify("Inicio de Sesión Correcto", "success");
 
 					// guardamos los datos en el session storage
@@ -355,8 +356,8 @@ application.controller('login', function($scope, $http, $window){
 					$scope.user = "";
 					$scope.password = "";
 				}else{
-					$scope.listStates = [];
-					$('#txtSearchGuide').notify('No se encontraron registros', 'info');
+					// mostramos el mensaje de que los datos no son correctos
+					$el.notify('Inicio de sesión incorrecto!');
 				}
 		  }, function errorCallback(response) {
 				console.warn(response);

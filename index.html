@@ -96,6 +96,27 @@
 						</div>
 					</article>
 				</main>
+				<main blue class="min blue" id="responsabilidad-social">
+					<div class="first">
+						<h1>Responsabilidad Social</h1>
+					</div>
+					<div class="second">
+						<section>
+							<h2>Misión</h2>
+						</section>
+					</div>
+				</main>
+				<main gray id="cubrimiento">
+					<article>
+						<img src="images/Satelite.jpg" alt="">
+					</article>
+					<article ng-controller="followGuide">
+						<div class="contentArticle">
+							<img src="images/boton-guia.png" alt="">
+							<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
+						</div>
+					</article>
+				</main>
 				<main blue class="min" id="contacto">
 					<div class="first">
 						<h1>Contacto</h1>
@@ -117,27 +138,6 @@
 								<i class="fa fa-mobile"></i> Comercial: 313 737 1427 <br>
 								<i class="fa fa-mobile"></i> Recolección: 314 519 0733 <br>
 							</div>
-						</section>
-					</div>
-				</main>
-				<main gray id="cubrimiento">
-					<article>
-						<img src="images/Satelite.jpg" alt="">
-					</article>
-					<article ng-controller="followGuide">
-						<div class="contentArticle">
-							<img src="images/boton-guia.png" alt="">
-							<button type="button" ng-click="showCotizador()">Ingrese Aquí</button>
-						</div>
-					</article>
-				</main>
-				<main blue class="min blue" id="responsabilidad-social">
-					<div class="first">
-						<h1>Responsabilidad Social</h1>
-					</div>
-					<div class="second">
-						<section>
-							<h2>Misión</h2>
 						</section>
 					</div>
 				</main>
@@ -236,7 +236,7 @@
 								<label for="password">Contraseña</label>
 							</div>
 							<div class="form-group block">
-								<button type="button" ng-click="login()" style="margin: 0">Ingresar</button>
+								<button type="button" ng-click="login($event)" style="margin: 0">Ingresar</button>
 							</div>
 						</div>
 						<div class="loguedSection" ng-hide="$parent.loginShow" ng-controller="searchGuide">

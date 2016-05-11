@@ -126,8 +126,8 @@ nav {
         nav ul li a.active, nav ul li a:focus, nav ul li a:hover {
           background: rgba(130, 130, 130, 0.8); }
       nav ul li:nth-child(2) a,
-      nav ul li:nth-child(3) a,
-      nav ul li:nth-child(4) a {
+      nav ul li:nth-child(4) a,
+      nav ul li:nth-child(5) a {
         line-height: 2.5; }
 
 section {
@@ -711,7 +711,8 @@ button {
         transform: translatey(0%); }
   .popup[cotizador] .container[choose] {
     width: 80%;
-    height: 80%; }
+    height: 80%;
+    max-height: 515px; }
   .popup[cotizador] .contentLogin.table:nth-child(1) .form-group:last-child, .popup[cotizador] .contentLogin.table:nth-child(2) .form-group:last-child {
     display: block; }
   .popup[cotizador] .contentLogin.table:last-child {
