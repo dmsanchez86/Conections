@@ -82,12 +82,54 @@ application.controller('followGuide', function($scope){
 // controlador de la busqueda de la guia
 application.controller('searchGuide', function($scope, $timeout, $http, $window){
 	$scope.message = "";
-	$scope.valueSearch = "";
-	$scope.listStates = [];
-	$scope.listGuides = [];
+	
 	$scope.listDetailsGuide = [];
 	$scope.viewDetails = false;
 
+	$scope.details = function(numero){
+		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
+
+		// ajax que me consulta las guias
+		$http({
+		  url: 'index.php?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
+		  method: 'POST'
+		}).then(function successCallback(response) {
+			console.log(response.data.seguimientoGuiaResult);
+			var $data = (response.data.seguimientoGuiaResult);
+
+			if($data.length > 0){
+				$scope.listDetailsGuide = $data;
+				$('.contentLogin.table').notify('Se encontraron '+$scope.listDetailsGuide.length+' registros', 'success');
+				$scope.viewDetails = true;
+			}else{
+				$scope.listDetailsGuide = [];
+				$('.contentLogin.table').notify('No se encontraron los detalles del registro', 'info');
+			}
+	  }, function errorCallback(response) {
+			console.warn(response);
+	  });
+	}
+});
+
+// controlador del poup
+application.controller('popup', function($scope, $timeout, $http, $window){
+	$scope.cotizador = {
+		origin: "",
+		destine: "",
+		units: 1,
+		weight: "",
+		width: "",
+		height: "",
+		fondo: "",
+		value: 450000,
+	}
+	$scope.listDestines = [];
+	$scope.valueCotizacion = -1;
+
+	$scope.listStates = [];
+	$scope.valueSearch = "";
+
+	$scope.listGuides = [];
 	$scope.objSearch = {
 		dateStart: "",
 		dateEnd: "",
@@ -124,96 +166,13 @@ application.controller('searchGuide', function($scope, $timeout, $http, $window)
 		}
 	}
 
-	$scope.searchEntidad = function(){
-		$scope.viewDetails = false;
-		$scope.listGuides = [];
-
-		$scope.back = function(){
-			$scope.viewDetails = false;
-		}
-
-		if($scope.objSearch.dateStart == "" || $scope.objSearch.dateStart == undefined){
-			$('#dateStart').notify("Ingrese una fecha").focus();
-		}else if($scope.objSearch.dateEnd == "" || $scope.objSearch.dateEnd == undefined){
-			$('#dateEnd').notify("Ingrese una fecha").focus();
-		}else{
-			$scope.listStates = [];
-			$('.contentLogin.table').notify('Buscando...', 'info');
-
-			if($scope.objSearch.guide == undefined){
-				$scope.objSearch.guide = "";
-			}
-
-			$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
-
-			// ajax que me consulta las guias
-			$http({
-			  url: 'index.php?opc=guiaEntidad&fechaInicio='+$scope.objSearch.dateStart+'&fechaFinal='+$scope.objSearch.dateEnd+'&client='+$scope.datosUsuario.uid_cli+'&guia='+$scope.objSearch.guide,
-			  method: 'POST'
-			}).then(function successCallback(response) {
-				console.log(response);
-				var $data = (response.data.guiasClienteResult);
-
-				if($data.length > 0){
-					$scope.listGuides = $data;
-					$('.contentLogin.table').notify('Se encontraron '+$scope.listGuides.length+' registros', 'success');
-				}else{
-					$scope.listGuides = [];
-					$('.contentLogin.table').notify('No se encontraron registros', 'info');
-				}
-		  }, function errorCallback(response) {
-				console.warn(response);
-		  });
-		}
-	}
-
-	$scope.details = function(numero){
-		$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
-
-		// ajax que me consulta las guias
-		$http({
-		  url: 'index.php?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
-		  method: 'POST'
-		}).then(function successCallback(response) {
-			console.log(response.data.seguimientoGuiaResult);
-			var $data = (response.data.seguimientoGuiaResult);
-
-			if($data.length > 0){
-				$scope.listDetailsGuide = $data;
-				$('.contentLogin.table').notify('Se encontraron '+$scope.listDetailsGuide.length+' registros', 'success');
-				$scope.viewDetails = true;
-			}else{
-				$scope.listDetailsGuide = [];
-				$('.contentLogin.table').notify('No se encontraron los detalles del registro', 'info');
-			}
-	  }, function errorCallback(response) {
-			console.warn(response);
-	  });
-	}
-});
-
-// controlador del poup
-application.controller('popup', function($scope, $timeout, $http){
-	$scope.cotizador = {
-		origin: "",
-		destine: "",
-		units: 1,
-		weight: "",
-		width: "",
-		height: "",
-		fondo: "",
-		value: 450000,
-	}
-	$scope.listDestines = [];
-	$scope.valueCotizacion = -1;
-
 	// evento que cierra lel popup
 	$scope.close = function(){
 		$('.popup').removeClass('open');
 		$('.popup .container').removeClass('out in hide show');
 		$('.popup .container[choose]').removeClass('out');
 
-		// cada vez que cerramos el popup resetiamos las variables del cotizador
+		// cada vez que cerramos el popup resetiamos las variables del cotizador y la busqueda
 		$scope.cotizador = {
 			origin: "",
 			destine: "",
@@ -226,6 +185,16 @@ application.controller('popup', function($scope, $timeout, $http){
 		}
 		$scope.listDestines = [];
 		$scope.valueCotizacion = -1;
+
+		$scope.listGuides = [];
+		$scope.objSearch = {
+			dateStart: "",
+			dateEnd: "",
+			guide: ""
+		};
+
+		$scope.listStates = [];
+		$scope.valueSearch = "";
 	}
 
 	// evento que abre segun la seccion que escoja en el popup
@@ -254,6 +223,17 @@ application.controller('popup', function($scope, $timeout, $http){
 			$('.popup .container').removeClass('out in hide show');
 			$('.popup[followGuide]').addClass('open');
 		}, 450);
+
+		// resetiamos las variables nuevamente
+		$scope.listGuides = [];
+		$scope.objSearch = {
+			dateStart: "",
+			dateEnd: "",
+			guide: ""
+		};
+
+		$scope.listStates = [];
+		$scope.valueSearch = "";
 	}
 
 	$scope.getDestinos = function(){
@@ -310,6 +290,50 @@ application.controller('popup', function($scope, $timeout, $http){
 					for(var i = 0; i < arr.length; i++){
 						$scope.valueCotizacion += parseInt(arr[i]);
 					}
+				}
+		  }, function errorCallback(response) {
+				console.warn(response);
+		  });
+		}
+	}
+
+	// evento que busca por la entidad cuando ya se ha logueado el usuario
+	$scope.searchEntidad = function(){
+		$scope.viewDetails = false;
+		$scope.listGuides = [];
+
+		$scope.back = function(){
+			$scope.viewDetails = false;
+		}
+
+		if($scope.objSearch.dateStart == "" || $scope.objSearch.dateStart == undefined){
+			$('#dateStart').notify("Ingrese una fecha").focus();
+		}else if($scope.objSearch.dateEnd == "" || $scope.objSearch.dateEnd == undefined){
+			$('#dateEnd').notify("Ingrese una fecha").focus();
+		}else{
+			$scope.listStates = [];
+			$('.contentLogin.table').notify('Buscando...', 'info');
+
+			if($scope.objSearch.guide == undefined){
+				$scope.objSearch.guide = "";
+			}
+
+			$scope.datosUsuario = JSON.parse($window.sessionStorage.datosUsuario);
+
+			// ajax que me consulta las guias
+			$http({
+			  url: 'index.php?opc=guiaEntidad&fechaInicio='+$scope.objSearch.dateStart+'&fechaFinal='+$scope.objSearch.dateEnd+'&client='+$scope.datosUsuario.uid_cli+'&guia='+$scope.objSearch.guide,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				console.log(response);
+				var $data = (response.data.guiasClienteResult);
+
+				if($data.length > 0){
+					$scope.listGuides = $data;
+					$('.contentLogin.table').notify('Se encontraron '+$scope.listGuides.length+' registros', 'success');
+				}else{
+					$scope.listGuides = [];
+					$('.contentLogin.table').notify('No se encontraron registros', 'info');
 				}
 		  }, function errorCallback(response) {
 				console.warn(response);

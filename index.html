@@ -192,7 +192,7 @@
 					<img src="images/logo.png" alt="Logo Conexiones">
 					<div class="center">
 						<label for="txtSearchGuide">Guía</label>
-						<input type="search" id="txtSearchGuide" placeholder="Ingrese El Número de La Guía" ng-model="valueSearch" name="txtSearchGuide" required>
+						<input type="search" id="txtSearchGuide" placeholder="Ingrese El Número de La Guía" ng-model="$parent.valueSearch" name="txtSearchGuide" required>
 						<button type="button" ng-click="search()">Buscar</button>
 						<span class="span">{{message}}</span>
 					</div>
