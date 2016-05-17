@@ -191,7 +191,7 @@
 	}
 
 	.contentTable{
-    max-height: 200px;
+    	max-height: 200px;
 
 		table{
 			td,th{
@@ -417,13 +417,13 @@
 		}
 	}
 
-	.contentTable {
+	.contentTable, .contentTable.services {
     	max-height: 240px;
     }
 }
 
 @media (min-height: 790px){
-	.contentTable {
+	.contentTable, .contentTable.services  {
     	max-height: 210px;
     }
 }

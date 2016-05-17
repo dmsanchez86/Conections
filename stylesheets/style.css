@@ -1368,9 +1368,9 @@ button {
 @media (min-height: 660px) {
   nav ul {
     padding: 3rem 5rem; }
-  .contentTable {
+  .contentTable, .contentTable.services {
     max-height: 240px; } }
 
 @media (min-height: 790px) {
-  .contentTable {
+  .contentTable, .contentTable.services {
     max-height: 210px; } }
