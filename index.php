@@ -14,6 +14,24 @@ if(isset($_REQUEST['opc'])){
 		echo $data;
 	}
 
+	// cuando solicita si hay alguna imagen
+	if($_REQUEST['opc'] == "imagenGuia"){
+		$guia = $_REQUEST['guia'];
+		$uid = $_REQUEST['uid'];
+		
+		$base_url = "http://181.143.244.18/conexiones/seguimiento/guias/";
+
+		$url_img_tiff = $base_url."?ruta=$guia";
+		$url_img_jpg = $base_url."$uid.jpg";
+
+		
+		if (urlValidator($url_img_jpg)){
+			echo $url_img_jpg;
+		} else if (urlValidator($url_img_tiff)){
+			echo $base_url."$guia.jpg";
+		}
+	}
+
 	// cuando solicita loguearse
 	if($_REQUEST['opc'] == "login"){
 		$user = $_REQUEST['user'];
@@ -80,4 +98,24 @@ if(isset($_REQUEST['opc'])){
 
 		echo $data;
 	}
+}
+
+function urlValidator( $url ){
+	$ch = curl_init();
+	
+	// set url
+	curl_setopt($ch, CURLOPT_URL, $url);
+	
+	//return the transfer as a string
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	
+	// $output contains the output string
+	curl_exec($ch);
+	
+	$output = curl_getinfo($ch);
+	
+	// close curl resource to free up system resources
+	curl_close($ch);
+	
+	return 200 === $output['http_code'];
 }
