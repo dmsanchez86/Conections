@@ -1,4 +1,5 @@
 var application = angular.module('conections', []);
+var webService = 'http://conexiones.net.co/index.php';
 
 // controlador principal
 application.controller('main', function($scope, $window){
@@ -115,7 +116,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 
 		// ajax que me consulta las guias
 		$http({
-		  url: 'index.php?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
+		  url: webService + '?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
 		  method: 'POST'
 		}).then(function successCallback(response) {
 			console.log(response.data.seguimientoGuiaResult);
@@ -129,7 +130,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 				
 				// ajax que me consulta las guias
 				$http({
-				  url: 'index.php?opc=guia&guia='+numero,
+				  url: webService + '?opc=guia&guia='+numero,
 				  method: 'GET'
 				}).then(function successCallback(response) {
 					var $data = (response.data.seguimientoGuiaIndividualResult);
@@ -139,7 +140,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 						
 						// si todo esta bien consultamos si existe la imagen
 						$http({
-						  url: 'index.php?opc=imagenGuia&guia='+numero+'&uid='+$data[0].uid,
+						  url: webService + '?opc=imagenGuia&guia='+numero+'&uid='+$data[0].uid,
 						  method: 'GET'
 						}).then(function successCallback(response) {
 							$scope.urlGuide = (response.data);
@@ -178,7 +179,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 
 			// ajax que me consulta las guias
 			$http({
-			  url: 'index.php?opc=guia&guia='+$scope.valueSearch,
+			  url: webService + '?opc=guia&guia='+$scope.valueSearch,
 			  method: 'GET'
 			}).then(function successCallback(response) {
 				var $data = (response.data.seguimientoGuiaIndividualResult);
@@ -186,10 +187,10 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 				if($data.length > 0){
 					$scope.listStates = $data;
 					$('#txtSearchGuide').notify('Se encontraron '+$scope.listStates.length+' registros', 'success');
-debugger
+
 					// si todo esta bien consultamos si existe la imagen
 					$http({
-					  url: 'index.php?opc=imagenGuia&guia='+$scope.valueSearch+'&uid='+$data[0].uid,
+					  url: webService + '?opc=imagenGuia&guia='+$scope.valueSearch+'&uid='+$data[0].uid,
 					  method: 'GET'
 					}).then(function successCallback(response) {
 						$scope.urlGuide = (response.data);
@@ -295,7 +296,7 @@ debugger
 		if($scope.cotizador.origin != ""){
 			// ajax que me consulta las guias
 			$http({
-			  url: 'index.php?opc=getDestinos&origin='+$scope.cotizador.origin,
+			  url: webService + '?opc=getDestinos&origin='+$scope.cotizador.origin,
 			  method: 'POST'
 			}).then(function successCallback(response) {
 				var $data = (response.data.traerDestinosResult);
@@ -330,7 +331,7 @@ debugger
 		}else{
 			// ajax que me consulta la cotizacion
 			$http({
-			  url: 'index.php?opc=cotizar&origin='+$scope.cotizador.origin+'&destine='+$scope.cotizador.destine+'&units='+$scope.cotizador.units+'&weight='+$scope.cotizador.weight+'&width='+$scope.cotizador.width+'&height='+$scope.cotizador.height+'&fondo='+$scope.cotizador.fondo+'&value='+$scope.cotizador.value,
+			  url: webService + '?opc=cotizar&origin='+$scope.cotizador.origin+'&destine='+$scope.cotizador.destine+'&units='+$scope.cotizador.units+'&weight='+$scope.cotizador.weight+'&width='+$scope.cotizador.width+'&height='+$scope.cotizador.height+'&fondo='+$scope.cotizador.fondo+'&value='+$scope.cotizador.value,
 			  method: 'POST'
 			}).then(function successCallback(response) {
 				var $data = (response.data.cotizarDespachoResult);
@@ -376,7 +377,7 @@ debugger
 
 			// ajax que me consulta las guias
 			$http({
-			  url: 'index.php?opc=guiaEntidad&fechaInicio='+$scope.objSearch.dateStart+'&fechaFinal='+$scope.objSearch.dateEnd+'&client='+$scope.datosUsuario.uid_cli+'&guia='+$scope.objSearch.guide,
+			  url: webService + '?opc=guiaEntidad&fechaInicio='+$scope.objSearch.dateStart+'&fechaFinal='+$scope.objSearch.dateEnd+'&client='+$scope.datosUsuario.uid_cli+'&guia='+$scope.objSearch.guide,
 			  method: 'POST'
 			}).then(function successCallback(response) {
 				console.log(response);
@@ -416,7 +417,7 @@ application.controller('login', function($scope, $http, $window){
 
 			// ajax que valida el inicio de sesion
 			$http({
-			  url: 'index.php?opc=login&user='+$scope.user+'&password='+$scope.password,
+			  url: webService + '?opc=login&user='+$scope.user+'&password='+$scope.password,
 			  method: 'POST'
 			}).then(function successCallback(response) {
 				var $data = (response.data.webLoginEmpresaResult);
