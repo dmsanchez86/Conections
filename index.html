@@ -49,12 +49,12 @@
 						</div>
 					</article>
 					<article>
-						<img src="images/camion.png" alt="">
+						<img src="images/camion.jpg" alt="">
 					</article>
 				</main>
 				<main gray>
 					<article>
-						<img src="images/repartidor.png" alt="">
+						<img src="images/repartidor.jpg" alt="">
 					</article>
 					<article ng-controller="followGuide">
 						<div class="contentArticle">
@@ -190,7 +190,7 @@
 						<button type="button" ng-click="search()">Buscar</button>
 						<span class="span">{{message}}</span>
 					</div>
-					<div class="contentTable individual" ng-show="listStates.length > 0">
+					<div class = "contentTable individual column" ng-class="{ 'column-half': urlGuide }" ng-show="listStates.length > 0">
 						<table>
 							<thead>
 								<tr>
@@ -208,6 +208,9 @@
 							</tbody>
 						</table>
 					</div>
+					<div ng-show="urlGuide" ng-class="{ 'column-half': urlGuide }" class="column scroll">
+						<img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}">
+					</div> 	
 				</div>
 			</div>
 			<div class="container" group>
@@ -216,7 +219,7 @@
 						<i class="fa fa-rotate-left"></i>
 					</span>
 					<header>
-						<img src="images/logo.png" alt="Logo Conexiones">
+						<img src="images/logo.png" alt="Logo Conexiones" style="width: 55%">
 					</header>
 					<div class="center">
 						<div class="contentLogin" ng-controller="login" ng-show="$parent.loginShow">
@@ -280,30 +283,35 @@
 										</tr>
 									</tbody>
 								</table>
-								<table ng-if="viewDetails" ng-show="listDetailsGuide.length > 0">
-									<thead>
-										<tr>
-											<th>Fecha</th>
-											<th>Estado</th>
-											<th>Observacion</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr ng-repeat="item in listDetailsGuide">
-											<td>{{ item.fecha }}</td>
-											<td>{{ item.estado }}</td>
-											<td>{{ item.observacion }}</td>
-										</tr>
-										<tr style="text-align: right">
-											<td colspan="3">
-												<button type="button" ng-click="back()" style="font-size: 1.35rem;width: 100%">
-													<i class="fa fa-hand-o-left"></i> 
-													Volver
-												</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+								<div class = "contentTable individual column" ng-class="{ 'column-half': urlGuide }">
+									<table ng-if="viewDetails" ng-show="listDetailsGuide.length > 0">
+										<thead>
+											<tr>
+												<th>Fecha</th>
+												<th>Estado</th>
+												<th>Observacion</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="item in listDetailsGuide">
+												<td>{{ item.fecha }}</td>
+												<td>{{ item.estado }}</td>
+												<td>{{ item.observacion }}</td>
+											</tr>
+											<tr style="text-align: right">
+												<td colspan="3">
+													<button type="button" ng-click="back()" style="font-size: 1.35rem;width: 100%">
+														<i class="fa fa-arrow-left"></i> 
+														Volver
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div ng-show="urlGuide" ng-class="{ 'column-half': urlGuide }" class="column scroll">
+									<img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}">
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -398,6 +406,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/angular.js"></script>
 		<script src="js/notify.js"></script>
+		<script src="js/zoom.min.js"></script>
 		<script src="js/config.js"></script>
 		<script src="js/script.js"></script>
 	</body>
