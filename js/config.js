@@ -96,6 +96,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 
 	$scope.listStates = [];
 	$scope.valueSearch = "";
+	$scope.urlGuide = '';
 
 	$scope.listGuides = [];
 	$scope.objSearch = {
@@ -124,6 +125,36 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 				$scope.listDetailsGuide = $data;
 				$('.contentLogin.table').notify('Se encontraron '+$scope.listDetailsGuide.length+' registros', 'success');
 				$scope.viewDetails = true;
+				//debugger
+				
+				// ajax que me consulta las guias
+				$http({
+				  url: 'index.php?opc=guia&guia='+numero,
+				  method: 'GET'
+				}).then(function successCallback(response) {
+					var $data = (response.data.seguimientoGuiaIndividualResult);
+	
+					if($data.length > 0){
+						$scope.listStates = $data;
+						
+						// si todo esta bien consultamos si existe la imagen
+						$http({
+						  url: 'index.php?opc=imagenGuia&guia='+numero+'&uid='+$data[0].uid,
+						  method: 'GET'
+						}).then(function successCallback(response) {
+							$scope.urlGuide = (response.data);
+						}, function errorCallback(response) {
+							console.warn(response);
+						});
+						
+						
+					}else{
+						$scope.listStates = [];
+						$('#txtSearchGuide').notify('No se encontraron registros', 'info');
+					}
+			  }, function errorCallback(response) {
+					console.warn(response);
+			  });
 			}else{
 				$scope.listDetailsGuide = [];
 				$('.contentLogin.table').notify('No se encontraron los detalles del registro', 'info');
@@ -141,6 +172,8 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 			$scope.listStates = [];
 		}else{
 			$scope.listStates = [];
+			$scope.urlGuide = '';
+
 			$('#txtSearchGuide').notify('Buscando...', 'info');
 
 			// ajax que me consulta las guias
@@ -153,6 +186,26 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 				if($data.length > 0){
 					$scope.listStates = $data;
 					$('#txtSearchGuide').notify('Se encontraron '+$scope.listStates.length+' registros', 'success');
+debugger
+					// si todo esta bien consultamos si existe la imagen
+					$http({
+					  url: 'index.php?opc=imagenGuia&guia='+$scope.valueSearch+'&uid='+$data[0].uid,
+					  method: 'GET'
+					}).then(function successCallback(response) {
+						$scope.urlGuide = (response.data);
+						console.log($scope.urlGuide);
+						setTimeout(function(){
+							if(window.innerWidth > 780){
+								//$("#zoomGuide").elevateZoom({zoomWindowPosition: 11,tint:true, tintColour:'#aaa', tintOpacity:0.5,scrollZoom : true});
+							}else{
+								//$("#zoomGuide").elevateZoom();
+							}
+						}, 1000);
+					}, function errorCallback(response) {
+						console.warn(response);
+					});
+					
+					
 				}else{
 					$scope.listStates = [];
 					$('#txtSearchGuide').notify('No se encontraron registros', 'info');
@@ -182,6 +235,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 		}
 		$scope.listDestines = [];
 		$scope.valueCotizacion = -1;
+		$scope.urlGuide = undefined;
 
 		$scope.listGuides = [];
 		$scope.objSearch = {
@@ -230,6 +284,7 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 		};
 
 		$scope.listStates = [];
+		$scope.urlGuide = '';
 		$scope.valueSearch = "";
 	}
 
@@ -298,9 +353,11 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 	$scope.searchEntidad = function(){
 		$scope.viewDetails = false;
 		$scope.listGuides = [];
+		$scope.urlGuide = '';
 
 		$scope.back = function(){
 			$scope.viewDetails = false;
+			$scope.urlGuide = '';
 		}
 
 		if($scope.objSearch.dateStart == "" || $scope.objSearch.dateStart == undefined){
