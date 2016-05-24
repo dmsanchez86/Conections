@@ -237,6 +237,20 @@ button{
 	}
 }
 
+.column{
+	padding-top: 1rem;
+
+	&-half{
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100% / 2 - 15px);
+	}
+
+	img{
+		width: inherit;
+	}
+}
+
 @import 'popup';
 @import 'login';
 @import 'queries';
