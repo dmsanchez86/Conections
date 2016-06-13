@@ -13,8 +13,8 @@ application.controller('main', function($scope, $window){
 			slug: "servicios"
 		},
 		{
-			name: "Responsabilidad Social",
-			slug: "responsabilidad-social"
+			name: "PQR",
+			slug: "pqr"
 		},
 		{
 			name: "Cubrimiento",
@@ -442,5 +442,14 @@ application.controller('login', function($scope, $http, $window){
 				console.warn(response);
 		  });
 		}
+	}
+	
+	$scope.validar = function($event){
+		if($event.keyCode == 13){
+			setTimeout(function(){
+				$('#btnLogin').click();
+			},100);
+		}
+		return;
 	}
 });
