@@ -456,3 +456,61 @@ application.controller('login', function($scope, $http, $window){
 		return;
 	}
 });
+
+// controlador del formulario PQR
+application.controller('PQR', function($scope, $http, $window){
+	var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	
+	$scope.createPQR = function($event){
+		// obtenemos el target del elemento
+		var $element = angular.element($event.target);
+		
+		if($scope.fullname == "" || $scope.fullname == undefined || $scope.fullname.length < 5){
+			$('#fullname').notify('Ingrese un nombre correcto').focus();
+		}else if($scope.phone == "" || $scope.phone == undefined){
+			$('#phone').notify('Ingrese un telefono correcto').focus();
+		}else if($scope.email == "" || $scope.email == undefined){
+			$('#email').notify('Ingrese un email correcto').focus();
+		}else if(!expr.test($scope.email) ){
+			$('#email').notify('Ingrese un email correcto').focus();
+		}else if($scope.description == "" || $scope.description == undefined){
+			$('#description').notify('Ingrese un descripcion correcta').focus();
+		}else if($scope.description.length < 20){
+			$('#description').notify('Ingrese un descripcion mas concreta').focus();
+		}else{
+			$element.notify('enviando...', 'info');
+			
+			var $data = {
+				fullname: $scope.fullname,
+				phone: $scope.phone,
+				email: $scope.email,
+				description: $scope.description
+			};
+			
+			// ajax que me envia los datos del PQR
+			$http({
+			  url: webService + '?opc=pqr&fullname='+$data.fullname+'&phone='+$data.phone+'&email='+$data.email+'&description='+$data.description,
+			  method: 'POST'
+			}).then(function successCallback(response) {
+				console.log(response);
+				var $data = (response.data);
+
+				if($data.status){
+					$element.notify('PQR enviado con exito', 'success');
+					
+					// resetiamos los valores del scope
+					$scope.fullname = '';
+					$scope.phone = '';
+					$scope.email = '';
+					$scope.description = '';
+					
+					$('.form-group').removeClass('with-data');
+				}else{
+					$element.notify('No se pudo enviar el PQR');
+				}
+		  }, function errorCallback(response) {
+				$.notify('Error de Conexion');
+		  });
+		}
+	}
+});

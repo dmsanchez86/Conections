@@ -98,6 +98,55 @@ if(isset($_REQUEST['opc'])){
 
 		echo $data;
 	}
+	
+	// si solicito un peticion de pqr
+	if($_REQUEST['opc'] == "pqr"){
+		$fullname = $_REQUEST['fullname'];
+		$phone = $_REQUEST['phone'];
+		$email = $_REQUEST['email'];
+		$description = $_REQUEST['description'];
+		
+		// cabeceras del correo
+		$headers = "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		
+		$template = file_get_contents('tmpl/email.html');
+		
+		$mensaje = str_replace(
+			array(
+				"##FULLNAME##",
+				"##PHONE##",
+				"##EMAIL##",
+				"##DESCRIPTION##"
+			),
+			array(
+				$fullname,
+				$phone,
+				$email,
+				$description,
+			),
+			$template
+		);
+		
+		// enviamos el correo al destinatario con su respectivo subject 
+		$estado = mail("dmsanchez86@misena.edu.co", 'PQR Conexiones', $mensaje, $headers);
+		
+		$response = array();
+		
+		if($estado){
+			$response = array(
+				'status' => true,
+				'message' => 'PQR enviado con exito'
+			);
+		}else{
+			$response = array(
+				'status' => false,
+				'message' => 'No se pudo enviar el PQR'
+			);
+		}
+		
+		echo json_encode($response);
+	}
 }
 
 function urlValidator( $url ){
