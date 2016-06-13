@@ -126,6 +126,7 @@ nav {
         nav ul li a.active, nav ul li a:focus, nav ul li a:hover {
           background: rgba(130, 130, 130, 0.8); }
       nav ul li:nth-child(2) a,
+      nav ul li:nth-child(3) a,
       nav ul li:nth-child(4) a,
       nav ul li:nth-child(5) a {
         line-height: 2.5; }
@@ -1380,7 +1381,7 @@ button {
   nav ul {
     padding: 3rem 5rem; }
   .contentTable, .contentTable.services {
-    max-height: 240px; }
+    max-height: 300px; }
   .column.scroll {
     max-height: 300px;
     overflow: auto; } }
