@@ -40,21 +40,24 @@ application.controller('main', function($scope, $window){
 
 	// evento que cierra la session
 	$scope.logout = function(){
+		// removemos todos los datos de la sesion
 		$window.sessionStorage.removeItem('datosUsuario');
 		$('.contentUser').removeClass('active');
 		$scope.loginShow = true;
+		
+		// mostramos el mensaje correctamente
 		$.notify("Se cerro la sesión correctamente", "info");
 	}
 	
-	// evento que me cambia la pagina
+	// evento que mhace el efecto del scroll
 	$scope.page = function(slug){
             
-        // $('.button-menu a').removeClass('active');
-        $(this).addClass('active');
+			// $('.button-menu a').removeClass('active');
+			$(this).addClass('active');
         
-        var target = '#'+slug;
+			var target = '#'+slug;
         
-        $('html, body').stop().animate({
+			$('html, body').stop().animate({
 	        'scrollTop': ($(target).offset().top)
 	    }, 900, 'swing', function () {
 	        window.location.hash = target;

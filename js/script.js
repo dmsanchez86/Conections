@@ -10,7 +10,7 @@ $().ready(function($) {
 	});
   
   // evento cuando los input de texto pierden el foco
-  $('.form-group input[type=text],.form-group input[type=password]').focusout(function(){
+  $('.form-group input[type=text],.form-group input[type=password],.form-group input[type=tel],.form-group input[type=email],.form-group textarea,.form-group input[type=number]').focusout(function(){
       $(this).parent().removeClass('active');
       
       if($(this).val().length > 0)
