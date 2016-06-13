@@ -166,15 +166,15 @@
 				<div class="choose">
 					<div class="individual" ng-click="open('individual')">
 						<h1>
-							Individual 
+							Clientes
 						</h1>
 						<i class="fa fa-user"></i>
 					</div>
 					<div class="group" ng-click="open('group')">
 						<h1>
-							Empresa 
+							Transportadoras
 						</h1>
-						<i class="fa fa-users"></i>
+						<i class="fa fa-truck"></i>
 					</div>
 				</div>
 			</div>
@@ -209,7 +209,7 @@
 						</table>
 					</div>
 					<div ng-show="urlGuide" ng-class="{ 'column-half': urlGuide }" class="column scroll">
-						<img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}">
+						<a target="_blank" href="{{ urlGuide }}"><img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}"></a>
 					</div> 	
 				</div>
 			</div>
@@ -310,7 +310,7 @@
 									</table>
 								</div>
 								<div ng-show="urlGuide" ng-class="{ 'column-half': urlGuide }" class="column scroll">
-									<img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}">
+									<a target="_blank" href="{{ urlGuide }}"><img alt="" src="{{ urlGuide }}" id="zoomGuide" data-zoom-image="{{ urlGuide }}"></a>
 								</div> 
 							</div>
 						</div>
