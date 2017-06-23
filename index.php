@@ -23,7 +23,6 @@ if(isset($_REQUEST['opc'])){
 
 		$url_img_tiff = $base_url."?ruta=$guia";
 		$url_img_jpg = $base_url."$uid.jpg";
-
 		
 		if (urlValidator($url_img_jpg)){
 			echo $url_img_jpg;
@@ -129,7 +128,8 @@ if(isset($_REQUEST['opc'])){
 		);
 		
 		// enviamos el correo al destinatario con su respectivo subject 
-		$estado = mail("dmsanchez86@misena.edu.co", 'PQR Conexiones', $mensaje, $headers);
+		$estado = mail("direccioncomercial@conexiones.net.co, sacmanizales@conexiones.net.co", 'PQR Conexiones', utf8_decode($mensaje), $headers);
+		$estado = mail("alexandersosa@aslimitada.com", 'PQR Conexiones', utf8_decode($mensaje), $headers);
 		
 		$response = array();
 		
