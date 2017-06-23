@@ -122,43 +122,32 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 		  url: webService + '?opc=detalleGuiaEntidad&client='+$scope.datosUsuario.uid_cli+'&numero='+numero,
 		  method: 'POST'
 		}).then(function successCallback(response) {
-			console.log(response.data.seguimientoGuiaResult);
 			var $data = (response.data.seguimientoGuiaResult);
 
 			if($data.length > 0){
 				$scope.listDetailsGuide = $data;
 				$('.contentLogin.table').notify('Se encontraron '+$scope.listDetailsGuide.length+' registros', 'success');
 				$scope.viewDetails = true;
-				//debugger
-				
-				// ajax que me consulta las guias
-				$http({
-				  url: webService + '?opc=guia&guia='+numero,
-				  method: 'GET'
-				}).then(function successCallback(response) {
-					var $data = (response.data.seguimientoGuiaIndividualResult);
-	
-					if($data.length > 0){
-						$scope.listStates = $data;
-						
-						// si todo esta bien consultamos si existe la imagen
-						$http({
-						  url: webService + '?opc=imagenGuia&guia='+numero+'&uid='+$data[0].uid,
-						  method: 'GET'
-						}).then(function successCallback(response) {
-							$scope.urlGuide = (response.data);
-						}, function errorCallback(response) {
-							console.warn(response);
-						});
-						
-						
-					}else{
-						$scope.listStates = [];
-						$('#txtSearchGuide').notify('No se encontraron registros', 'info');
-					}
-			  }, function errorCallback(response) {
-					console.warn(response);
-			  });
+
+				if($data.length > 0){
+					$scope.listStates = $data;
+					console.log($data);
+					console.log($data[0].uid);
+					debugger
+					// si todo esta bien consultamos si existe la imagen
+					$http({
+					  url: webService + '?opc=imagenGuia&guia='+numero+'&uid='+$data[0].uid,
+					  method: 'GET'
+					}).then(function successCallback(response) {
+						$scope.urlGuide = (response.data);
+					}, function errorCallback(response) {
+						console.warn(response);
+					});
+					
+					
+				}else{
+					$scope.listStates = [];
+				}
 			}else{
 				$scope.listDetailsGuide = [];
 				$('.contentLogin.table').notify('No se encontraron los detalles del registro', 'info');
@@ -195,16 +184,8 @@ application.controller('popup', function($scope, $timeout, $http, $window){
 					$http({
 					  url: webService + '?opc=imagenGuia&guia='+$scope.valueSearch+'&uid='+$data[0].uid,
 					  method: 'GET'
-					}).then(function successCallback(response) {
+					}).then(function successCallback(response) {debugger
 						$scope.urlGuide = (response.data);
-						console.log($scope.urlGuide);
-						setTimeout(function(){
-							if(window.innerWidth > 780){
-								//$("#zoomGuide").elevateZoom({zoomWindowPosition: 11,tint:true, tintColour:'#aaa', tintOpacity:0.5,scrollZoom : true});
-							}else{
-								//$("#zoomGuide").elevateZoom();
-							}
-						}, 1000);
 					}, function errorCallback(response) {
 						console.warn(response);
 					});
