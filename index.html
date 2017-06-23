@@ -35,6 +35,9 @@
 							{{ link.name }}
 						</a>
 					</li>
+					<li>
+						<a href="/contratoTransporte.pdf" target="_blank">Contrato de Transporte</a>
+					</li>
 				</ul>
 				<div class="containerMenuMobile">
 					<span>Menu <i class="fa fa-navicon"></i></span>
@@ -63,7 +66,7 @@
 						</div>
 					</article>
 				</main>
-				<main blue class="min" id="quienes-somos">
+				<main blue class="min" id="quienes-somos" style="max-height: 539px;overflow: auto;">
 					<div class="first">
 						<h1>Quiénes Somos</h1>
 					</div>
@@ -78,6 +81,17 @@
 							<h2>Visión</h2>
 							<p>
 								Consolidar un modelo de negocio que permita estandarizar la prestación del servicio de transporte de carga en reexpedición, que evidencie la eficacia y la eficiencia en la operación y nos permita avanzar en la expansión hacia el mercado nacional..
+							</p>
+						</section>
+						<section>
+							<h2>Historia de la Compañía </h2>
+							<p>
+								La Compañía Nacional de Reexpediciones S. A. S. “Conexiones S. A. S.” es una empresa familiar de origen caldense, dedicada al transporte de mercancía en reexpedición hacia los diferentes municipios, corregimientos y veredas del Eje Cafetero, Norte del Valle y Norte del Tolima, formalizada el 17 de mayo de 2006, por un joven emprendedor, quien encontró y desarrolló una idea de negocio a raíz de la labor desempeñada por su señor padre y el apoyo incondicional de su madre, sus hermanas y la dedicación de cada uno de los colaboradores que han pasado por la compañía, poniendo todo su empeño en la labor.
+Desde el año 1.987 se buscó la manera de obtener relaciones comerciales para la distribución de mercancía en el departamento de Caldas con grandes transportadoras del país como “Transportadora Comercial Moderna (COMODERNA), después Open Market y desde el año 1998 con Envía Colvanes, Saferbo, Transportadora La Prensa del Valle, Redetrans, y demás, que se fueron convirtiendo en clientes por dos principios aplicables y fundamentales para la compañia: 1. La confidencialidad de la información y 2. La optimización de los recursos, consolidando la carga de las transportadoras hacia las diferentes zonas del departamento.  
+En el mes de mayo del año 2011, CONEXIONES S. A. S. fue pionero en formalizar el transporte de mercancía en reexpedición obteniendo la Resolución 0017 de mayo 6 de 2011 otorgada por el Ministerio de Transporte como habilitación para operar en el servicio público de transporte terrestre automotor de carga. Gracias al conocimiento de las zonas, la situación económico y sociocultural y la oportunidad de proporcionar trabajo en cada uno de los municipios visitados, ha facilitado la expansión en el cubrimiento de los diferentes departamentos, además de contar con una amplia experiencia del recurso humano, en cuanto al manejo y distribución de diferentes clase de mercancías como: medicamentos, ropa, zapatos, alimentos, huacales, en fin el paqueteo.
+ 
+Para el año 2015, como resultado de una competitividad dinámica el objetivo se enfocó en el contexto organizacional para lo cual se buscó acompañamiento de varias entidades del estado y, con el apoyo de la Cámara de Comercio de Manizales, se participa en el proceso de certificación en la Norma ISO 9001:2015 integrado al Estándar ISO 39001 (Sistema de Gestión de Seguridad Vial). Así mismo se recurrió a profesionales expertos en la implementación de las NIIF y en el Sistema de Gestión de Salud y Seguridad en el Trabajo (SGSST). 
+
 							</p>
 						</section>
 					</div>
@@ -104,20 +118,20 @@
 							<div class="contentPQR" ng-controller="PQR" style="margin-bottom: 2rem" >
 								<h1>Ingrese los Datos</h1>
 								<div class="form-group">
-									<input type="text" name="fullname" id="fullname" ng-model="fullname" ng-keypress="validarPQR($event)" required>
-									<label for="fullname">Nombre Completo</label>
+									<input type="text" placeholder= "Nombre Completo" name="fullname" id="fullname" ng-model="fullname" ng-keypress="validarPQR($event)" required>
+<!-- 									<label for="fullname">Nombre Completo</label> -->
 								</div>
 								<div class="form-group">
-									<input type="number" name="phone" id="phone" ng-model="phone" ng-keypress="validarPQR($event)" required>
-									<label for="phone">Teléfono de Contacto</label>
+									<input type="number" placeholder= "Teléfono de Contacto" name="phone" id="phone" ng-model="phone" ng-keypress="validarPQR($event)" required>
+<!-- 									<label for="phone">Teléfono de Contacto</label> -->
 								</div>
 								<div class="form-group">
-									<input type="email" name="email" id="email" ng-model="email" ng-keypress="validarPQR($event)" required>
-									<label for="email">Correo</label>
+									<input type="email" placeholder= "Correo"  name="email" id="email" ng-model="email" ng-keypress="validarPQR($event)" required>
+<!-- 									<label for="email">Correo</label> -->
 								</div>
 								<div class="form-group">
-									<textarea name="description" id="description" ng-model="description" ng-keypress="validarPQR($event)" required></textarea>
-									<label for="description" style="max-height: 2rem;margin: 0">Descripción</label>
+									<textarea name="description" placeholder= "Descripción"  id="description" ng-model="description" ng-keypress="validarPQR($event)" required></textarea>
+<!-- 									<label for="description" style="max-height: 2rem;margin: 0">Descripción</label> -->
 								</div>
 								<div class="form-group">
 									<button type="button" id="btnPQR" ng-click="createPQR($event)" style="margin: 0;padding: .25rem .5rem;">Enviar</button>
@@ -145,12 +159,13 @@
 						<section>
 							<div>
 								<i class="fa fa-globe"></i> Manizales - Calle 106 Nº 26 – 50 (Km 10 vía al Magdalena) diagonal a Súper de Alimentos <br>
-								<i class="fa fa-phone"></i> Teléfonos:  (6)  874 30 10 – 874 07 04 – 891 80 <br>
+								<i class="fa fa-phone"></i> Teléfonos:  (6)  874 30 10 – 874 07 04 <br>
 								<i class="fa fa-mobile"></i> Servicio al Cliente 314 669 8336 – 312 843 2906 <br>
 								<i class="fa fa-mobile"></i> Comercial: 310 411 1336 <br>
 								<i class="fa fa-mobile"></i> Recolección: 321 886 7296 <br>
-								<i class="fa fa-mobile"></i> Dirección Comercial: 320 690 4662
-							</div><br>
+								<i class="fa fa-mobile"></i> Dirección Comercial: 314 740 3379
+							</div>
+							<br>
 							<div>
 								<i class="fa fa-globe"></i> Dosquebradas: Carrera 18A Nº 11 – 14 – Barrio Los Cámbulos <br>
 								<i class="fa fa-phone"></i> Teléfono:   (6) 330 52 11 <br>
